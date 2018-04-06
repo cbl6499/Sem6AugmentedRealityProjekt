@@ -10,6 +10,7 @@ public class GameLobby : MonoBehaviour {
     private int currentPlayerCount;
     private static GameLobby instance;
 
+
     public Player Owner{ get; set; }
 
     public List<Player> Players{ get; set; }

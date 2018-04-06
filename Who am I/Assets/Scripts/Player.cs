@@ -8,6 +8,7 @@ public class Player : MonoBehaviour {
     private int number;
     private string ip;
 
+
     
 
     public Player(string username, int number, string ip) {
