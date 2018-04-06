@@ -18,7 +18,7 @@ public class GameLobby : MonoBehaviour {
     public static GameLobby Instance{
         get {
             if(instance == null) {
-                instance = new GameLobby("test");
+                instance = new GameLobby();
             }
             return instance;
         }
@@ -31,6 +31,11 @@ public class GameLobby : MonoBehaviour {
     public int CurrentPlayerCount { get; set; }
 
     public string Identifier { get; set; }
+
+    private GameLobby() {
+        this.CurrentPlayerCount = 0;
+        this.Players = new List<Player>();
+    }
 
     private GameLobby(string owner) {
         this.CurrentPlayerCount = 0;
@@ -57,7 +62,8 @@ public class GameLobby : MonoBehaviour {
     }
 
     public void StartGame() {
-        //start the game
+        NetworkHandler handler = NetworkHandler.Instance;
+        handler.BroadCastReady();
     }
 
     // Use this for initialization

@@ -8,9 +8,6 @@ public class Player : MonoBehaviour {
     private int number;
     private string ip;
 
-
-    
-
     public Player(string username, int number, string ip) {
         this.Username = username;
         this.Number = number;
@@ -20,6 +17,7 @@ public class Player : MonoBehaviour {
     public string Username{ get; set; }
 
     public int Number { get; set; }
+
     public string Ip { get; set; }
 
     // Use this for initialization
