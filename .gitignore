@@ -32,3 +32,6 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+Who am I/.vs/Who am I/v15/Server/sqlite3/storage.ide-wal
+*.lock
+Who am I/.vs/Who am I/v15/Server/sqlite3/storage.ide
