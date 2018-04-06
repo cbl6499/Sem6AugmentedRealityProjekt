@@ -42,29 +42,27 @@ public class NetworkHandler : MonoBehaviour {
 
     public void SetupClient() {
         myClient = new NetworkClient();
-        //myClient.RegisterHandler(MsgType.Connect, OnConnected);
-        //myClient.RegisterHandler(MsgType.AddPlayer, ConnectToLobby);
         myClient.RegisterHandler(MsgType.Ready, OnReady);
         myClient.Connect(this.HostAddress, hostPort);
     }
 
     public void SendLobbyRegistration(string username) {
-        ConnectionMessage msg = new ConnectionMessage();
+        Notification msg = new Notification();
         msg.Ip = Network.player.ipAddress;
-        msg.User = username;
+        msg.Message = username;
         myClient.Send(MsgType.AddPlayer, msg);
     }
 
     public void SendReadyMessage(Player p) {
         myClient.Connect(p.Ip, hostPort);
-        ConnectionMessage msg = new ConnectionMessage();
+        Notification msg = new Notification();
         msg.Ip = Network.player.ipAddress;
-        msg.User = "Ready";
+        msg.Message = "Ready";
         myClient.Send(MsgType.Ready, msg);
     }
 
     private void OnReady(NetworkMessage netMsg) {
-        ConnectionMessage msg = netMsg.ReadMessage<ConnectionMessage>();
+        Notification msg = netMsg.ReadMessage<Notification>();
         //do stuff and start game
         Debug.Log("Yay, everyone is ready");
     }
@@ -82,13 +80,13 @@ public class NetworkHandler : MonoBehaviour {
     }
 
     public void ConnectToLobby(NetworkMessage netMsg) {
-        ConnectionMessage msg = netMsg.ReadMessage<ConnectionMessage>();
+        Notification msg = netMsg.ReadMessage<Notification>();
         GameLobby lobby = GameLobby.Instance;
-        lobby.RegisterPlayer(msg.User, msg.Ip);
+        lobby.RegisterPlayer(msg.Message, msg.Ip);
     }
 
-    private ConnectionMessage CreateConnectionMessage(string username, string userIp) {
-        return new ConnectionMessage(username, userIp);
+    private Notification CreateConnectionMessage(string username, string userIp) {
+        return new Notification(username, userIp);
     }
 
     // Use this for initialization

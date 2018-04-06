@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class ConnectionMessage : MessageBase {
+public class Notification : MessageBase {
 
-    private string user;
+    private string message;
     private int ip;
 
+    public string Message { get; set; }
 
-    public string User { get; set; }
     public string Ip{ get; set; }
     
     
     // Use this for initialization
-    public ConnectionMessage() { }
-    public ConnectionMessage(string user, string ip) {
-        this.User = user;
+    public Notification() { }
+    public Notification(string message, string ip) {
+        this.Message = message;
         this.Ip = ip;
     }
 }

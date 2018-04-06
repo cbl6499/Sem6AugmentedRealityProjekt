@@ -290,10 +290,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Client.cs" />
-    <Compile Include="Assets\Scripts\ConnectionMessage.cs" />
     <Compile Include="Assets\Scripts\GameLobby.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\NetworkHandler.cs" />
+    <Compile Include="Assets\Scripts\Notification.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\Server.cs" />
     <Compile Include="Assets\Scripts\text.cs" />
