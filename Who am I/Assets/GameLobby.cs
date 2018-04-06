@@ -41,6 +41,10 @@ public class GameLobby : MonoBehaviour {
         players.Remove(player);
     }
 
+    public void StartGame() {
+        //start the game
+    }
+
     // Use this for initialization
     void Start () {
         
