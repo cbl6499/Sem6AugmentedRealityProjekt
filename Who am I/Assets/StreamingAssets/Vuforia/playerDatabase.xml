@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
-    <ImageTarget name="Player1" size="2.000000 1.124000" />
+    <ImageTarget name="Player_2_v2" size="500.000000 597.826111" />
+    <ImageTarget name="Player_1_v2" size="500.000000 561.224487" />
+    <ImageTarget name="Player_6_v2" size="500.000000 656.250000" />
+    <ImageTarget name="Player_5_v2" size="500.000000 545.454529" />
+    <ImageTarget name="Player_4_v2" size="500.000000 508.771942" />
+    <ImageTarget name="Player_3_v2" size="500.000000 568.627441" />
   </Tracking>
 </QCARConfig>
