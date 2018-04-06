@@ -18,6 +18,7 @@ public class NetworkHandler : MonoBehaviour {
         this.HostPort = hostPort;
     }
 
+
     public void SetupClient() {
         myClient = new NetworkClient();
         myClient.RegisterHandler(MsgType.Connect, OnConnected);
