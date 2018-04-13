@@ -11,20 +11,19 @@ public class GameManager : MonoBehaviour {
     public GameObject mainMenu;
     public GameObject serverMenu;
     public GameObject connectMenu;
+    public GameObject hostSettingMenu;
 
     public GameObject serverPrefab;
     public GameObject clientPrefab;
-
-<<<<<<< HEAD
+    
     string username;
 
-=======
->>>>>>> d6b4e89af04f2c969ee4d3b1eec207a91787831c
     // Use this for initialization
     void Start () {
         Instance = this;
         serverMenu.SetActive(false);
         connectMenu.SetActive(false);
+        hostSettingMenu.SetActive(false);
         DontDestroyOnLoad(gameObject);
 	}
 
@@ -42,15 +41,28 @@ public class GameManager : MonoBehaviour {
         string username = GameObject.Find("Username").GetComponent<InputField>().text;
         if (username == "") {
             GameManager.print("Username was empty");
+        } else {            
+            mainMenu.SetActive(false);
+            hostSettingMenu.SetActive(true);
+        }        
+    }
+
+    public void CreateGameButton() {
+        int amount = Convert.ToInt32(GameObject.Find("PlayerAmount").GetComponent<InputField>().text);
+        if (amount == null) {
+            amount = 4;
+        } else if (amount > 6) {
+            GameManager.print("Lobby would be to big!");
+            GameObject.Find("PlayerAmount").GetComponent<InputField>().text = "6";
         } else {
-            WhoAmIServer s = Instantiate(ServerPrefab.GetComponent<WhoAmIServer>());
-            WhoAmIClient c = Instantiate(ClientPrefab.GetComponent<WhoAmIClient>());
+            WhoAmIServer s = Instantiate(serverPrefab.GetComponent<WhoAmIServer>());
+            WhoAmIClient c = Instantiate(clientPrefab.GetComponent<WhoAmIClient>());
             c.Username = username;
             c.ClientAddress = "127.0.0.1";
             c.HostAddress = "127.0.0.1";
-            mainMenu.SetActive(false);
             serverMenu.SetActive(true);
-        }        
+            hostSettingMenu.SetActive(false);
+        }
     }
 
     public void ConnectToHostButton() {
@@ -60,7 +72,7 @@ public class GameManager : MonoBehaviour {
         }
 
         try {
-            WhoAmIClient c = Instantiate(ClientPrefab.GetComponent<WhoAmIClient>());
+            WhoAmIClient c = Instantiate(clientPrefab.GetComponent<WhoAmIClient>());
             c.Username = username;
             c.HostAddress = hostAddress;
             c.SendLobbyRegistration();
@@ -72,6 +84,7 @@ public class GameManager : MonoBehaviour {
     public void BackButton() {
         serverMenu.SetActive(false);
         connectMenu.SetActive(false);
+        hostSettingMenu.SetActive(false);
         mainMenu.SetActive(true);
     }
 }
