@@ -6,7 +6,8 @@ using UnityEngine.Networking;
 
 public class WhoAmIServer : MonoBehaviour {
 
-    private NetworkClient client;
+    //private NetworkClient client;
+    NetworkServer server;
     private int port;
     private string hostAddress;
     private WhoAmIServer instance;
@@ -14,7 +15,7 @@ public class WhoAmIServer : MonoBehaviour {
     public WhoAmIServer Instance {
         get {
             if (instance == null) {
-                instance = new WhoAmIServer(Network.player.ipAddress);
+                instance = new WhoAmIServer();
             }
             return instance;
         }
@@ -23,21 +24,22 @@ public class WhoAmIServer : MonoBehaviour {
         }
     }
 
-    public NetworkClient Client{ get; set; }
+    public NetworkServer Server{ get; set; }
     public int Port { get; set; }
     public string HostAddress{ get; set; }
 
-    private WhoAmIServer(string ip) {
-        this.HostAddress = ip;
+    private WhoAmIServer() {
         this.Port = 6321;
     }
+
     public void SetupHost() {
+        NetworkServer.Listen(this.Port);
         GameLobby lobby = GameLobby.Instance;
         lobby.SetOwner("Diego1337", "127.0.0.1");
-        this.Client = new NetworkClient();
-        this.Client.RegisterHandler(MsgType.Connect, OnConnected);
-        this.Client.RegisterHandler(MsgType.AddPlayer, ConnectToLobby);
-        this.Client.Connect(Network.player.ipAddress, this.Port);
+        //Server = new NetworkServer();
+        NetworkServer.RegisterHandler(MsgType.Connect, OnConnected);
+        NetworkServer.RegisterHandler(MsgType.AddPlayer, ConnectToLobby);
+        //this.Server.Connect(Network.player.ipAddress, this.Port);
         this.Port = 6321;
         this.HostAddress = Network.player.ipAddress;
     }
@@ -52,9 +54,7 @@ public class WhoAmIServer : MonoBehaviour {
     public void BroadCastReady() {
         GameLobby lobby = GameLobby.Instance;
         List<Player> players = lobby.Players;
-        foreach (Player p in players) {
-            SendReadyMessage(p);
-        }
+        BroadCastMessage(MsgType.Ready, "Ready");
     }
 
     public void BroadCastConnectedPlayer() {
@@ -72,21 +72,23 @@ public class WhoAmIServer : MonoBehaviour {
         List<Player> playerList = lobby.Players;
         Notification msg = new Notification();
         msg.Message = message;
-        foreach (Player p in playerList) {
+        /*foreach (Player p in playerList) {
             msg.Ip = p.Ip;
-            this.Client.Send(type, msg);
-        }
+            this.Server.Send(type, msg);
+        }*/
+        NetworkServer.SendToAll(type, msg);
     }
     private void OnConnected(NetworkMessage netMsg) {
         throw new NotImplementedException();
     }
 
     public void SendReadyMessage(Player p) {
-        this.Client.Connect(p.Ip, port);
+        //this.Client.Connect(p.Ip, port);
         Notification msg = new Notification();
         msg.Ip = Network.player.ipAddress;
         msg.Message = "Ready";
-        this.Client.Send(MsgType.Ready, msg);
+        //this.Client.Send(MsgType.Ready, msg);
+
         
     }
 
