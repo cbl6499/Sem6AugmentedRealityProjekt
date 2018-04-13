@@ -22,7 +22,7 @@ public class NetworkHandler : MonoBehaviour {
             instance = value;
         }
     }
-
+    
     public int Port{ get; set; }
     public string HostAddress{ get; set; }
 
@@ -31,6 +31,7 @@ public class NetworkHandler : MonoBehaviour {
         this.Port = 6321;
     }
 
+    //Server Methode
     public void SetupHost() {
         GameLobby lobby = GameLobby.Instance;
         lobby.RegisterPlayer("Testname", Network.player.ipAddress);
@@ -40,12 +41,14 @@ public class NetworkHandler : MonoBehaviour {
         myClient.Connect(Network.player.ipAddress, this.Port);
     }
 
+    //Client Methode
     public void SetupClient() {
         myClient = new NetworkClient();
         myClient.RegisterHandler(MsgType.Ready, OnReady);
         myClient.Connect(this.HostAddress, port);
     }
 
+    //Client Methode
     public void SendLobbyRegistration(string username) {
         Notification msg = new Notification();
         msg.Ip = Network.player.ipAddress;
@@ -53,6 +56,7 @@ public class NetworkHandler : MonoBehaviour {
         myClient.Send(MsgType.AddPlayer, msg);
     }
 
+    //Client Methode
     public void SendReadyMessage(Player p) {
         myClient.Connect(p.Ip, port);
         Notification msg = new Notification();
@@ -61,6 +65,7 @@ public class NetworkHandler : MonoBehaviour {
         myClient.Send(MsgType.Ready, msg);
     }
 
+    //Client Methode (Listener)
     private void OnReady(NetworkMessage netMsg) {
         Notification msg = netMsg.ReadMessage<Notification>();
         //do stuff and start game
@@ -71,6 +76,7 @@ public class NetworkHandler : MonoBehaviour {
         throw new NotImplementedException();
     }
 
+    //Server Methode
     public void BroadCastReady() {
         GameLobby lobby = GameLobby.Instance;
         List<Player> players = lobby.Players;
@@ -79,12 +85,14 @@ public class NetworkHandler : MonoBehaviour {
         }
     }
 
+    //Client Methode
     public void ConnectToLobby(NetworkMessage netMsg) {
         Notification msg = netMsg.ReadMessage<Notification>();
         GameLobby lobby = GameLobby.Instance;
         lobby.RegisterPlayer(msg.Message, msg.Ip);
     }
 
+    //Client Methode
     private Notification CreateConnectionMessage(string username, string userIp) {
         return new Notification(username, userIp);
     }
