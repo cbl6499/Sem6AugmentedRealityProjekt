@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class GameLobby : MonoBehaviour {
 
-    private string identifier;
     private List<Player> players;
     private Player owner;
     private int currentPlayerCount;
     private static GameLobby instance;
-
 
     public Player Owner{ get; set; }
 
@@ -27,10 +25,7 @@ public class GameLobby : MonoBehaviour {
         }
     }
 
-
     public int CurrentPlayerCount { get; set; }
-
-    public string Identifier { get; set; }
 
     private GameLobby() {
         this.CurrentPlayerCount = 0;
@@ -41,11 +36,6 @@ public class GameLobby : MonoBehaviour {
         this.CurrentPlayerCount = 0;
         this.Owner = CreatePlayer(owner, Network.player.ipAddress);
         this.Players = new List<Player>();
-    }
-
-    public void CreateIdentifier() {
-        //TODO: create unique identifier
-        this.Identifier = "SampleIdentifier";
     }
 
     public void RegisterPlayer(string username, string ip) {
