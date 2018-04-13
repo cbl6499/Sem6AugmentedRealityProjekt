@@ -289,13 +289,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Client.cs" />
+    <Compile Include="Assets\Scripts\Experiments\Client.cs" />
+    <Compile Include="Assets\Scripts\Experiments\Server.cs" />
     <Compile Include="Assets\Scripts\GameLobby.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\NetworkHandler.cs" />
     <Compile Include="Assets\Scripts\Notification.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
-    <Compile Include="Assets\Scripts\Server.cs" />
     <Compile Include="Assets\Scripts\text.cs" />
     <Compile Include="Assets\Vuforia\Scripts\DefaultInitializationErrorHandler.cs" />
     <Compile Include="Assets\Vuforia\Scripts\DefaultTrackableEventHandler.cs" />
