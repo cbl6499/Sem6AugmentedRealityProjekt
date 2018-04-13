@@ -291,29 +291,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="Assets\Scripts\Experiments\Client.cs" />
     <Compile Include="Assets\Scripts\Experiments\Server.cs" />
-=======
-<<<<<<< HEAD
-    <Compile Include="Assets\Scripts\Experiments\Client.cs" />
-    <Compile Include="Assets\Scripts\Experiments\Server.cs" />
-=======
-<<<<<<< HEAD
-    <Compile Include="Assets\Scripts\ConnectionMessage.cs" />
-    <Compile Include="Assets\Scripts\Experiments\Client.cs" />
-    <Compile Include="Assets\Scripts\Experiments\Server.cs" />
-=======
-    <Compile Include="Assets\Scripts\Client.cs" />
->>>>>>> 270296dd93d9bc6fd64327526f651bd51bae2c6f
->>>>>>> origin/master
->>>>>>> 986b8c4531b387d54b18c88abc74bcb55da6a23e
     <Compile Include="Assets\Scripts\GameLobby.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\NetworkHandler.cs" />
     <Compile Include="Assets\Scripts\Notification.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\text.cs" />
+    <Compile Include="Assets\Scripts\WhoAmIClient.cs" />
     <Compile Include="Assets\Vuforia\Scripts\DefaultInitializationErrorHandler.cs" />
     <Compile Include="Assets\Vuforia\Scripts\DefaultTrackableEventHandler.cs" />
   </ItemGroup>
