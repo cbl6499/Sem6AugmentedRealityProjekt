@@ -13,8 +13,8 @@ public class WhoAmIClient : MonoBehaviour {
 
     public int Port { get; set; }
     public string HostAddress { get; set; }
-    public int ClientAddress { get; set; }
-    public int Username { get; set; }
+    public string ClientAddress { get; set; }
+    public string Username { get; set; }
 
     void Start() {
         SetupClient();
