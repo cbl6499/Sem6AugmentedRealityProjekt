@@ -6,24 +6,46 @@ public class WhoAmIClient : MonoBehaviour {
 
     NetworkClient myClient;
     private string hostAddress;
-    private int port;
+    private string clientAddress;
+    private string username;
+    private int port = 6321;
+    private WhoAmIClient instance;
 
     public int Port { get; set; }
     public string HostAddress { get; set; }
+    public int ClientAddress { get; set; }
+    public int Username { get; set; }
 
-    private void Start() {
+    void Start() {
         SetupClient();
+    }
+
+    private WhoAmIClient(string address) {
+        this.clientAddress = address;
+    }
+
+    public WhoAmIClient Instance {
+        get {
+            if (instance == null) {
+                instance = new WhoAmIClient(Network.player.ipAddress);
+            }
+            return instance;
+        }
+        set {
+            instance = value;
+        }
     }
 
     //Client Methode
     public void SetupClient() {
         myClient = new NetworkClient();
         myClient.RegisterHandler(MsgType.Ready, OnReady);
+        myClient.RegisterHandler(MsgType.NotReady, PrintPlayerList);
         myClient.Connect(this.HostAddress, port);
     }
 
     //Client Methode
-    public void SendLobbyRegistration(string username) {
+    public void SendLobbyRegistration() {
         Notification msg = new Notification();
         msg.Ip = Network.player.ipAddress;
         msg.Message = username;
@@ -32,7 +54,6 @@ public class WhoAmIClient : MonoBehaviour {
 
     //Client Methode
     public void SendReadyMessage(Player p) {
-        myClient.Connect(p.Ip, port);
         Notification msg = new Notification();
         msg.Ip = Network.player.ipAddress;
         msg.Message = "Ready";
@@ -44,6 +65,11 @@ public class WhoAmIClient : MonoBehaviour {
         Notification msg = netMsg.ReadMessage<Notification>();
         //do stuff and start game
         Debug.Log("Yay, everyone is ready");
+    }
+
+    private void PrintPlayerList(NetworkMessage netMsg) {
+        Notification msg = netMsg.ReadMessage<Notification>();
+        Debug.Log("Yay, " + msg.Message + " are in the lobby");
     }
 
     //Client Methode
