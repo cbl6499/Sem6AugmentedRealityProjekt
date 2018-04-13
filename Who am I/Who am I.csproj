@@ -297,6 +297,7 @@
     <Compile Include="Assets\Scripts\Notification.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\text.cs" />
+    <Compile Include="Assets\Scripts\WhoAmIClient.cs" />
     <Compile Include="Assets\Scripts\WhoAmIServer.cs" />
     <Compile Include="Assets\Vuforia\Scripts\DefaultInitializationErrorHandler.cs" />
     <Compile Include="Assets\Vuforia\Scripts\DefaultTrackableEventHandler.cs" />
