@@ -193,6 +193,7 @@
     </Reference>
     <Reference Include="UnityEngine.WindModule">
       <HintPath>D:/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.WindModule.dll</HintPath>
+<<<<<<< HEAD
     </Reference>
 <<<<<<< HEAD
     <Reference Include="Vuforia.UnityExtensions">
@@ -206,6 +207,11 @@
 =======
     <Reference Include="UnityEngine.UI">
       <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+=======
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+>>>>>>> 93df2d6877ce9577be8ea6fb9396110ba5ffe386
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll</HintPath>
@@ -218,6 +224,9 @@
     </Reference>
     <Reference Include="UnityEditor.TestRunner">
       <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/Editor/UnityEditor.TestRunner.dll</HintPath>
+<<<<<<< HEAD
+>>>>>>> 93df2d6877ce9577be8ea6fb9396110ba5ffe386
+=======
 >>>>>>> 93df2d6877ce9577be8ea6fb9396110ba5ffe386
     </Reference>
     <Reference Include="UnityEngine.TestRunner">
@@ -228,6 +237,7 @@
     </Reference>
     <Reference Include="UnityEngine.Timeline">
       <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
+<<<<<<< HEAD
 <<<<<<< HEAD
     </Reference>
     <Reference Include="UnityEngine.UIAutomation">
@@ -254,6 +264,8 @@
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>C:/ProgramData/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
 =======
+=======
+>>>>>>> 93df2d6877ce9577be8ea6fb9396110ba5ffe386
     </Reference>
     <Reference Include="UnityEditor.Timeline">
       <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/Timeline/Editor/UnityEditor.Timeline.dll</HintPath>
@@ -323,6 +335,9 @@
     </Reference>
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>C:/Users/David/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
+<<<<<<< HEAD
+>>>>>>> 93df2d6877ce9577be8ea6fb9396110ba5ffe386
+=======
 >>>>>>> 93df2d6877ce9577be8ea6fb9396110ba5ffe386
     </Reference>
   </ItemGroup>

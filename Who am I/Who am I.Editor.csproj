@@ -194,12 +194,15 @@
     <Reference Include="UnityEngine.WindModule">
       <HintPath>D:/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.WindModule.dll</HintPath>
 <<<<<<< HEAD
+<<<<<<< HEAD
     </Reference>
     <Reference Include="Vuforia.UnityExtensions.Editor">
       <HintPath>D:/Unity/Editor/Data/PlaybackEngines/VuforiaSupport/Managed/Editor/Vuforia.UnityExtensions.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Vuforia.UnityExtensions">
       <HintPath>D:/Unity/Editor/Data/PlaybackEngines/VuforiaSupport/Managed/Runtime/Vuforia.UnityExtensions.dll</HintPath>
+=======
+>>>>>>> 93df2d6877ce9577be8ea6fb9396110ba5ffe386
 =======
 >>>>>>> 93df2d6877ce9577be8ea6fb9396110ba5ffe386
     </Reference>
@@ -260,6 +263,7 @@
     <Reference Include="UnityEditor.VR">
       <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll</HintPath>
 <<<<<<< HEAD
+<<<<<<< HEAD
     </Reference>
     <Reference Include="UnityEditor.Graphs">
       <HintPath>D:/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
@@ -267,6 +271,8 @@
     <Reference Include="UnityEditor.Android.Extensions">
       <HintPath>D:/Unity/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll</HintPath>
 =======
+=======
+>>>>>>> 93df2d6877ce9577be8ea6fb9396110ba5ffe386
     </Reference>
     <Reference Include="Vuforia.UnityExtensions.Editor">
       <HintPath>D:/Unity/Editor/Data/PlaybackEngines/VuforiaSupport/Managed/Editor/Vuforia.UnityExtensions.Editor.dll</HintPath>
@@ -276,6 +282,9 @@
     </Reference>
     <Reference Include="UnityEditor.Graphs">
       <HintPath>D:/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+<<<<<<< HEAD
+>>>>>>> 93df2d6877ce9577be8ea6fb9396110ba5ffe386
+=======
 >>>>>>> 93df2d6877ce9577be8ea6fb9396110ba5ffe386
     </Reference>
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
@@ -285,6 +294,7 @@
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Advertisements">
+<<<<<<< HEAD
 <<<<<<< HEAD
       <HintPath>C:/ProgramData/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.3/UnityEngine.Advertisements.dll</HintPath>
     </Reference>
@@ -306,6 +316,8 @@
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>C:/ProgramData/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
 =======
+=======
+>>>>>>> 93df2d6877ce9577be8ea6fb9396110ba5ffe386
       <HintPath>C:/Users/David/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.3/UnityEngine.Advertisements.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Advertisements">
@@ -325,6 +337,9 @@
     </Reference>
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>C:/Users/David/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
+<<<<<<< HEAD
+>>>>>>> 93df2d6877ce9577be8ea6fb9396110ba5ffe386
+=======
 >>>>>>> 93df2d6877ce9577be8ea6fb9396110ba5ffe386
     </Reference>
   </ItemGroup>
