@@ -8,15 +8,32 @@ public class WhoAmIServer : MonoBehaviour {
 
     private NetworkClient client;
     private int port;
-    private int hostAddress;
+    private string hostAddress;
+    private WhoAmIServer instance;
+
+    public WhoAmIServer Instance {
+        get {
+            if (instance == null) {
+                instance = new WhoAmIServer(Network.player.ipAddress);
+            }
+            return instance;
+        }
+        set {
+            instance = value;
+        }
+    }
 
     public NetworkClient Client{ get; set; }
     public int Port { get; set; }
     public string HostAddress{ get; set; }
 
+    private WhoAmIServer(string ip) {
+        this.HostAddress = ip;
+        this.Port = 6321;
+    }
     public void SetupHost() {
         GameLobby lobby = GameLobby.Instance;
-        lobby.RegisterPlayer("Testname", Network.player.ipAddress);
+        lobby.SetOwner("Diego1337", "127.0.0.1");
         this.Client = new NetworkClient();
         this.Client.RegisterHandler(MsgType.Connect, OnConnected);
         this.Client.RegisterHandler(MsgType.AddPlayer, ConnectToLobby);

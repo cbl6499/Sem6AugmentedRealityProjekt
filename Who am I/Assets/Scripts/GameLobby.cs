@@ -39,8 +39,8 @@ public class GameLobby : MonoBehaviour {
         this.Players.Add(this.Owner);
     }
 
-    public void setOwner(string owner) {
-        this.Owner = CreatePlayer(owner, Network.player.ipAddress);
+    public void SetOwner(string owner, string ip) {
+        this.Owner = CreatePlayer(owner, ip);
         if (!this.Players.Contains(this.Owner)) {
             this.Players.Add(Owner);
         }
