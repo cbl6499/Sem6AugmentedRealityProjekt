@@ -10,11 +10,11 @@ public class GameManager : MonoBehaviour {
     public GameObject serverMenu;
     public GameObject connectMenu;
 
-    public GameObject ServerPrefab;
-    public GameObject ClientPrefab;
+    public GameObject serverPrefab;
+    public GameObject clientPrefab;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         Instance = this;
         serverMenu.SetActive(false);
         connectMenu.SetActive(false);
