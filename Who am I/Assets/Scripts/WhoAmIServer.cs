@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class WhoAmIServer : MonoBehaviour {
+public class WhoAmIServer{// : MonoBehaviour {
 
     NetworkServer server;
     private int port;
     private string hostAddress;
-   /* private WhoAmIServer instance;
+    private static WhoAmIServer instance;
 
-    public WhoAmIServer Instance {
+    public static WhoAmIServer Instance {
         get {
             if (instance == null) {
                 instance = new WhoAmIServer();
@@ -21,7 +21,7 @@ public class WhoAmIServer : MonoBehaviour {
         set {
             instance = value;
         }
-    }*/
+    }
 
     public NetworkServer Server{ get; set; }
     public int Port { get; set; }
@@ -29,6 +29,7 @@ public class WhoAmIServer : MonoBehaviour {
 
     public WhoAmIServer() {
         this.Port = 6321;
+        SetupHost();
     }
 
     public void SetupHost() {

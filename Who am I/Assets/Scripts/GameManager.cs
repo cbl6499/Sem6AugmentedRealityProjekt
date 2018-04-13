@@ -54,8 +54,8 @@ public class GameManager : MonoBehaviour {
             GameManager.print("Lobby would be to big!");
             GameObject.Find("PlayerAmount").GetComponent<InputField>().text = "6";
         } else {
-            WhoAmIServer s = Instantiate(serverPrefab.GetComponent<WhoAmIServer>());
-            WhoAmIClient c = Instantiate(clientPrefab.GetComponent<WhoAmIClient>());
+            WhoAmIServer s = WhoAmIServer.Instance; //Instantiate(serverPrefab.GetComponent<WhoAmIServer>());
+            WhoAmIClient c = WhoAmIClient.Instance;//Instantiate(clientPrefab.GetComponent<WhoAmIClient>());
             c.Username = username;
             c.ClientAddress = "127.0.0.1";
             c.HostAddress = "127.0.0.1";
@@ -69,11 +69,12 @@ public class GameManager : MonoBehaviour {
         if (hostAddress == "") {
             hostAddress = "127.0.0.1";
         }
-
         try {
-            WhoAmIClient c = Instantiate(clientPrefab.GetComponent<WhoAmIClient>());
+            WhoAmIClient c = WhoAmIClient.Instance;// Instantiate(clientPrefab.GetComponent<WhoAmIClient>());
             c.Username = username;
             c.HostAddress = hostAddress;
+            Debug.Log("I mad it to to send method " + username + " " + hostAddress + " Client:" + c.Username + " " + c.HostAddress );
+            c.Connect();
             c.SendLobbyRegistration();
         } catch (Exception e) {
             Debug.Log(e.Message);
