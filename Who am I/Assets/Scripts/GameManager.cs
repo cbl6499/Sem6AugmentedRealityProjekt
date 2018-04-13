@@ -12,8 +12,6 @@ public class GameManager : MonoBehaviour {
     public GameObject serverMenu;
     public GameObject connectMenu;
 
-    public GameObject ServerPrefab;
-    public GameObject ClientPrefab;
     public GameObject serverPrefab;
     public GameObject clientPrefab;
 
