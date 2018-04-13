@@ -15,10 +15,15 @@ public class GameManager : MonoBehaviour {
 
     public GameObject serverPrefab;
     public GameObject clientPrefab;
+<<<<<<< HEAD
     
     string username;
 
     // Use this for initialization
+=======
+
+    string username;
+>>>>>>> 1a362e0b574d22d56ffe3a47f5250a20972c759e
     void Start () {
         Instance = this;
         serverMenu.SetActive(false);
