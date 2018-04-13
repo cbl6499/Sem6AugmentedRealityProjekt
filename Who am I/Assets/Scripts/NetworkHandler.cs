@@ -8,7 +8,7 @@ public class NetworkHandler : MonoBehaviour {
 
     NetworkClient myClient;
     private string hostAddress;
-    private int hostPort;
+    private int port;
     private static NetworkHandler instance;
 
     public static NetworkHandler Instance {
@@ -23,12 +23,12 @@ public class NetworkHandler : MonoBehaviour {
         }
     }
 
-    public int HostPort{ get; set; }
+    public int Port{ get; set; }
     public string HostAddress{ get; set; }
 
     private NetworkHandler(string hostAddress) {
         this.HostAddress = hostAddress;
-        this.HostPort = 6321;
+        this.Port = 6321;
     }
 
     public void SetupHost() {
@@ -37,13 +37,13 @@ public class NetworkHandler : MonoBehaviour {
         myClient = new NetworkClient();
         myClient.RegisterHandler(MsgType.Connect, OnConnected);
         myClient.RegisterHandler(MsgType.AddPlayer, ConnectToLobby);
-        myClient.Connect(Network.player.ipAddress, this.HostPort);
+        myClient.Connect(Network.player.ipAddress, this.Port);
     }
 
     public void SetupClient() {
         myClient = new NetworkClient();
         myClient.RegisterHandler(MsgType.Ready, OnReady);
-        myClient.Connect(this.HostAddress, hostPort);
+        myClient.Connect(this.HostAddress, port);
     }
 
     public void SendLobbyRegistration(string username) {
@@ -54,7 +54,7 @@ public class NetworkHandler : MonoBehaviour {
     }
 
     public void SendReadyMessage(Player p) {
-        myClient.Connect(p.Ip, hostPort);
+        myClient.Connect(p.Ip, port);
         Notification msg = new Notification();
         msg.Ip = Network.player.ipAddress;
         msg.Message = "Ready";
