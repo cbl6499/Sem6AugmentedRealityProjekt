@@ -15,12 +15,7 @@ public class GameManager : MonoBehaviour {
     public GameObject serverPrefab;
     public GameObject clientPrefab;
 
-<<<<<<< HEAD
     string username;
-
-=======
->>>>>>> d6b4e89af04f2c969ee4d3b1eec207a91787831c
-    // Use this for initialization
     void Start () {
         Instance = this;
         serverMenu.SetActive(false);
@@ -43,8 +38,8 @@ public class GameManager : MonoBehaviour {
         if (username == "") {
             GameManager.print("Username was empty");
         } else {
-            WhoAmIServer s = Instantiate(ServerPrefab.GetComponent<WhoAmIServer>());
-            WhoAmIClient c = Instantiate(ClientPrefab.GetComponent<WhoAmIClient>());
+            WhoAmIServer s = Instantiate(serverPrefab.GetComponent<WhoAmIServer>());
+            WhoAmIClient c = Instantiate(clientPrefab.GetComponent<WhoAmIClient>());
             c.Username = username;
             c.ClientAddress = "127.0.0.1";
             c.HostAddress = "127.0.0.1";
@@ -60,7 +55,7 @@ public class GameManager : MonoBehaviour {
         }
 
         try {
-            WhoAmIClient c = Instantiate(ClientPrefab.GetComponent<WhoAmIClient>());
+            WhoAmIClient c = Instantiate(clientPrefab.GetComponent<WhoAmIClient>());
             c.Username = username;
             c.HostAddress = hostAddress;
             c.SendLobbyRegistration();
