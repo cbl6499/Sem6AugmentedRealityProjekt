@@ -9,7 +9,7 @@ public class WhoAmIServer : MonoBehaviour {
     NetworkServer server;
     private int port;
     private string hostAddress;
-    private WhoAmIServer instance;
+   /* private WhoAmIServer instance;
 
     public WhoAmIServer Instance {
         get {
@@ -21,17 +21,18 @@ public class WhoAmIServer : MonoBehaviour {
         set {
             instance = value;
         }
-    }
+    }*/
 
     public NetworkServer Server{ get; set; }
     public int Port { get; set; }
     public string HostAddress{ get; set; }
 
-    private WhoAmIServer() {
+    public WhoAmIServer() {
         this.Port = 6321;
     }
 
     public void SetupHost() {
+        NetworkServer.Reset();
         NetworkServer.Listen(this.Port);
         GameLobby lobby = GameLobby.Instance;
         lobby.SetOwner("Diego1337", "127.0.0.1");

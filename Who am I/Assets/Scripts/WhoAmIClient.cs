@@ -2,14 +2,14 @@
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class WhoAmIClient : MonoBehaviour {
+public class WhoAmIClient  : MonoBehaviour {
 
     NetworkClient myClient;
     private string hostAddress;
     private string clientAddress;
     private string username;
     private int port = 6321;
-    private WhoAmIClient instance;
+    //private WhoAmIClient instance;
 
     public int Port { get; set; }
     public string HostAddress { get; set; }
@@ -20,11 +20,11 @@ public class WhoAmIClient : MonoBehaviour {
         SetupClient();
     }
 
-    private WhoAmIClient(string address) {
+    public WhoAmIClient(string address) {
         this.clientAddress = address;
     }
 
-    public WhoAmIClient Instance {
+   /* public WhoAmIClient Instance {
         get {
             if (instance == null) {
                 instance = new WhoAmIClient(Network.player.ipAddress);
@@ -34,7 +34,7 @@ public class WhoAmIClient : MonoBehaviour {
         set {
             instance = value;
         }
-    }
+    }*/
 
     //Client Methode
     public void SetupClient() {

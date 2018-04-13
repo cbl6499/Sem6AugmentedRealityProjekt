@@ -9,7 +9,7 @@ public class NetworkHandler : MonoBehaviour {
     NetworkClient myClient;
     private string hostAddress;
     private int port;
-    private static NetworkHandler instance;
+   /* private static NetworkHandler instance;
 
     public static NetworkHandler Instance {
         get {
@@ -22,7 +22,7 @@ public class NetworkHandler : MonoBehaviour {
             instance = value;
         }
     }
-    
+    */
     public int Port{ get; set; }
     public string HostAddress{ get; set; }
 
@@ -32,7 +32,7 @@ public class NetworkHandler : MonoBehaviour {
     }
 
     //Server Methode
-    public void SetupHost() {
+  /**  public void SetupHost() {
         GameLobby lobby = GameLobby.Instance;
         lobby.RegisterPlayer("Testname", Network.player.ipAddress);
         myClient = new NetworkClient();
@@ -75,7 +75,7 @@ public class NetworkHandler : MonoBehaviour {
     private void OnConnected(NetworkMessage netMsg) {
         throw new NotImplementedException();
     }
-
+    /*
     //Server Methode
     public void BroadCastReady() {
         GameLobby lobby = GameLobby.Instance;
@@ -83,25 +83,25 @@ public class NetworkHandler : MonoBehaviour {
         foreach(Player p in players) {
             SendReadyMessage(p);
         }
-    }
+    }*/
 
-    //Client Methode
+  /*  //Client Methode
     public void ConnectToLobby(NetworkMessage netMsg) {
         Notification msg = netMsg.ReadMessage<Notification>();
         GameLobby lobby = GameLobby.Instance;
         lobby.RegisterPlayer(msg.Message, msg.Ip);
     }
-
+    */
     //Client Methode
     private Notification CreateConnectionMessage(string username, string userIp) {
         return new Notification(username, userIp);
     }
 
     // Use this for initialization
-    void Start () {
+  /*  void Start () {
         SetupHost();
         SetupClient();
-	}
+	}*/
 	
 	// Update is called once per frame
 	void Update () {

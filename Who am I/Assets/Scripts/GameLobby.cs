@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameLobby : MonoBehaviour {
+public class GameLobby {// : MonoBehaviour {
 
     private List<Player> players;
     private Player owner;
@@ -61,12 +61,12 @@ public class GameLobby : MonoBehaviour {
     public void RemovePlayer(Player player) {
         players.Remove(player);
     }
-
+/*
     public void StartGame() {
         NetworkHandler handler = NetworkHandler.Instance;
         handler.BroadCastReady();
     }
-
+    */
     // Use this for initialization
     void Start () {
         
