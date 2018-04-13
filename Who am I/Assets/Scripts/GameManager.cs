@@ -14,9 +14,14 @@ public class GameManager : MonoBehaviour {
 
     public GameObject ServerPrefab;
     public GameObject ClientPrefab;
+    public GameObject serverPrefab;
+    public GameObject clientPrefab;
 
+<<<<<<< HEAD
     string username;
 
+=======
+>>>>>>> d6b4e89af04f2c969ee4d3b1eec207a91787831c
     // Use this for initialization
     void Start () {
         Instance = this;
