@@ -297,6 +297,7 @@
     <Compile Include="Assets\Scripts\NetworkHandler.cs" />
     <Compile Include="Assets\Scripts\Notification.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\ReadInformations.cs" />
     <Compile Include="Assets\Scripts\text.cs" />
     <Compile Include="Assets\Scripts\WhoAmIClient.cs" />
     <Compile Include="Assets\Scripts\WhoAmIServer.cs" />
@@ -311,6 +312,7 @@
     <None Include="Assets\Editor\Vuforia\TargetsetData\VuforiaMars_Object_info.xml" />
     <None Include="Assets\Editor\Vuforia\VuforiaMars_ModelTarget\authoringinfo.xml" />
     <None Include="Assets\Editor\Vuforia\VuforiaMars_VuMark\authoringinfo.xml" />
+    <None Include="Assets\Informations\obama.txt" />
     <None Include="Assets\StreamingAssets\Vuforia\VuforiaMars_Images.xml" />
     <None Include="Assets\StreamingAssets\Vuforia\VuforiaMars_ModelTarget.xml" />
     <None Include="Assets\StreamingAssets\Vuforia\VuforiaMars_Object_OT.xml" />

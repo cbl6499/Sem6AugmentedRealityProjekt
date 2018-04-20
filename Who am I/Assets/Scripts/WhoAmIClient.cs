@@ -1,4 +1,5 @@
 ﻿
+using System;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -51,10 +52,16 @@ public class WhoAmIClient : NetworkBehaviour {
         this.MyClient.RegisterHandler(MsgType.Ready, OnReady);
        // Debug.Log("Register OnReady");
         this.MyClient.RegisterHandler(MsgType.NotReady, PrintPlayerList);
+        this.MyClient.RegisterHandler(MsgType.Connect, OnSuccessfulConnection);
         // Debug.Log("Register PrintPlayerList");
         //Debug.Log(this.HostAddress);
         this.Connect();
         //Debug.Log("Connect to Server");
+    }
+
+    private void OnSuccessfulConnection(NetworkMessage netMsg) {
+        Debug.Log("hell yeah");
+        //throw new NotImplementedException();
     }
 
     public void Connect() {
