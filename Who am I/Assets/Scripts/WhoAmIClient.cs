@@ -58,8 +58,8 @@ public class WhoAmIClient : NetworkBehaviour {
     }
 
     public void Connect() {
-        Network.Connect(hostAddress, port);
-        //this.MyClient.Connect(this.HostAddress, port);
+        //Network.Connect(hostAddress, port);
+        this.MyClient.Connect(this.HostAddress, port);
     }
 
     //Client Methode
