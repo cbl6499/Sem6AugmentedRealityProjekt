@@ -92,8 +92,7 @@ public class WhoAmIServer: NetworkBehaviour {
     public void StartGame() {
         BroadCastMessage(MsgType.LobbySceneLoaded, "Start");
     }
-
-<<<<<<< HEAD
+    
     private void CheckGuess(NetworkMessage netMsg)
     {
         Notification msg = netMsg.ReadMessage<Notification>();
@@ -114,8 +113,4 @@ public class WhoAmIServer: NetworkBehaviour {
 	void Update () {
 		
 	}
-
-
-=======
->>>>>>> 220dd66f7dec4fba4ac4a70dcfb92e6fcf04a331
 }
