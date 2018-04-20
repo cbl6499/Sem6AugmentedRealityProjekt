@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour {
         username = GameObject.Find("Username").GetComponent<InputField>().text;
         if (username == "") {
             GameManager.print("Username was empty");
+            username = "testUser";
         } else {
             mainMenu.SetActive(false);
             connectMenu.SetActive(true);
@@ -38,9 +39,11 @@ public class GameManager : MonoBehaviour {
     }
 
     public void HostButton() {
-        string username = GameObject.Find("Username").GetComponent<InputField>().text;
+        username = GameObject.Find("Username").GetComponent<InputField>().text;
+        Debug.Log(username);
         if (username == "") {
             GameManager.print("Username was empty");
+            username = "testUser";
         } else {            
             mainMenu.SetActive(false);
             hostSettingMenu.SetActive(true);
@@ -58,11 +61,12 @@ public class GameManager : MonoBehaviour {
             WhoAmIServer s = WhoAmIServer.Instance; //Instantiate(serverPrefab.GetComponent<WhoAmIServer>());
             WhoAmIClient c = WhoAmIClient.Instance;//Instantiate(clientPrefab.GetComponent<WhoAmIClient>());
             c.Username = username;
-            //c.ClientAddress = "127.0.0.1";
-            c.HostAddress = "127.0.0.1";
+            c.HostAddress = "127.0.0.1";            
             s.SetupHost();
             c.SetupClient();
-            
+
+            Debug.Log("I made it to send method " + c.Username + " " + c.HostAddress);
+
             serverMenu.SetActive(true);
             hostSettingMenu.SetActive(false);
         }
@@ -79,10 +83,8 @@ public class GameManager : MonoBehaviour {
             c.HostAddress = hostAddress;
             Debug.Log("I mad it to to send method " + username + " " + hostAddress + " Client:" + c.Username + " " + c.HostAddress );
             c.SetupClient();
-            //c.Connect();
-            c.SendLobbyRegistration();
         } catch (Exception e) {
-            //Debug.Log(e.Message);
+            Debug.Log(e.Message);
         }
     }
 
