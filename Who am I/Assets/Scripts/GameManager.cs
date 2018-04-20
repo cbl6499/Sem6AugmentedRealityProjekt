@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour {
             c.Connect();
             c.SendLobbyRegistration();
         } catch (Exception e) {
-            Debug.Log(e.Message);
+            //Debug.Log(e.Message);
         }
     }
 	
