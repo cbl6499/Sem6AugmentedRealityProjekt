@@ -53,7 +53,6 @@ public class WhoAmIClient : NetworkBehaviour {
        // Debug.Log("Register OnReady");
         this.MyClient.RegisterHandler(MsgType.NotReady, PrintPlayerList);
         this.MyClient.RegisterHandler(MsgType.Connect, OnSuccessfulConnection);
-        this.MyClient.RegisterHandler(MsgType.AddPlayer, null);
         // Debug.Log("Register PrintPlayerList");
         //Debug.Log(this.HostAddress);
         this.Connect();
@@ -63,6 +62,7 @@ public class WhoAmIClient : NetworkBehaviour {
     private void OnSuccessfulConnection(NetworkMessage netMsg) {
         Debug.Log("hell yeah " + netMsg.conn.address);
         //throw new NotImplementedException();
+        this.SendLobbyRegistration();
     }
 
     public void Connect() {

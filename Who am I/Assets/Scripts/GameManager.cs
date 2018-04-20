@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour {
             s.SetupHost();
             c.SetupClient();
 
-            Debug.Log("I mad it to to send method " + c.Username + " " + c.HostAddress + " Client:" + c.Username + " " + c.HostAddress);
+            Debug.Log("I mad it to to send method " + c.Username + " " + c.HostAddress);
             c.SendLobbyRegistration();
             serverMenu.SetActive(true);
             hostSettingMenu.SetActive(false);
@@ -84,7 +84,8 @@ public class GameManager : MonoBehaviour {
             Debug.Log("I mad it to to send method " + username + " " + hostAddress + " Client:" + c.Username + " " + c.HostAddress );
             c.SetupClient();
             //c.Connect();
-            c.SendLobbyRegistration();
+
+            //c.SendLobbyRegistration();
         } catch (Exception e) {
             //Debug.Log(e.Message);
         }
