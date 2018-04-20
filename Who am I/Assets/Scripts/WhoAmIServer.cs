@@ -27,12 +27,7 @@ public class WhoAmIServer: NetworkBehaviour {
     public NetworkServer Server{ get; set; }
     public int Port { get; set; }
     public string HostAddress{ get; set; }
-/*
-    public WhoAmIServer() {
-        this.Port = 6321;
-        SetupHost();
-    }
-    */
+
     public void SetupHost() {
         NetworkServer.Reset();
         this.Port = 63210;
@@ -85,21 +80,10 @@ public class WhoAmIServer: NetworkBehaviour {
     private void OnConnected(NetworkMessage netMsg) {
         Debug.Log("Player connected server!");
         SendMessageToClient(netMsg, MsgType.Connect, "Success");
-        //throw new NotImplementedException();
     }
 
     public void StartGame() {
         BroadCastMessage(MsgType.LobbySceneLoaded, "Start");
     }
 
-    // Use this for initialization
-    /*void Start () {
-        this.Port = 6321;
-        SetupHost();
-    }*/
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
