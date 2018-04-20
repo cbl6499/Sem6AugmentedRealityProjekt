@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class WhoAmIServer{// : MonoBehaviour {
+public class WhoAmIServer: NetworkBehaviour {
 
     NetworkServer server;
     private int port;
@@ -26,26 +26,28 @@ public class WhoAmIServer{// : MonoBehaviour {
     public NetworkServer Server{ get; set; }
     public int Port { get; set; }
     public string HostAddress{ get; set; }
-
+/*
     public WhoAmIServer() {
         this.Port = 6321;
         SetupHost();
     }
-
+    */
     public void SetupHost() {
         NetworkServer.Reset();
+        this.Port = 63210;
+        this.HostAddress = Network.player.ipAddress;
         NetworkServer.Listen(this.Port);
         GameLobby lobby = GameLobby.Instance;
         lobby.SetOwner("Diego1337", "127.0.0.1");
         NetworkServer.RegisterHandler(MsgType.Connect, OnConnected);
         NetworkServer.RegisterHandler(MsgType.AddPlayer, ConnectToLobby);
-        this.Port = 6321;
-        this.HostAddress = Network.player.ipAddress;
+        
     }
 
     public void ConnectToLobby(NetworkMessage netMsg) {
         Notification msg = netMsg.ReadMessage<Notification>();
         GameLobby lobby = GameLobby.Instance;
+        Debug.Log("Test");
         lobby.RegisterPlayer(msg.Message, msg.Ip);
         if(lobby.Size == lobby.Players.Count) {
             BroadCastReady();
@@ -83,12 +85,12 @@ public class WhoAmIServer{// : MonoBehaviour {
         Notification answer = new Notification();
         answer.Message = text;
         answer.Ip = msg.Ip;
-        NetworkServer.SendToClient(netMsg.channelId, MsgType.Connect, answer);
+        NetworkServer.SendToClient(netMsg.conn.connectionId, type, answer);
     }
 
     private void OnConnected(NetworkMessage netMsg) {
         SendMessageToClient(netMsg, MsgType.Connect, "Success");
-        throw new NotImplementedException();
+        //throw new NotImplementedException();
     }
 
     public void StartGame() {
@@ -97,6 +99,7 @@ public class WhoAmIServer{// : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        this.Port = 6321;
         SetupHost();
     }
 	

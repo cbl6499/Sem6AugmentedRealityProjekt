@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
+
 
 public class SelectPerson : MonoBehaviour {
 
@@ -10,13 +12,14 @@ public class SelectPerson : MonoBehaviour {
 	public GameObject Person4;
 	public GameObject Person5;
 	public GameObject Person6;
-
+	public GameObject activePerson;
 	// Use this for initialization
 	void Start () {
 		Person2.SetActive (false);
 		Person3.SetActive (false);
 		Person4.SetActive (false);
 		Person4.SetActive (false);
+		activePerson = Person1;
 	}
 	
 	public void LoadPerson1(){
@@ -26,6 +29,7 @@ public class SelectPerson : MonoBehaviour {
 		Person4.SetActive (false);
 		Person5.SetActive (false);
 		Person6.SetActive (false);
+		activePerson = Person1;
 	}
 
 	public void LoadPerson2(){
@@ -35,6 +39,7 @@ public class SelectPerson : MonoBehaviour {
 		Person4.SetActive (false);
 		Person5.SetActive (false);
 		Person6.SetActive (false);
+		activePerson = Person2;
 	}
 
 	public void LoadPerson3(){
@@ -44,6 +49,7 @@ public class SelectPerson : MonoBehaviour {
 		Person4.SetActive (false);
 		Person5.SetActive (false);
 		Person6.SetActive (false);
+		activePerson = Person3;
 	}
 
 	public void LoadPerson4(){
@@ -53,6 +59,7 @@ public class SelectPerson : MonoBehaviour {
 		Person4.SetActive (true);
 		Person5.SetActive (false);
 		Person6.SetActive (false);
+		activePerson = Person4;
 	}
 
 	public void LoadPerson5(){
@@ -62,6 +69,7 @@ public class SelectPerson : MonoBehaviour {
 		Person4.SetActive (false);
 		Person5.SetActive (true);
 		Person6.SetActive (false);
+		activePerson = Person5;
 	}
 
 	public void LoadPerson6(){
@@ -71,6 +79,10 @@ public class SelectPerson : MonoBehaviour {
 		Person4.SetActive (false);
 		Person5.SetActive (false);
 		Person6.SetActive (true);
+		activePerson = Person6;
 	}
 
+	public GameObject loadInformations(){
+		return activePerson;
+	}
 }

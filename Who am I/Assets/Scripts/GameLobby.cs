@@ -50,6 +50,7 @@ public class GameLobby {// : MonoBehaviour {
     }
 
     public void RegisterPlayer(string username, string ip) {
+        Debug.Log("Registered player: " + username);
         players.Add(CreatePlayer(username, ip));
     }
 
