@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.UI;
 
 
 public class SelectPerson : MonoBehaviour {
@@ -12,7 +13,12 @@ public class SelectPerson : MonoBehaviour {
 	public GameObject Person4;
 	public GameObject Person5;
 	public GameObject Person6;
-	public GameObject activePerson;
+	private GameObject activePerson;
+	public GameObject selectPlayerList;
+	public GameObject selectButton;
+	public GameObject infoCanvas;
+	public GameObject panel;
+
 	// Use this for initialization
 	void Start () {
 		Person2.SetActive (false);
@@ -82,7 +88,23 @@ public class SelectPerson : MonoBehaviour {
 		activePerson = Person6;
 	}
 
+
+	public void setFinalPlayer(){
+		selectPlayerList.SetActive (false);
+		selectButton.SetActive (false);
+		infoCanvas.SetActive (true);
+	}
+
 	public GameObject loadInformations(){
 		return activePerson;
+	}
+
+	public string getName(){
+		return activePerson.gameObject.name;
+	}
+
+	public void setStuffVisible(){
+		infoCanvas.SetActive (false);
+		panel.SetActive (true);
 	}
 }
