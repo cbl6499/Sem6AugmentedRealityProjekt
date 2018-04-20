@@ -93,8 +93,8 @@ public class NetworkHandler : MonoBehaviour {
     }
     */
     //Client Methode
-    private Notification CreateConnectionMessage(string username, string userIp) {
-        return new Notification(username, userIp);
+    private Notification CreateConnectionMessage(string username) {
+        return new Notification(username);
     }
 
     // Use this for initialization

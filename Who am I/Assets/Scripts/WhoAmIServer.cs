@@ -47,12 +47,9 @@ public class WhoAmIServer: NetworkBehaviour {
 
     public void ConnectToLobby(NetworkMessage netMsg) {
         GameLobby lobby = GameLobby.Instance;
-        AddPlayerMessage msg = netMsg.ReadMessage<AddPlayerMessage>();
-        NetworkReader reader = new NetworkReader(msg.msgData);
-        Notification not = new Notification();
-        not.Deserialize(reader);
-        Debug.Log("Username: " + not.Message + " from IP: " + not.Ip);
-        lobby.RegisterPlayer(not.Message, not.Ip);
+        
+        Debug.Log(netMsg.ReadMessage<Notification>().Message);
+        
         if(lobby.Size == lobby.Players.Count) {
             BroadCastReady();
         } else {
@@ -77,19 +74,12 @@ public class WhoAmIServer: NetworkBehaviour {
     }
 
     private void BroadCastMessage(short type, string message) {
-        GameLobby lobby = GameLobby.Instance;
-        List<Player> playerList = lobby.Players;
-        Notification msg = new Notification();
-        msg.Message = message;
-        NetworkServer.SendToAll(type, msg);
+        NetworkServer.SendToAll(type, new Notification(message));
     }
 
     private void SendMessageToClient(NetworkMessage netMsg, short type, string text) {
         Notification msg = netMsg.ReadMessage<Notification>();
-        Notification answer = new Notification();
-        answer.Message = text;
-        answer.Ip = msg.Ip;
-        NetworkServer.SendToClient(netMsg.conn.connectionId, type, answer);
+        NetworkServer.SendToClient(netMsg.conn.connectionId, type, new Notification(text));
     }
 
     private void OnConnected(NetworkMessage netMsg) {

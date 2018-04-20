@@ -7,14 +7,12 @@ public class WhoAmIClient : NetworkBehaviour {
 
     NetworkClient myClient;
     private string hostAddress;
-    //private string clientAddress;
     private string username;
     private int port = 63210;
     private static WhoAmIClient instance;
 
     public int Port { get; set; }
     public string HostAddress { get; set; }
-  //  public string ClientAddress { get; set; }
     public string Username { get; set; }
 
     void Start() {
@@ -24,13 +22,7 @@ public class WhoAmIClient : NetworkBehaviour {
     void Update() {
 
     }
-    /*
-    public WhoAmIClient() {
-       // this.clientAddress = address;
-        SetupClient();
-        
-    }
-    */
+
     public NetworkClient MyClient { get; set; }
     public static WhoAmIClient Instance {
         get {
@@ -44,55 +36,35 @@ public class WhoAmIClient : NetworkBehaviour {
         }
     }
 
-    //Client Methode
     public void SetupClient() {
-       // Debug.Log("SetupClient");
         this.MyClient = new NetworkClient();
-      //  Debug.Log("new NetworkClient()");
         this.MyClient.RegisterHandler(MsgType.Ready, OnReady);
-       // Debug.Log("Register OnReady");
         this.MyClient.RegisterHandler(MsgType.NotReady, PrintPlayerList);
         this.MyClient.RegisterHandler(MsgType.Connect, OnSuccessfulConnection);
-        // Debug.Log("Register PrintPlayerList");
-        //Debug.Log(this.HostAddress);
         this.Connect();
-        //Debug.Log("Connect to Server");
     }
 
     private void OnSuccessfulConnection(NetworkMessage netMsg) {
         Debug.Log("hell yeah " + netMsg.conn.address);
-        //throw new NotImplementedException();
+        Debug.Log(netMsg.ToString());
         this.SendLobbyRegistration();
     }
 
     public void Connect() {
-        //Network.Connect(hostAddress, port);
         Debug.Log("I am connecting");
         this.MyClient.Connect(this.HostAddress, port);
     }
 
-    //Client Methode
     public void SendLobbyRegistration() {
-        Notification msg = new Notification();
-        msg.Ip = Network.player.ipAddress;
-        Debug.Log(Network.player.ipAddress);
-        msg.Message = this.Username;
-        Debug.Log("Notification created");
-        this.MyClient.Send(MsgType.AddPlayer, msg);
+        this.MyClient.Send(MsgType.AddPlayer, new Notification(this.Username));
     }
 
-    //Client Methode
-    public void SendReadyMessage(Player p) {
-        Notification msg = new Notification();
-        msg.Ip = Network.player.ipAddress;
-        msg.Message = "Ready";
-        myClient.Send(MsgType.Ready, msg);
+    public void SendReadyMessage() {
+        myClient.Send(MsgType.Ready, new Notification("Ready"));
     }
 
-    //Client Methode (Listener)
     private void OnReady(NetworkMessage netMsg) {
         Notification msg = netMsg.ReadMessage<Notification>();
-        //do stuff and start game
         Debug.Log("Yay, everyone is ready");
     }
 
@@ -101,8 +73,7 @@ public class WhoAmIClient : NetworkBehaviour {
         Debug.Log("Yay, " + msg.Message + " are in the lobby");
     }
 
-    //Client Methode
     private Notification CreateConnectionMessage(string username, string userIp) {
-        return new Notification(username, userIp);
+        return new Notification(username);
     }
 }
