@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class WhoAmIServer{// : MonoBehaviour {
+public class WhoAmIServer: NetworkBehaviour {
 
     NetworkServer server;
     private int port;
@@ -26,12 +26,12 @@ public class WhoAmIServer{// : MonoBehaviour {
     public NetworkServer Server{ get; set; }
     public int Port { get; set; }
     public string HostAddress{ get; set; }
-
+/*
     public WhoAmIServer() {
         this.Port = 6321;
         SetupHost();
     }
-
+    */
     public void SetupHost() {
         NetworkServer.Reset();
         NetworkServer.Listen(this.Port);
@@ -46,6 +46,7 @@ public class WhoAmIServer{// : MonoBehaviour {
     public void ConnectToLobby(NetworkMessage netMsg) {
         Notification msg = netMsg.ReadMessage<Notification>();
         GameLobby lobby = GameLobby.Instance;
+        Debug.Log("Test");
         lobby.RegisterPlayer(msg.Message, msg.Ip);
         if(lobby.Size == lobby.Players.Count) {
             BroadCastReady();
@@ -97,6 +98,7 @@ public class WhoAmIServer{// : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        this.Port = 6321;
         SetupHost();
     }
 	
