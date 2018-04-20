@@ -1,11 +1,11 @@
 Name: 	Lionel Messi
-Beruf: 	Fußballspieler
+Beruf: 	Fu?ballspieler
 Geburtstag: 	24.06.1987
 Sternzeichen: 	Krebs
 Geburtsort:	Rosario (Argentinien)
-Staatsangehörigkeit: 	Argentinien,Spanien
-Größe: 	170 cm
+Staatsangeh?rigkeit: 	Argentinien,Spanien
+Gr??e: 	170 cm
 Gewicht: 	67 kg
 Familienstand: 	verheiratet
-Geschlecht: 	männlich
-Haarfarbe: 	blond (gefärbt)
+Geschlecht: 	m?nnlich
+Haarfarbe: 	blond (gef?rbt)
