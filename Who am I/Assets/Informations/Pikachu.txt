@@ -1,0 +1,7 @@
+Name: Pikachu
+Art: Pokemon
+Real: nein
+Größe: klein
+Herkunft: Kanto
+
+
