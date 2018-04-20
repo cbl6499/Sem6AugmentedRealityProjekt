@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour {
             c.HostAddress = hostAddress;
             Debug.Log("I mad it to to send method " + username + " " + hostAddress + " Client:" + c.Username + " " + c.HostAddress );
             c.SetupClient();
-            c.Connect();
+            //c.Connect();
             c.SendLobbyRegistration();
         } catch (Exception e) {
             //Debug.Log(e.Message);

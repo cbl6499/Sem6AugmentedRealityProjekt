@@ -60,12 +60,13 @@ public class WhoAmIClient : NetworkBehaviour {
     }
 
     private void OnSuccessfulConnection(NetworkMessage netMsg) {
-        Debug.Log("hell yeah");
+        Debug.Log("hell yeah " + netMsg.conn.address);
         //throw new NotImplementedException();
     }
 
     public void Connect() {
         //Network.Connect(hostAddress, port);
+        Debug.Log("I am connecting");
         this.MyClient.Connect(this.HostAddress, port);
     }
 
