@@ -42,10 +42,11 @@ public class WhoAmIServer: NetworkBehaviour {
     }
 
     public void ConnectToLobby(NetworkMessage netMsg) {
-        StringMessage msg = netMsg.ReadMessage<StringMessage>();
+        //StringMessage msg = netMsg.ReadMessage<StringMessage>();
         GameLobby lobby = GameLobby.Instance;
-        Debug.Log("Test");
-        lobby.RegisterPlayer(msg.value);
+        //Debug.Log("Test");
+        Debug.Log(netMsg.ReadMessage<StringMessage>().value);
+        //lobby.RegisterPlayer(msg.value);
         if(lobby.Size == lobby.Players.Count) {
             BroadCastReady();
         } else {
@@ -76,11 +77,7 @@ public class WhoAmIServer: NetworkBehaviour {
     }
 
     private void SendMessageToClient(NetworkMessage netMsg, short type, string text) {
-        string msg = netMsg.ReadMessage<StringMessage>().value;
-        Debug.Log(msg);
-        StringMessage answer = new StringMessage();
-        answer.value = text;
-        NetworkServer.SendToClient(netMsg.conn.connectionId, type, answer);
+        NetworkServer.SendToClient(netMsg.conn.connectionId, type, new StringMessage(text));
     }
 
         //throw new NotImplementedException();

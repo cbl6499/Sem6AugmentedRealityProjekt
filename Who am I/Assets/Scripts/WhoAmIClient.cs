@@ -48,9 +48,8 @@ public class WhoAmIClient : NetworkBehaviour {
     }
 
     private void OnSuccessfulConnection(NetworkMessage netMsg) {
-        string msg = netMsg.ReadMessage<StringMessage>().value;
-        Debug.Log("hell yeah " + msg);
-
+        //Debug.Log("hell yeah " + netMsg.ReadMessage<StringMessage>().value);
+        Debug.Log("Connection #läuft");
         this.SendLobbyRegistration();
     }
 
