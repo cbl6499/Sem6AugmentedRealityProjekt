@@ -89,7 +89,11 @@ public class WhoAmIServer: NetworkBehaviour {
     public void StartGame() {
         BroadCastMessage(MsgType.LobbySceneLoaded, "Start");
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> origin/master
     private void CheckGuess(NetworkMessage netMsg)
     {
         Notification msg = netMsg.ReadMessage<Notification>();
@@ -100,4 +104,17 @@ public class WhoAmIServer: NetworkBehaviour {
         NetworkServer.SendToClient(netMsg.conn.connectionId, MsgType.UpdateVars ,answer);
     }
 
+<<<<<<< HEAD
+=======
+    // Use this for initialization
+    void Start () {
+        this.Port = 6321;
+        SetupHost();
+    }
+	
+	// Update is called once per frame
+	void Update () {
+		
+	}
+>>>>>>> origin/master
 }
