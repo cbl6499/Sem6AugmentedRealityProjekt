@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ public class GameLobby {// : MonoBehaviour {
     private int currentPlayerCount;
     private int size;
     private static GameLobby instance;
+   
 
     public Player Owner{ get; set; }
 
@@ -77,4 +79,32 @@ public class GameLobby {// : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    private Player GetPlayerByIp(string ip)
+    {
+        foreach (Player p in players)
+        {
+            if (p.Ip.Equals(ip))
+            {
+                return p;
+            }
+        }
+        return null;
+    }
+
+    internal bool CheckGuess(string face, string ip)
+    {
+        Boolean result = false;
+        Player player = GetPlayerByIp(ip);
+        if (player != null)
+        {
+            string playerFace = player.Face.ToUpper();
+            if (face.ToUpper().Equals(playerFace))
+            {
+                result = true;
+            }
+        }
+        //TODO implemetn if player not found
+        return result;
+    }
 }

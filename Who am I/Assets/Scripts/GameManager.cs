@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
@@ -84,6 +85,17 @@ public class GameManager : MonoBehaviour {
             //Debug.Log(e.Message);
         }
     }
+
+    public void OnGameStart(){
+        Debug.Log("sceneName to load: 2D_Scene");
+        SceneManager.LoadScene("2D_Scene");
+    }
+
+    public void GuessButtonClick() {
+        string guess = GameObject.Find("GuessInput").GetComponent<InputField>().text;
+        WhoAmIClient client = WhoAmIClient.Instance;
+        client.SendGuess(guess);
+    }
 	
     public void BackButton() {
         serverMenu.SetActive(false);
@@ -91,4 +103,6 @@ public class GameManager : MonoBehaviour {
         hostSettingMenu.SetActive(false);
         mainMenu.SetActive(true);
     }
+
+
 }
