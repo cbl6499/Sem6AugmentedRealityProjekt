@@ -1,0 +1,8 @@
+Name: Harry James Potter
+Beruf: Zauberer
+Besondere Merkmale: Blitznarbe auf der Strin
+Haustier: Eule Hedwig
+Geburtstag: 31.07.1980
+Augenfarbe: Grün
+Haarfarbe:Schwarz
+Real: nein
