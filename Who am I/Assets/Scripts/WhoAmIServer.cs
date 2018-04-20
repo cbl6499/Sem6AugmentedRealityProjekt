@@ -84,12 +84,12 @@ public class WhoAmIServer: NetworkBehaviour {
         Notification answer = new Notification();
         answer.Message = text;
         answer.Ip = msg.Ip;
-        NetworkServer.SendToClient(netMsg.channelId, MsgType.Connect, answer);
+        NetworkServer.SendToClient(netMsg.conn.connectionId, MsgType.Connect, answer);
     }
 
     private void OnConnected(NetworkMessage netMsg) {
         SendMessageToClient(netMsg, MsgType.Connect, "Success");
-        throw new NotImplementedException();
+        //throw new NotImplementedException();
     }
 
     public void StartGame() {

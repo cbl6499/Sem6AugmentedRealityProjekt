@@ -59,7 +59,9 @@ public class GameManager : MonoBehaviour {
             c.Username = username;
             //c.ClientAddress = "127.0.0.1";
             c.HostAddress = "127.0.0.1";
+            s.SetupHost();
             c.SetupClient();
+            
             serverMenu.SetActive(true);
             hostSettingMenu.SetActive(false);
         }
