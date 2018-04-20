@@ -34,7 +34,7 @@ public class WhoAmIServer: NetworkBehaviour {
         this.HostAddress = Network.player.ipAddress;
         NetworkServer.Listen(this.Port);
         GameLobby lobby = GameLobby.Instance;
-        lobby.SetOwner("Diego1337", "127.0.0.1");
+        lobby.SetOwner(Network.player.ipAddress);
         NetworkServer.RegisterHandler(MsgType.Connect, OnConnected);
         NetworkServer.RegisterHandler(MsgType.AddPlayer, ConnectToLobby);
         
@@ -42,9 +42,10 @@ public class WhoAmIServer: NetworkBehaviour {
 
     public void ConnectToLobby(NetworkMessage netMsg) {
         GameLobby lobby = GameLobby.Instance;
-        
-        Debug.Log(netMsg.ReadMessage<Notification>().Message);
-        
+        Notification notification = new Notification();
+        notification.Deserialize(netMsg.reader);
+        Debug.Log(netMsg.ReadMessage<Notification>());
+        Debug.Log(notification.Message);
         if(lobby.Size == lobby.Players.Count) {
             BroadCastReady();
         } else {
@@ -62,9 +63,6 @@ public class WhoAmIServer: NetworkBehaviour {
         string players = "";
         GameLobby lobby = GameLobby.Instance;
         List<Player> playerList = lobby.Players;
-        foreach(Player p in playerList) {
-            players += p.Username + ",";
-        }
         BroadCastMessage(MsgType.SyncList, players);
     }
 

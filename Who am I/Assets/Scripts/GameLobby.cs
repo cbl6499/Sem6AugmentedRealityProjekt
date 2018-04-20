@@ -32,31 +32,26 @@ public class GameLobby {// : MonoBehaviour {
 
     private GameLobby() {
         this.CurrentPlayerCount = 0;
-        this.Players = new List<Player>();
-    }
-
-    private GameLobby(string owner) {
-        this.CurrentPlayerCount = 0;
-        this.Owner = CreatePlayer(owner, Network.player.ipAddress);
+        this.Owner = CreatePlayer(Network.player.ipAddress);
         this.Players = new List<Player>();
         this.Players.Add(this.Owner);
     }
 
-    public void SetOwner(string owner, string ip) {
-        this.Owner = CreatePlayer(owner, ip);
+    public void SetOwner(string ip) {
+        this.Owner = CreatePlayer(ip);
         if (!this.Players.Contains(this.Owner)) {
             this.Players.Add(Owner);
         }
     }
 
-    public void RegisterPlayer(string username, string ip) {
-        Debug.Log("Registered player: " + username);
-        players.Add(CreatePlayer(username, ip));
+    public void RegisterPlayer(string ip) {
+        Debug.Log("Registered player: ");
+        players.Add(CreatePlayer(ip));
     }
 
-    private Player CreatePlayer(string username, string ip) {
+    private Player CreatePlayer(string ip) {
         this.CurrentPlayerCount += 1;
-        return new Player(username, this.CurrentPlayerCount, ip);
+        return new Player(this.CurrentPlayerCount, ip);
     }
 
     public void RemovePlayer(Player player) {

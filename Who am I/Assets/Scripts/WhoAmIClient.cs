@@ -45,8 +45,8 @@ public class WhoAmIClient : NetworkBehaviour {
     }
 
     private void OnSuccessfulConnection(NetworkMessage netMsg) {
+        MessageBase msgBase = netMsg.ReadMessage<Notification>();
         Debug.Log("hell yeah " + netMsg.conn.address);
-        Debug.Log(netMsg.ToString());
         this.SendLobbyRegistration();
     }
 
