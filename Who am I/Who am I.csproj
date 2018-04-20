@@ -296,11 +296,8 @@
     <Compile Include="Assets\Scripts\GameLobby.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Manager.cs" />
-    <Compile Include="Assets\Scripts\NetworkHandler.cs" />
-    <Compile Include="Assets\Scripts\Notification.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\ReadInformations.cs" />
-    <Compile Include="Assets\Scripts\text.cs" />
     <Compile Include="Assets\Scripts\WhoAmIClient.cs" />
     <Compile Include="Assets\Scripts\WhoAmIServer.cs" />
     <Compile Include="Assets\SelectPerson.cs" />
@@ -335,7 +332,6 @@
     <None Include="Assets\Informations\justintimberlake.txt" />
     <None Include="Assets\Informations\katemoss.txt" />
     <None Include="Assets\Informations\kim.txt" />
-    <None Include="Assets\Informations\kimjongun.txt" />
     <None Include="Assets\Informations\ladygaga.txt" />
     <None Include="Assets\Informations\legolas.txt" />
     <None Include="Assets\Informations\lionelmessi.txt" />
