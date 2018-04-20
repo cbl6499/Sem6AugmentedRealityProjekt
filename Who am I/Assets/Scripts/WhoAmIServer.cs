@@ -26,12 +26,6 @@ public class WhoAmIServer: NetworkBehaviour {
     public NetworkServer Server{ get; set; }
     public int Port { get; set; }
     public string HostAddress{ get; set; }
-/*
-    public WhoAmIServer() {
-        this.Port = 6321;
-        SetupHost();
-    }
-    */
     public void SetupHost() {
         NetworkServer.Reset();
         this.Port = 63210;
