@@ -81,19 +81,14 @@ public class WhoAmIServer: NetworkBehaviour {
         NetworkServer.SendToClient(netMsg.conn.connectionId, type, answer);
     }
 
+        //throw new NotImplementedException();
     private void OnConnected(NetworkMessage netMsg) {
         SendMessageToClient(netMsg, MsgType.Connect, "Success");
-        //throw new NotImplementedException();
     }
 
     public void StartGame() {
         BroadCastMessage(MsgType.LobbySceneLoaded, "Start");
     }
-<<<<<<< HEAD
-
-=======
-    
->>>>>>> origin/master
     private void CheckGuess(NetworkMessage netMsg)
     {
         Notification msg = netMsg.ReadMessage<Notification>();
@@ -103,9 +98,7 @@ public class WhoAmIServer: NetworkBehaviour {
         answer.Message = guessResult.ToString();
         NetworkServer.SendToClient(netMsg.conn.connectionId, MsgType.UpdateVars ,answer);
     }
-
-<<<<<<< HEAD
-=======
+    
     // Use this for initialization
     void Start () {
         this.Port = 6321;
@@ -116,5 +109,4 @@ public class WhoAmIServer: NetworkBehaviour {
 	void Update () {
 		
 	}
->>>>>>> origin/master
 }
