@@ -8,7 +8,7 @@ public class WhoAmIClient : NetworkBehaviour {
     private string hostAddress;
     //private string clientAddress;
     private string username;
-    private int port = 6321;
+    private int port = 63210;
     private static WhoAmIClient instance;
 
     public int Port { get; set; }
@@ -58,14 +58,15 @@ public class WhoAmIClient : NetworkBehaviour {
     }
 
     public void Connect() {
-        this.MyClient.Connect(this.HostAddress, port);
+        Network.Connect(hostAddress, port);
+        //this.MyClient.Connect(this.HostAddress, port);
     }
 
     //Client Methode
     public void SendLobbyRegistration() {
         Notification msg = new Notification();
         msg.Ip = Network.player.ipAddress;
-        
+        Debug.Log(Network.player.ipAddress);
         msg.Message = this.Username;
         Debug.Log("Notification created");
         myClient.Send(MsgType.AddPlayer, msg);
