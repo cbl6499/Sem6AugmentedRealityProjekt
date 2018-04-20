@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.Networking.NetworkSystem;
 
 public class WhoAmIServer: NetworkBehaviour {
 
@@ -45,10 +46,13 @@ public class WhoAmIServer: NetworkBehaviour {
     }
 
     public void ConnectToLobby(NetworkMessage netMsg) {
-        Notification msg = netMsg.ReadMessage<Notification>();
         GameLobby lobby = GameLobby.Instance;
-        Debug.Log("Test");
-        lobby.RegisterPlayer(msg.Message, msg.Ip);
+        AddPlayerMessage msg = netMsg.ReadMessage<AddPlayerMessage>();
+        NetworkReader reader = new NetworkReader(msg.msgData);
+        Notification not = new Notification();
+        not.Deserialize(reader);
+        Debug.Log("Username: " + not.Message + " from IP: " + not.Ip);
+        lobby.RegisterPlayer(not.Message, not.Ip);
         if(lobby.Size == lobby.Players.Count) {
             BroadCastReady();
         } else {
@@ -89,6 +93,7 @@ public class WhoAmIServer: NetworkBehaviour {
     }
 
     private void OnConnected(NetworkMessage netMsg) {
+        Debug.Log("Player connected server!");
         SendMessageToClient(netMsg, MsgType.Connect, "Success");
         //throw new NotImplementedException();
     }
@@ -98,10 +103,10 @@ public class WhoAmIServer: NetworkBehaviour {
     }
 
     // Use this for initialization
-    void Start () {
+    /*void Start () {
         this.Port = 6321;
         SetupHost();
-    }
+    }*/
 	
 	// Update is called once per frame
 	void Update () {

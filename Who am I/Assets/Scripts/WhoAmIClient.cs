@@ -53,6 +53,7 @@ public class WhoAmIClient : NetworkBehaviour {
        // Debug.Log("Register OnReady");
         this.MyClient.RegisterHandler(MsgType.NotReady, PrintPlayerList);
         this.MyClient.RegisterHandler(MsgType.Connect, OnSuccessfulConnection);
+        this.MyClient.RegisterHandler(MsgType.AddPlayer, null);
         // Debug.Log("Register PrintPlayerList");
         //Debug.Log(this.HostAddress);
         this.Connect();
@@ -77,7 +78,7 @@ public class WhoAmIClient : NetworkBehaviour {
         Debug.Log(Network.player.ipAddress);
         msg.Message = this.Username;
         Debug.Log("Notification created");
-        myClient.Send(MsgType.AddPlayer, msg);
+        this.MyClient.Send(MsgType.AddPlayer, msg);
     }
 
     //Client Methode

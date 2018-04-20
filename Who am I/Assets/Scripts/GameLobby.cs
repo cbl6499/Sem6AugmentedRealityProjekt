@@ -61,6 +61,7 @@ public class GameLobby {// : MonoBehaviour {
 
     public void RemovePlayer(Player player) {
         players.Remove(player);
+        this.CurrentPlayerCount -= 1;
     }
 /*
     public void StartGame() {
