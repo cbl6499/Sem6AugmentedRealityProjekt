@@ -1,0 +1,4 @@
+Name: Homer Simpson
+Beruf: Komiker, Kernkraftwerkarbeiter
+Land: Amerika, Springfield
+Spezial: NEIN!, Glatze mit 2 Haaren!

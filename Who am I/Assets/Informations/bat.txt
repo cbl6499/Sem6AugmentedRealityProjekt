@@ -1,0 +1,4 @@
+Name: Batman
+Beruf: Superheld
+Land: Gotham, DC Universe
+Spezial: Fledermausmann, Schrecken der Nacht
