@@ -57,8 +57,9 @@ public class GameManager : MonoBehaviour {
             WhoAmIServer s = WhoAmIServer.Instance; //Instantiate(serverPrefab.GetComponent<WhoAmIServer>());
             WhoAmIClient c = WhoAmIClient.Instance;//Instantiate(clientPrefab.GetComponent<WhoAmIClient>());
             c.Username = username;
-            c.ClientAddress = "127.0.0.1";
+            //c.ClientAddress = "127.0.0.1";
             c.HostAddress = "127.0.0.1";
+            c.SetupClient();
             serverMenu.SetActive(true);
             hostSettingMenu.SetActive(false);
         }
@@ -74,6 +75,7 @@ public class GameManager : MonoBehaviour {
             c.Username = username;
             c.HostAddress = hostAddress;
             Debug.Log("I mad it to to send method " + username + " " + hostAddress + " Client:" + c.Username + " " + c.HostAddress );
+            c.SetupClient();
             c.Connect();
             c.SendLobbyRegistration();
         } catch (Exception e) {

@@ -2,34 +2,34 @@
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class WhoAmIClient{//  : MonoBehaviour {
+public class WhoAmIClient : NetworkBehaviour {
 
     NetworkClient myClient;
     private string hostAddress;
-    private string clientAddress;
+    //private string clientAddress;
     private string username;
     private int port = 6321;
     private static WhoAmIClient instance;
 
     public int Port { get; set; }
     public string HostAddress { get; set; }
-    public string ClientAddress { get; set; }
+  //  public string ClientAddress { get; set; }
     public string Username { get; set; }
 
     void Start() {
-        SetupClient();
+     //   SetupClient();
     }
 
     void Update() {
 
     }
-
+    /*
     public WhoAmIClient() {
        // this.clientAddress = address;
         SetupClient();
         
     }
-
+    */
     public NetworkClient MyClient { get; set; }
     public static WhoAmIClient Instance {
         get {
@@ -51,9 +51,9 @@ public class WhoAmIClient{//  : MonoBehaviour {
         this.MyClient.RegisterHandler(MsgType.Ready, OnReady);
        // Debug.Log("Register OnReady");
         this.MyClient.RegisterHandler(MsgType.NotReady, PrintPlayerList);
-       // Debug.Log("Register PrintPlayerList");
+        // Debug.Log("Register PrintPlayerList");
         //Debug.Log(this.HostAddress);
-        
+        this.Connect();
         //Debug.Log("Connect to Server");
     }
 

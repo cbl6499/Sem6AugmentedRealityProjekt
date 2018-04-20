@@ -293,12 +293,14 @@
     <Compile Include="Assets\Scripts\Experiments\Server.cs" />
     <Compile Include="Assets\Scripts\GameLobby.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Manager.cs" />
     <Compile Include="Assets\Scripts\NetworkHandler.cs" />
     <Compile Include="Assets\Scripts\Notification.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\text.cs" />
     <Compile Include="Assets\Scripts\WhoAmIClient.cs" />
     <Compile Include="Assets\Scripts\WhoAmIServer.cs" />
+    <Compile Include="Assets\SelectPerson.cs" />
     <Compile Include="Assets\Vuforia\Scripts\DefaultInitializationErrorHandler.cs" />
     <Compile Include="Assets\Vuforia\Scripts\DefaultTrackableEventHandler.cs" />
   </ItemGroup>
