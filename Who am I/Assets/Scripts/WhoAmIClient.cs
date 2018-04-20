@@ -43,16 +43,13 @@ public class WhoAmIClient : NetworkBehaviour {
         this.MyClient.RegisterHandler(MsgType.Connect, OnSuccessfulConnection);
         
         this.MyClient.RegisterHandler(MsgType.UpdateVars, GameWon);
-        
-        // Debug.Log("Register PrintPlayerList");
-        //Debug.Log(this.HostAddress);
-
         this.Connect();
     }
 
     private void OnSuccessfulConnection(NetworkMessage netMsg) {
-
+        MessageBase msgBase = netMsg.ReadMessage<Notification>();
         Debug.Log("hell yeah " + netMsg.conn.address);
+
         this.SendLobbyRegistration();
     }
 
