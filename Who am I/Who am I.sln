@@ -1,6 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+<<<<<<< HEAD
 # Visual Studio 2017
+=======
+# Visual Studio 15
+>>>>>>> 5407953e65708d177b5ededc3ee1db11c3f39e95
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Who am I", "Who am I.csproj", "{20DAC535-F0B7-73B2-BFA9-2E37DFBD1B14}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Who am I.Editor", "Who am I.Editor.csproj", "{E521B10D-B135-DFBD-8801-6751FFB3C200}"
