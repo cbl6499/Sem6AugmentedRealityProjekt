@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -318,7 +318,7 @@ GameObject:
   - component: {fileID: 15725604}
   - component: {fileID: 15725603}
   m_Layer: 5
-  m_Name: Trump
+  m_Name: britneyspears
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -337,9 +337,9 @@ RectTransform:
   m_Father: {fileID: 526028796}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 285, y: -82.35}
   m_SizeDelta: {x: 180, y: 164.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &15725603
@@ -432,7 +432,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 7067261e767bc425283babc5800abff7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e7ab00c08a837704b8ac12a85b721751, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -478,9 +478,9 @@ RectTransform:
   m_Father: {fileID: 1592263000}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 480, y: -82.35}
   m_SizeDelta: {x: 180, y: 164.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &21370891
@@ -599,7 +599,7 @@ GameObject:
   - component: {fileID: 24298952}
   - component: {fileID: 24298951}
   m_Layer: 0
-  m_Name: homer
+  m_Name: miketyson
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -632,7 +632,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: c46169aa8603c6c4fae5c108e3e201e8, type: 2}
+  - {fileID: 2100000, guid: 6a35e79d212e3d94e91869bba0e47f92, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -771,7 +771,7 @@ GameObject:
   - component: {fileID: 70223346}
   - component: {fileID: 70223345}
   m_Layer: 0
-  m_Name: bat
+  m_Name: mickeymouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -804,7 +804,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 36c93d4f22c35934f8b3a15fc252ae24, type: 2}
+  - {fileID: 2100000, guid: 9bd14cde8ea6f054ab1949ee8fa59475, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1391,7 +1391,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &158794975
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1633,11 +1633,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd51e9faf8e3b4f3995b25edbf98ae40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  person: {fileID: 1102149891}
-  panel: {fileID: 192256168}
-  infoCan: {fileID: 1531876110}
+  person: {fileID: 0}
+  panel: {fileID: 0}
+  infoCan: {fileID: 0}
   infoStr: 
-  info: {fileID: 1801666514}
+  info: {fileID: 0}
 --- !u!114 &192256171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1926,7 +1926,7 @@ MonoBehaviour:
   Person2: {fileID: 1789079724}
   Person3: {fileID: 1981225119}
   Person4: {fileID: 1207416139}
-  Person5: {fileID: 1760861644}
+  Person5: {fileID: 1480184353}
   Person6: {fileID: 1025465486}
   selectPlayerList: {fileID: 191142144}
   selectButton: {fileID: 326207112}
@@ -1958,7 +1958,7 @@ GameObject:
   - component: {fileID: 264135614}
   - component: {fileID: 264135613}
   m_Layer: 5
-  m_Name: Arni
+  m_Name: sylvesterstallone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1977,9 +1977,9 @@ RectTransform:
   m_Father: {fileID: 2008784888}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 480, y: -82.35}
   m_SizeDelta: {x: 180, y: 164.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &264135613
@@ -2072,7 +2072,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 48f36378cdf7ebd4bbcf2390d3e2a48c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 20e314fe48620d145adfbcc2ce5d758d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2119,10 +2119,10 @@ MonoBehaviour:
   Person4: {fileID: 1349848188}
   Person5: {fileID: 343553231}
   Person6: {fileID: 1645821589}
-  selectPlayerList: {fileID: 1820658141}
-  selectButton: {fileID: 1003604271}
-  infoCanvas: {fileID: 416708478}
-  panel: {fileID: 1672017977}
+  selectPlayerList: {fileID: 0}
+  selectButton: {fileID: 0}
+  infoCanvas: {fileID: 0}
+  panel: {fileID: 0}
 --- !u!4 &301640711
 Transform:
   m_ObjectHideFlags: 0
@@ -2149,7 +2149,7 @@ GameObject:
   - component: {fileID: 315577927}
   - component: {fileID: 315577926}
   m_Layer: 5
-  m_Name: Bat
+  m_Name: miketyson
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2168,9 +2168,9 @@ RectTransform:
   m_Father: {fileID: 2121392660}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 870, y: -82.35}
   m_SizeDelta: {x: 180, y: 164.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &315577926
@@ -2263,7 +2263,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 9b396835ce6aa4518a73df22fd3ad349, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 13cfc648a22da904c86b6df232f250ad, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2416,7 +2416,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &330606225
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2524,7 +2524,7 @@ Transform:
   m_LocalScale: {x: 0.18255684, y: 0.18255684, z: 0.18255684}
   m_Children: []
   m_Father: {fileID: 1109985619}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!23 &341441651
 MeshRenderer:
@@ -2593,7 +2593,7 @@ GameObject:
   - component: {fileID: 343553234}
   - component: {fileID: 343553233}
   m_Layer: 0
-  m_Name: bat
+  m_Name: 50cent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2626,7 +2626,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 36c93d4f22c35934f8b3a15fc252ae24, type: 2}
+  - {fileID: 2100000, guid: c696bd35b98ec3c428ed50d305086bdb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2679,7 +2679,7 @@ GameObject:
   - component: {fileID: 363918865}
   - component: {fileID: 363918864}
   m_Layer: 0
-  m_Name: trump
+  m_Name: oprahwinfrey
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2712,7 +2712,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 4d6ef162223464d5c95bde4a27342466, type: 2}
+  - {fileID: 2100000, guid: 260151724ab3cf3439d62a283b123998, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3177,7 +3177,7 @@ GameObject:
   - component: {fileID: 420482162}
   - component: {fileID: 420482161}
   m_Layer: 0
-  m_Name: kim
+  m_Name: lionelmessi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3210,7 +3210,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6a2f43cc83514f84bbe89d63ff73de79, type: 2}
+  - {fileID: 2100000, guid: 6cd7b64c750cf134197c517bb606637f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3292,7 +3292,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 85.685}
-  m_SizeDelta: {x: 0, y: 171.43}
+  m_SizeDelta: {x: 1155, y: 171.43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &423680806
 MonoBehaviour:
@@ -3520,7 +3520,7 @@ Transform:
   m_LocalScale: {x: 0.15173554, y: 0.15173554, z: 0.15173554}
   m_Children: []
   m_Father: {fileID: 1109985619}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &457572808
 GameObject:
@@ -3534,7 +3534,7 @@ GameObject:
   - component: {fileID: 457572811}
   - component: {fileID: 457572810}
   m_Layer: 0
-  m_Name: trump
+  m_Name: britneyspears
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3567,7 +3567,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 4d6ef162223464d5c95bde4a27342466, type: 2}
+  - {fileID: 2100000, guid: 7b93d64e108332b48b97153b6976328a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3743,7 +3743,7 @@ GameObject:
   - component: {fileID: 494818237}
   - component: {fileID: 494818236}
   m_Layer: 5
-  m_Name: Homer
+  m_Name: 50cent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3762,9 +3762,9 @@ RectTransform:
   m_Father: {fileID: 526028796}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1065, y: -82.35}
   m_SizeDelta: {x: 180, y: 164.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &494818236
@@ -3857,7 +3857,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: ed39dc0dc17f8494c9e5e501fde90828, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 10bd8b9717708aa499367f9c810eb4ba, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3912,7 +3912,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 85.685}
-  m_SizeDelta: {x: 0, y: 171.43}
+  m_SizeDelta: {x: 1155, y: 171.43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &526028797
 MonoBehaviour:
@@ -4125,11 +4125,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd51e9faf8e3b4f3995b25edbf98ae40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  person: {fileID: 946233150}
-  panel: {fileID: 539911590}
-  infoCan: {fileID: 1953002025}
+  person: {fileID: 0}
+  panel: {fileID: 0}
+  infoCan: {fileID: 0}
   infoStr: 
-  info: {fileID: 412425089}
+  info: {fileID: 0}
 --- !u!114 &539911592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4269,7 +4269,7 @@ GameObject:
   - component: {fileID: 561634062}
   - component: {fileID: 561634061}
   m_Layer: 0
-  m_Name: homer
+  m_Name: legolas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4289,7 +4289,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: c46169aa8603c6c4fae5c108e3e201e8, type: 2}
+  - {fileID: 2100000, guid: b23e9bb22211f8446ac51fc3bae171fb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4713,7 +4713,7 @@ GameObject:
   - component: {fileID: 611671838}
   - component: {fileID: 611671837}
   m_Layer: 0
-  m_Name: obama
+  m_Name: markzuckerberg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4746,7 +4746,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: e2b0e59dd7ba744f6b8690c3bdd3a0aa, type: 2}
+  - {fileID: 2100000, guid: 296a17ab22dc31546977960d015d50af, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5051,7 +5051,7 @@ GameObject:
   - component: {fileID: 640770922}
   - component: {fileID: 640770921}
   m_Layer: 0
-  m_Name: homer
+  m_Name: ironman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5071,7 +5071,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: c46169aa8603c6c4fae5c108e3e201e8, type: 2}
+  - {fileID: 2100000, guid: 988234d694a261f4aa19c5d7b42ead67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5138,7 +5138,7 @@ GameObject:
   - component: {fileID: 643417067}
   - component: {fileID: 643417066}
   m_Layer: 5
-  m_Name: Trump
+  m_Name: oprahwinfrey
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5157,9 +5157,9 @@ RectTransform:
   m_Father: {fileID: 2121392660}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 285, y: -82.35}
   m_SizeDelta: {x: 180, y: 164.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &643417066
@@ -5252,7 +5252,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 7067261e767bc425283babc5800abff7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 39e0b71f02a7654448c880defe41e985, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5279,7 +5279,7 @@ GameObject:
   - component: {fileID: 648453706}
   - component: {fileID: 648453705}
   m_Layer: 5
-  m_Name: Trump
+  m_Name: markwahlberg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5298,9 +5298,9 @@ RectTransform:
   m_Father: {fileID: 2080334982}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 285, y: -82.35}
   m_SizeDelta: {x: 180, y: 164.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &648453705
@@ -5393,7 +5393,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 7067261e767bc425283babc5800abff7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9695709e45e6c7640af9180a7955bb4e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5419,12 +5419,12 @@ GameObject:
   - component: {fileID: 653642444}
   - component: {fileID: 653642443}
   m_Layer: 0
-  m_Name: obama
+  m_Name: pikatchu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &653642442
 Transform:
   m_ObjectHideFlags: 0
@@ -5452,7 +5452,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: e2b0e59dd7ba744f6b8690c3bdd3a0aa, type: 2}
+  - {fileID: 2100000, guid: 0a5957784423a3843a3757138d86ef7b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5823,7 +5823,7 @@ GameObject:
   - component: {fileID: 713823581}
   - component: {fileID: 713823580}
   m_Layer: 5
-  m_Name: Obama
+  m_Name: pikatchu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5842,9 +5842,9 @@ RectTransform:
   m_Father: {fileID: 2008784888}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 90, y: -82.35}
   m_SizeDelta: {x: 180, y: 164.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &713823580
@@ -5937,7 +5937,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 02d8d27478d5d450296b7ca5b781a68c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8c4a169c799479444b4a9ca29aaab16d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5963,7 +5963,7 @@ GameObject:
   - component: {fileID: 716468509}
   - component: {fileID: 716468508}
   m_Layer: 0
-  m_Name: trump
+  m_Name: markwahlberg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5996,7 +5996,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 4d6ef162223464d5c95bde4a27342466, type: 2}
+  - {fileID: 2100000, guid: 3a45c1160349bae4cae5e16447a29d63, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6050,7 +6050,7 @@ GameObject:
   - component: {fileID: 804293582}
   - component: {fileID: 804293581}
   m_Layer: 5
-  m_Name: Kim
+  m_Name: lionelmessi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6069,9 +6069,9 @@ RectTransform:
   m_Father: {fileID: 2080334982}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 675, y: -82.35}
   m_SizeDelta: {x: 180, y: 164.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &804293581
@@ -6164,7 +6164,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: a2c3a0c0867734aea804b7b94009f46e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cb6ebabb68449f74c86af39edbd91e48, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6211,10 +6211,10 @@ MonoBehaviour:
   Person4: {fileID: 420482159}
   Person5: {fileID: 1563065523}
   Person6: {fileID: 561634060}
-  selectPlayerList: {fileID: 1339123196}
-  selectButton: {fileID: 1480500609}
-  infoCanvas: {fileID: 1848489706}
-  panel: {fileID: 1134235463}
+  selectPlayerList: {fileID: 0}
+  selectButton: {fileID: 0}
+  infoCanvas: {fileID: 0}
+  panel: {fileID: 0}
 --- !u!4 &805506893
 Transform:
   m_ObjectHideFlags: 0
@@ -6547,7 +6547,7 @@ GameObject:
   - component: {fileID: 917282352}
   - component: {fileID: 917282351}
   m_Layer: 0
-  m_Name: kim
+  m_Name: jenniferaniston
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6580,7 +6580,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6a2f43cc83514f84bbe89d63ff73de79, type: 2}
+  - {fileID: 2100000, guid: c72ecfbc6640a7b4f89d69b5ddd6c09b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6654,10 +6654,10 @@ MonoBehaviour:
   Person4: {fileID: 917282349}
   Person5: {fileID: 1027766640}
   Person6: {fileID: 640770920}
-  selectPlayerList: {fileID: 1607108080}
-  selectButton: {fileID: 403405936}
-  infoCanvas: {fileID: 962173931}
-  panel: {fileID: 539911590}
+  selectPlayerList: {fileID: 0}
+  selectButton: {fileID: 0}
+  infoCanvas: {fileID: 0}
+  panel: {fileID: 0}
 --- !u!4 &946233151
 Transform:
   m_ObjectHideFlags: 0
@@ -6908,7 +6908,7 @@ GameObject:
   - component: {fileID: 974884033}
   - component: {fileID: 974884032}
   m_Layer: 5
-  m_Name: Homer
+  m_Name: ladygaga
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6927,9 +6927,9 @@ RectTransform:
   m_Father: {fileID: 2080334982}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1065, y: -82.35}
   m_SizeDelta: {x: 180, y: 164.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &974884032
@@ -7022,7 +7022,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: ed39dc0dc17f8494c9e5e501fde90828, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e4840bbd34548ba4e9d5caf3720364b0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7170,7 +7170,7 @@ GameObject:
   - component: {fileID: 1025465488}
   - component: {fileID: 1025465487}
   m_Layer: 0
-  m_Name: homer
+  m_Name: supermario
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7190,7 +7190,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: c46169aa8603c6c4fae5c108e3e201e8, type: 2}
+  - {fileID: 2100000, guid: e20ba2a498272074e9fb3ea6b54c5899, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7238,11 +7238,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1025465486}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 1.4388714, z: 0}
+  m_LocalPosition: {x: 0.06, y: 1.4388714, z: -0.31}
   m_LocalScale: {x: 0.14388718, y: 0.14388718, z: 0.14388718}
   m_Children: []
   m_Father: {fileID: 2110428206}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1027766640
 GameObject:
@@ -7256,7 +7256,7 @@ GameObject:
   - component: {fileID: 1027766643}
   - component: {fileID: 1027766642}
   m_Layer: 0
-  m_Name: bat
+  m_Name: harrypotter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7289,7 +7289,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 36c93d4f22c35934f8b3a15fc252ae24, type: 2}
+  - {fileID: 2100000, guid: d209c9611e5077942a0e57de0cbb16e4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7342,7 +7342,7 @@ GameObject:
   - component: {fileID: 1053576927}
   - component: {fileID: 1053576926}
   m_Layer: 0
-  m_Name: kim
+  m_Name: mutterteresa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7362,7 +7362,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6a2f43cc83514f84bbe89d63ff73de79, type: 2}
+  - {fileID: 2100000, guid: 2cb2d27b29820d54d847a800061ea4d5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7589,7 +7589,7 @@ GameObject:
   - component: {fileID: 1077843077}
   - component: {fileID: 1077843076}
   m_Layer: 5
-  m_Name: Arni
+  m_Name: lordvoldemort
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7608,9 +7608,9 @@ RectTransform:
   m_Father: {fileID: 2080334982}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 480, y: -82.35}
   m_SizeDelta: {x: 180, y: 164.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1077843076
@@ -7703,7 +7703,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 48f36378cdf7ebd4bbcf2390d3e2a48c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b324fdae2bb27654f9e17accd2a2231d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7824,10 +7824,10 @@ MonoBehaviour:
   Person4: {fileID: 1053576925}
   Person5: {fileID: 70223343}
   Person6: {fileID: 24298949}
-  selectPlayerList: {fileID: 526251779}
-  selectButton: {fileID: 96024919}
-  infoCanvas: {fileID: 1531876110}
-  panel: {fileID: 192256168}
+  selectPlayerList: {fileID: 0}
+  selectButton: {fileID: 0}
+  infoCanvas: {fileID: 0}
+  panel: {fileID: 0}
 --- !u!4 &1102149892
 Transform:
   m_ObjectHideFlags: 0
@@ -7984,9 +7984,9 @@ Transform:
   - {fileID: 896013858}
   - {fileID: 1060410230}
   - {fileID: 1846554534}
-  - {fileID: 1868449810}
   - {fileID: 455619421}
   - {fileID: 341441650}
+  - {fileID: 1868449810}
   - {fileID: 1953002026}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -8142,11 +8142,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd51e9faf8e3b4f3995b25edbf98ae40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  person: {fileID: 805506892}
-  panel: {fileID: 1134235463}
-  infoCan: {fileID: 1953002025}
+  person: {fileID: 0}
+  panel: {fileID: 0}
+  infoCan: {fileID: 0}
   infoStr: 
-  info: {fileID: 1469781704}
+  info: {fileID: 0}
 --- !u!114 &1134235465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8372,7 +8372,7 @@ GameObject:
   - component: {fileID: 1143339638}
   - component: {fileID: 1143339637}
   m_Layer: 5
-  m_Name: Kim
+  m_Name: elvis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8391,9 +8391,9 @@ RectTransform:
   m_Father: {fileID: 526028796}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 675, y: -82.35}
   m_SizeDelta: {x: 180, y: 164.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1143339637
@@ -8486,7 +8486,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: a2c3a0c0867734aea804b7b94009f46e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 641e0cf187a6c164d90be2257c9c3842, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8532,9 +8532,9 @@ RectTransform:
   m_Father: {fileID: 1592263000}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1065, y: -82.35}
   m_SizeDelta: {x: 180, y: 164.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1160055995
@@ -8654,7 +8654,7 @@ GameObject:
   - component: {fileID: 1182904136}
   - component: {fileID: 1182904135}
   m_Layer: 5
-  m_Name: Bat
+  m_Name: snoopdogg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8673,9 +8673,9 @@ RectTransform:
   m_Father: {fileID: 2008784888}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 870, y: -82.35}
   m_SizeDelta: {x: 180, y: 164.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1182904135
@@ -8768,7 +8768,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 9b396835ce6aa4518a73df22fd3ad349, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6921a60e3b074b34381a074051ada1b9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8900,9 +8900,9 @@ RectTransform:
   m_Father: {fileID: 2008784888}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 675, y: -82.35}
   m_SizeDelta: {x: 180, y: 164.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1216527627
@@ -9144,7 +9144,7 @@ GameObject:
   - component: {fileID: 1254542611}
   - component: {fileID: 1254542610}
   m_Layer: 5
-  m_Name: Obama
+  m_Name: katemoss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9163,9 +9163,9 @@ RectTransform:
   m_Father: {fileID: 423680805}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 90, y: -82.35}
   m_SizeDelta: {x: 180, y: 164.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1254542610
@@ -9258,7 +9258,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 02d8d27478d5d450296b7ca5b781a68c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e3699c834f5737f4cb21e00c2fd26182, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9284,12 +9284,12 @@ GameObject:
   - component: {fileID: 1305270562}
   - component: {fileID: 1305270561}
   m_Layer: 0
-  m_Name: obama
+  m_Name: spiderman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1305270560
 Transform:
   m_ObjectHideFlags: 0
@@ -9317,7 +9317,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: e2b0e59dd7ba744f6b8690c3bdd3a0aa, type: 2}
+  - {fileID: 2100000, guid: 35975cbb83ee17643b46ce8f35558cce, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9371,7 +9371,7 @@ GameObject:
   - component: {fileID: 1308042598}
   - component: {fileID: 1308042597}
   m_Layer: 5
-  m_Name: Bat
+  m_Name: billgates
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9390,9 +9390,9 @@ RectTransform:
   m_Father: {fileID: 526028796}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 870, y: -82.35}
   m_SizeDelta: {x: 180, y: 164.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1308042597
@@ -9485,7 +9485,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 9b396835ce6aa4518a73df22fd3ad349, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 773981c560556ea4ab1f69d65a6be06a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9531,9 +9531,9 @@ RectTransform:
   m_Father: {fileID: 1592263000}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 870, y: -82.35}
   m_SizeDelta: {x: 180, y: 164.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1310599461
@@ -9653,7 +9653,7 @@ GameObject:
   - component: {fileID: 1313655828}
   - component: {fileID: 1313655827}
   m_Layer: 5
-  m_Name: Obama
+  m_Name: spiderman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9672,9 +9672,9 @@ RectTransform:
   m_Father: {fileID: 2121392660}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 90, y: -82.35}
   m_SizeDelta: {x: 180, y: 164.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1313655827
@@ -9767,7 +9767,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 02d8d27478d5d450296b7ca5b781a68c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ec5eac677fdbb12409859dd91d5ffa22, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9794,7 +9794,7 @@ GameObject:
   - component: {fileID: 1328823067}
   - component: {fileID: 1328823066}
   m_Layer: 5
-  m_Name: Homer
+  m_Name: supermario
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9813,9 +9813,9 @@ RectTransform:
   m_Father: {fileID: 2008784888}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1065, y: -82.35}
   m_SizeDelta: {x: 180, y: 164.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1328823066
@@ -9908,7 +9908,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: ed39dc0dc17f8494c9e5e501fde90828, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e69d482a9800aef40a3da5a1dcf4563c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10048,7 +10048,7 @@ GameObject:
   - component: {fileID: 1349848191}
   - component: {fileID: 1349848190}
   m_Layer: 0
-  m_Name: kim
+  m_Name: elvis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10081,7 +10081,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6a2f43cc83514f84bbe89d63ff73de79, type: 2}
+  - {fileID: 2100000, guid: 4deffde891c5df84b8b123e770681557, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10209,7 +10209,7 @@ GameObject:
   - component: {fileID: 1358566277}
   - component: {fileID: 1358566276}
   m_Layer: 5
-  m_Name: Obama
+  m_Name: markzuckerberg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10228,9 +10228,9 @@ RectTransform:
   m_Father: {fileID: 2080334982}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 90, y: -82.35}
   m_SizeDelta: {x: 180, y: 164.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1358566276
@@ -10323,7 +10323,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 02d8d27478d5d450296b7ca5b781a68c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b88a53d2bdb22ed4386bb23e20535162, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10472,7 +10472,7 @@ GameObject:
   - component: {fileID: 1409350313}
   - component: {fileID: 1409350312}
   m_Layer: 5
-  m_Name: Kim
+  m_Name: jenniferaniston
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10491,9 +10491,9 @@ RectTransform:
   m_Father: {fileID: 423680805}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 675, y: -82.35}
   m_SizeDelta: {x: 180, y: 164.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1409350312
@@ -10586,7 +10586,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: a2c3a0c0867734aea804b7b94009f46e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f759905ff3ad6ce4fa3030cfb427a4b0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10873,6 +10873,92 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1480184353
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1480184354}
+  - component: {fileID: 1480184357}
+  - component: {fileID: 1480184356}
+  - component: {fileID: 1480184355}
+  m_Layer: 0
+  m_Name: snoopdogg
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1480184354
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1480184353}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 0.06, y: 1.4388714, z: -0.31}
+  m_LocalScale: {x: 0.14388718, y: 0.14388718, z: 0.14388718}
+  m_Children: []
+  m_Father: {fileID: 2110428206}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!23 &1480184355
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1480184353}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: f24fc31adf607284ba3841953a2cd9e8, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!64 &1480184356
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1480184353}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &1480184357
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1480184353}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1480500609
 GameObject:
   m_ObjectHideFlags: 0
@@ -11028,10 +11114,10 @@ MonoBehaviour:
   Person4: {fileID: 1846554530}
   Person5: {fileID: 341441649}
   Person6: {fileID: 455619417}
-  selectPlayerList: {fileID: 1876937939}
-  selectButton: {fileID: 483432164}
-  infoCanvas: {fileID: 1953002025}
-  panel: {fileID: 1526873854}
+  selectPlayerList: {fileID: 0}
+  selectButton: {fileID: 0}
+  infoCanvas: {fileID: 0}
+  panel: {fileID: 0}
 --- !u!4 &1511912337
 Transform:
   m_ObjectHideFlags: 0
@@ -11152,11 +11238,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd51e9faf8e3b4f3995b25edbf98ae40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  person: {fileID: 1511912336}
-  panel: {fileID: 1526873854}
-  infoCan: {fileID: 1953002025}
+  person: {fileID: 0}
+  panel: {fileID: 0}
+  infoCan: {fileID: 0}
   infoStr: 
-  info: {fileID: 425319439}
+  info: {fileID: 0}
 --- !u!1 &1531876110
 GameObject:
   m_ObjectHideFlags: 0
@@ -11280,11 +11366,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd51e9faf8e3b4f3995b25edbf98ae40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  person: {fileID: 255376954}
-  panel: {fileID: 1544213949}
-  infoCan: {fileID: 1953002025}
+  person: {fileID: 0}
+  panel: {fileID: 0}
+  infoCan: {fileID: 0}
   infoStr: 
-  info: {fileID: 1079161491}
+  info: {fileID: 0}
 --- !u!114 &1544213951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11351,7 +11437,7 @@ GameObject:
   - component: {fileID: 1548906164}
   - component: {fileID: 1548906163}
   m_Layer: 5
-  m_Name: Homer
+  m_Name: mickeymouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11370,9 +11456,9 @@ RectTransform:
   m_Father: {fileID: 2121392660}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1065, y: -82.35}
   m_SizeDelta: {x: 180, y: 164.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1548906163
@@ -11465,7 +11551,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: ed39dc0dc17f8494c9e5e501fde90828, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e3178e79ed111bc4ba7df266f6a03c77, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11496,7 +11582,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1561829096
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11587,7 +11673,7 @@ GameObject:
   - component: {fileID: 1563065526}
   - component: {fileID: 1563065525}
   m_Layer: 0
-  m_Name: bat
+  m_Name: ladygaga
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11620,7 +11706,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 36c93d4f22c35934f8b3a15fc252ae24, type: 2}
+  - {fileID: 2100000, guid: 64fc754764db9fd4e8f2af219efdb652, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11674,7 +11760,7 @@ GameObject:
   - component: {fileID: 1569665773}
   - component: {fileID: 1569665772}
   m_Layer: 5
-  m_Name: Homer
+  m_Name: harrypotter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11693,9 +11779,9 @@ RectTransform:
   m_Father: {fileID: 423680805}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1065, y: -82.35}
   m_SizeDelta: {x: 180, y: 164.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1569665772
@@ -11788,7 +11874,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: ed39dc0dc17f8494c9e5e501fde90828, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5b3c952028fe8a641b7dbd8e04227447, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11815,7 +11901,7 @@ GameObject:
   - component: {fileID: 1572572360}
   - component: {fileID: 1572572359}
   m_Layer: 5
-  m_Name: Trump
+  m_Name: justintimberlake
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11834,9 +11920,9 @@ RectTransform:
   m_Father: {fileID: 423680805}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 285, y: -82.35}
   m_SizeDelta: {x: 180, y: 164.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1572572359
@@ -11929,7 +12015,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 7067261e767bc425283babc5800abff7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a833c6c2b11a3664baf756e7a0942e26, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11955,7 +12041,7 @@ GameObject:
   - component: {fileID: 1573979533}
   - component: {fileID: 1573979532}
   m_Layer: 0
-  m_Name: trump
+  m_Name: justintimberlake
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11988,7 +12074,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 4d6ef162223464d5c95bde4a27342466, type: 2}
+  - {fileID: 2100000, guid: 681b1ee46bedf71428e0153d66f2dcfc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12131,7 +12217,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1578563433
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12222,7 +12308,7 @@ GameObject:
   - component: {fileID: 1591710246}
   - component: {fileID: 1591710245}
   m_Layer: 0
-  m_Name: obama
+  m_Name: gandalf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12255,7 +12341,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: e2b0e59dd7ba744f6b8690c3bdd3a0aa, type: 2}
+  - {fileID: 2100000, guid: ea3f85ff3594c9b4eb12fe9656bba494, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12337,7 +12423,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 85.685}
-  m_SizeDelta: {x: 0, y: 171.43}
+  m_SizeDelta: {x: 1155, y: 171.43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1592263001
 MonoBehaviour:
@@ -12618,7 +12704,7 @@ GameObject:
   - component: {fileID: 1609073194}
   - component: {fileID: 1609073193}
   m_Layer: 0
-  m_Name: arni
+  m_Name: jesus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12651,7 +12737,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 96b43c9f5cda8aa4a89744474910cf37, type: 2}
+  - {fileID: 2100000, guid: cbd81a094941b8042857546b42050a32, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12705,7 +12791,7 @@ GameObject:
   - component: {fileID: 1629102820}
   - component: {fileID: 1629102819}
   m_Layer: 5
-  m_Name: Kim
+  m_Name: mutterteresa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12724,9 +12810,9 @@ RectTransform:
   m_Father: {fileID: 2121392660}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 675, y: -82.35}
   m_SizeDelta: {x: 180, y: 164.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1629102819
@@ -12819,7 +12905,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: a2c3a0c0867734aea804b7b94009f46e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2812366a7dca7dc4d8d9aa4f8da039a1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12939,9 +13025,9 @@ RectTransform:
   m_Father: {fileID: 1592263000}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 285, y: -82.35}
   m_SizeDelta: {x: 180, y: 164.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1638816501
@@ -13061,7 +13147,7 @@ GameObject:
   - component: {fileID: 1639736754}
   - component: {fileID: 1639736753}
   m_Layer: 5
-  m_Name: Trump
+  m_Name: willsmith
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13080,9 +13166,9 @@ RectTransform:
   m_Father: {fileID: 2008784888}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 285, y: -82.35}
   m_SizeDelta: {x: 180, y: 164.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1639736753
@@ -13144,7 +13230,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 255376954}
-        m_MethodName: LoadPerson3
+        m_MethodName: LoadPerson2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13175,7 +13261,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 7067261e767bc425283babc5800abff7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2d1ebd97c3588ed41b2745765f47ad8b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -13323,7 +13409,7 @@ GameObject:
   - component: {fileID: 1645821591}
   - component: {fileID: 1645821590}
   m_Layer: 0
-  m_Name: homer
+  m_Name: billgates
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13343,7 +13429,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: c46169aa8603c6c4fae5c108e3e201e8, type: 2}
+  - {fileID: 2100000, guid: 827a2452952fed04aae7b394688c192b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13426,11 +13512,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd51e9faf8e3b4f3995b25edbf98ae40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  person: {fileID: 301640710}
-  panel: {fileID: 1672017977}
-  infoCan: {fileID: 1953002025}
+  person: {fileID: 0}
+  panel: {fileID: 0}
+  infoCan: {fileID: 0}
   infoStr: 
-  info: {fileID: 549729870}
+  info: {fileID: 0}
 --- !u!114 &1672017979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13572,7 +13658,7 @@ GameObject:
   - component: {fileID: 1724096711}
   - component: {fileID: 1724096710}
   m_Layer: 0
-  m_Name: arni
+  m_Name: donaldduck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13605,7 +13691,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 96b43c9f5cda8aa4a89744474910cf37, type: 2}
+  - {fileID: 2100000, guid: 9a44e86d07e3f5a45a6d1a7da1d1cab6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13646,92 +13732,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1724096708}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1760861644
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1760861645}
-  - component: {fileID: 1760861648}
-  - component: {fileID: 1760861647}
-  - component: {fileID: 1760861646}
-  m_Layer: 0
-  m_Name: bat
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1760861645
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1760861644}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 1.7080603, z: 0}
-  m_LocalScale: {x: 0.17311426, y: 0.17311426, z: 0.17311426}
-  m_Children: []
-  m_Father: {fileID: 2110428206}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!23 &1760861646
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1760861644}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 2100000, guid: 36c93d4f22c35934f8b3a15fc252ae24, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!64 &1760861647
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1760861644}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!33 &1760861648
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1760861644}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1773215625
 GameObject:
   m_ObjectHideFlags: 0
@@ -13745,7 +13745,7 @@ GameObject:
   - component: {fileID: 1773215628}
   - component: {fileID: 1773215627}
   m_Layer: 5
-  m_Name: Arni
+  m_Name: nicolascage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13764,9 +13764,9 @@ RectTransform:
   m_Father: {fileID: 2121392660}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 480, y: -82.35}
   m_SizeDelta: {x: 180, y: 164.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1773215627
@@ -13859,7 +13859,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 48f36378cdf7ebd4bbcf2390d3e2a48c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a18fc0515267ab946a21bdaa7cbe3300, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -13885,7 +13885,7 @@ GameObject:
   - component: {fileID: 1789079727}
   - component: {fileID: 1789079726}
   m_Layer: 0
-  m_Name: trump
+  m_Name: willsmith
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13898,7 +13898,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1789079724}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 1.4999999, z: -0.159}
+  m_LocalPosition: {x: 0, y: 1.4999999, z: -0.3}
   m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_Children: []
   m_Father: {fileID: 2110428206}
@@ -13918,7 +13918,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 4d6ef162223464d5c95bde4a27342466, type: 2}
+  - {fileID: 2100000, guid: 15b9d328a10cc30418389092fd3dc20b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14568,7 +14568,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1868449807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14640,7 +14640,7 @@ RectTransform:
   - {fileID: 483432165}
   - {fileID: 1526873857}
   m_Father: {fileID: 1109985619}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -14660,7 +14660,7 @@ GameObject:
   - component: {fileID: 1868798455}
   - component: {fileID: 1868798454}
   m_Layer: 5
-  m_Name: Arni
+  m_Name: donaldduck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14679,9 +14679,9 @@ RectTransform:
   m_Father: {fileID: 526028796}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 480, y: -82.35}
   m_SizeDelta: {x: 180, y: 164.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1868798454
@@ -14774,7 +14774,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 48f36378cdf7ebd4bbcf2390d3e2a48c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5c96adc7de51b6e43a9a7ec44746b658, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -14801,7 +14801,7 @@ GameObject:
   - component: {fileID: 1874010917}
   - component: {fileID: 1874010916}
   m_Layer: 5
-  m_Name: Bat
+  m_Name: legolas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14820,9 +14820,9 @@ RectTransform:
   m_Father: {fileID: 2080334982}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 870, y: -82.35}
   m_SizeDelta: {x: 180, y: 164.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1874010916
@@ -14915,7 +14915,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 9b396835ce6aa4518a73df22fd3ad349, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 44b4c96c43d887140b619938363c458b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -15131,7 +15131,7 @@ GameObject:
   - component: {fileID: 1937141436}
   - component: {fileID: 1937141435}
   m_Layer: 0
-  m_Name: obama
+  m_Name: katemoss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15164,7 +15164,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: e2b0e59dd7ba744f6b8690c3bdd3a0aa, type: 2}
+  - {fileID: 2100000, guid: 451774ba149c04644b8ea302e57e4ce9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15218,7 +15218,7 @@ GameObject:
   - component: {fileID: 1950815589}
   - component: {fileID: 1950815588}
   m_Layer: 5
-  m_Name: Obama
+  m_Name: gandalf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15237,9 +15237,9 @@ RectTransform:
   m_Father: {fileID: 526028796}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 90, y: -82.35}
   m_SizeDelta: {x: 180, y: 164.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1950815588
@@ -15332,7 +15332,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 02d8d27478d5d450296b7ca5b781a68c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 10bfee5303a83c54ca6624276ebcc2a9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -15472,9 +15472,9 @@ RectTransform:
   m_Father: {fileID: 1592263000}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 675, y: -82.35}
   m_SizeDelta: {x: 180, y: 164.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1961542061
@@ -15913,7 +15913,7 @@ GameObject:
   - component: {fileID: 1981225122}
   - component: {fileID: 1981225121}
   m_Layer: 0
-  m_Name: arni
+  m_Name: sylvesterstallone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15926,7 +15926,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1981225119}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 1.7370865, z: -0.1519951}
+  m_LocalPosition: {x: -0.03, y: 1.33, z: -0.38}
   m_LocalScale: {x: 0.15298209, y: 0.15298209, z: 0.15298209}
   m_Children: []
   m_Father: {fileID: 2110428206}
@@ -15946,7 +15946,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 96b43c9f5cda8aa4a89744474910cf37, type: 2}
+  - {fileID: 2100000, guid: 681161eba97b2034d805d604591279da, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -16076,7 +16076,7 @@ GameObject:
   - component: {fileID: 1995186389}
   - component: {fileID: 1995186388}
   m_Layer: 5
-  m_Name: Bat
+  m_Name: ironman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16095,9 +16095,9 @@ RectTransform:
   m_Father: {fileID: 423680805}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 870, y: -82.35}
   m_SizeDelta: {x: 180, y: 164.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1995186388
@@ -16190,7 +16190,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 9b396835ce6aa4518a73df22fd3ad349, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 758cbf6b777f1284c8ce5b03175cf592, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16321,7 +16321,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 85.685}
-  m_SizeDelta: {x: 0, y: 171.43}
+  m_SizeDelta: {x: 1155, y: 171.43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2008784889
 MonoBehaviour:
@@ -16482,7 +16482,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2012426628
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16573,7 +16573,7 @@ GameObject:
   - component: {fileID: 2022791439}
   - component: {fileID: 2022791438}
   m_Layer: 0
-  m_Name: arni
+  m_Name: lordvoldemort
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16606,7 +16606,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 96b43c9f5cda8aa4a89744474910cf37, type: 2}
+  - {fileID: 2100000, guid: 63351e66d03ef6843b7788219e227bdc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -16757,7 +16757,7 @@ GameObject:
   - component: {fileID: 2030565744}
   - component: {fileID: 2030565743}
   m_Layer: 5
-  m_Name: Arni
+  m_Name: jesus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16776,9 +16776,9 @@ RectTransform:
   m_Father: {fileID: 423680805}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 480, y: -82.35}
   m_SizeDelta: {x: 180, y: 164.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2030565743
@@ -16871,7 +16871,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 48f36378cdf7ebd4bbcf2390d3e2a48c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f73c24ad120827b46944d5ec9c67f8ff, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -17170,7 +17170,7 @@ GameObject:
   - component: {fileID: 2074862088}
   - component: {fileID: 2074862087}
   m_Layer: 0
-  m_Name: arni
+  m_Name: nicolascage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17203,7 +17203,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 96b43c9f5cda8aa4a89744474910cf37, type: 2}
+  - {fileID: 2100000, guid: e04c2f70491d946489e2a311fd6e5a67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17285,7 +17285,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 85.685}
-  m_SizeDelta: {x: 0, y: 171.43}
+  m_SizeDelta: {x: 1155, y: 171.43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2080334983
 MonoBehaviour:
@@ -17387,9 +17387,9 @@ RectTransform:
   m_Father: {fileID: 1592263000}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 90, y: -82.35}
   m_SizeDelta: {x: 180, y: 164.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2091741426
@@ -17614,8 +17614,8 @@ Transform:
   - {fileID: 1789079725}
   - {fileID: 1981225120}
   - {fileID: 1207416140}
+  - {fileID: 1480184354}
   - {fileID: 1025465490}
-  - {fileID: 1760861645}
   - {fileID: 158794975}
   - {fileID: 222029823}
   m_Father: {fileID: 0}
@@ -17784,7 +17784,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 85.685}
-  m_SizeDelta: {x: 0, y: 171.43}
+  m_SizeDelta: {x: 1155, y: 171.43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2121392661
 MonoBehaviour:
