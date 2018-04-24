@@ -1,10 +1,10 @@
 Name: Gandalf der Garaue
 Beruf: Zauberer
 Real: nein
-Besondere Merkmale: exxxxxxxtremer Bart, altert nicht
+Besondere Merkmale: altert nicht, grau/wei?
 Haustier: Schattenfell 
 Geburtstag: Am anfang aller tage unsterblich
-Augenfarbe: Grün
+Augenfarbe: Gr¨¹n
 Schwert: Glamdril
 Haarfarbe:Schwarz
 Real: nein

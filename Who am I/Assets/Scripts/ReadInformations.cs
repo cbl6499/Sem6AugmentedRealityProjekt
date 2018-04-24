@@ -2,33 +2,43 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.UI;
 
 public class ReadInformations : MonoBehaviour {
 
 	private string information;
-	private SelectPerson person;
-	private GameObject activePerson;
+	public SelectPerson person;
+	public GameObject panel;
+	public GameObject infoCan;
+	public string infoStr;
+
+	public Text info;
 
 	void Start () {
-		activePerson = person.loadInformations();
-		string path = "Assets/Informations/obama.txt";
+		//activePerson = person.loadInformations ();
+
+		string path = "Assets/Informations/" + person.getName() +".txt";
 
 		//Read the text from directly from the test.txt file
-		StreamReader reader = new StreamReader(path); 
-		information = reader.ToString();
-
-		GameObject text = new GameObject();
-		TextMesh t = text.AddComponent<TextMesh>();
-		t.text = information;
-		t.fontSize = 14;
+		StreamReader reader = new StreamReader(path, System.Text.Encoding.UTF8); 
 
 
-		Debug.Log(reader.ReadToEnd());
+		while (reader.Peek() >= 0) 
+		{
+			information += reader.ReadLine().ToString();
+			information += "\n";
+
+		}
+		info.text = information;
+
+
+		//Debug.Log(person.getName());
 		reader.Close();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+
+	public void closeInfoScreen(){
+		panel.SetActive (false);
+		infoCan.SetActive (true);
 	}
 }

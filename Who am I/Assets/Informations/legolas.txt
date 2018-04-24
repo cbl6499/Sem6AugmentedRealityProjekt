@@ -1,4 +1,4 @@
 Name: Legolas
-Beruf: Bogenschütze, Kommandant der Palastwachen des Düsterwaldes
-Land: Düsterwald
+Beruf: Bogensch¨¹tze, Kommandant der Palastwachen des D¨¹sterwaldes
+Land: D¨¹sterwald
 Spezial: 100% Trefferquote 
