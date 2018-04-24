@@ -41,12 +41,15 @@ public class WhoAmIClient : NetworkBehaviour {
         this.MyClient.RegisterHandler(MsgType.Ready, OnReady);
         this.MyClient.RegisterHandler(MsgType.NotReady, PrintPlayerList);
         this.MyClient.RegisterHandler(MsgType.Connect, OnSuccessfulConnection);
+<<<<<<< HEAD
 
         
         this.MyClient.RegisterHandler(MsgType.UpdateVars, GameWon);
         
         // Debug.Log("Register PrintPlayerList");
         //Debug.Log(this.HostAddress);
+=======
+>>>>>>> 220dd66f7dec4fba4ac4a70dcfb92e6fcf04a331
 
         this.Connect();
     }
@@ -54,8 +57,12 @@ public class WhoAmIClient : NetworkBehaviour {
     private void OnSuccessfulConnection(NetworkMessage netMsg) {
         MessageBase msgBase = netMsg.ReadMessage<Notification>();
         Debug.Log("hell yeah " + netMsg.conn.address);
+<<<<<<< HEAD
+        //throw new NotImplementedException();
 
+=======
         this.SendLobbyRegistration();
+>>>>>>> 220dd66f7dec4fba4ac4a70dcfb92e6fcf04a331
     }
 
     public void Connect() {
@@ -85,6 +92,7 @@ public class WhoAmIClient : NetworkBehaviour {
         return new Notification(username);
     }
 
+    private void SendGuess(string guess)
     {
         Notification msg = new Notification();
         msg.Message = guess;
