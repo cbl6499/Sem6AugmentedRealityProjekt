@@ -1,5 +1,5 @@
 Name: Albert Einstein
-Geburtsdatum: Freitag, 14. März 1879
+Geburtsdatum:	Freitag, 14. März 1879
 Geburtsort: Ulm, Baden-Württemberg, Deutschland
 Todesdatum: Montag, 18. April 1955 (†76) (Innere Blutungen durch Aortenaneurysma)
 Sterbeort: Princeton, New Jersey, USA

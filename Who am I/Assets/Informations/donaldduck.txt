@@ -2,7 +2,7 @@ Name: Donald Fauntleroy Duck
 Beruf: Weltrekordler im Jobwechseln 
 Geburtstag: 09.06.1934 
 Sternzeichen: Zwilling
-Staatsangeh?rigkeit: Vereinigte Staaten von Amerika
-Gr??e: 110cm
-Geschlecht: m?nnlich
+Staatsangehörigkeit: Vereinigte Staaten von Amerika
+Größe: 110cm
+Geschlecht: männlich
 

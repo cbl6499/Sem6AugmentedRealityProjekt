@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour {
             s.SetupHost();
             c.SetupClient();
 
-    
+            Debug.Log("I made it to send method " + c.Username + " " + c.HostAddress);
 
             serverMenu.SetActive(true);
             hostSettingMenu.SetActive(false);

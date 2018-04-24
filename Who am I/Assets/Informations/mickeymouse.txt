@@ -3,6 +3,6 @@ Real: nein
 Beruf: Detektiv
 Geburtstag: 18.11.1928
 Sternzeichen: Skorpion
-Staatsangeh?rigkeit: keine
-Gr??e: 109cm
-Geschlecht: m?nnlich
+Staatsangehörigkeit: ??
+Größe: 109cm
+Geschlecht: männlich
