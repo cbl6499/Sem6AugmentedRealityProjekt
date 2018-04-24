@@ -42,6 +42,7 @@ public class WhoAmIClient : NetworkBehaviour {
         this.MyClient.RegisterHandler(MsgType.NotReady, PrintPlayerList);
         this.MyClient.RegisterHandler(MsgType.Connect, OnSuccessfulConnection);
 <<<<<<< HEAD
+
         
         this.MyClient.RegisterHandler(MsgType.UpdateVars, GameWon);
         
@@ -49,6 +50,7 @@ public class WhoAmIClient : NetworkBehaviour {
         //Debug.Log(this.HostAddress);
 =======
 >>>>>>> 220dd66f7dec4fba4ac4a70dcfb92e6fcf04a331
+
         this.Connect();
     }
 
