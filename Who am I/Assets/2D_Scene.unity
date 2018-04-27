@@ -1637,7 +1637,7 @@ MonoBehaviour:
   panel: {fileID: 192256168}
   infoCan: {fileID: 1531876110}
   infoStr: 
-  info: {fileID: 1352127163}
+  info: {fileID: 1801666514}
 --- !u!114 &192256171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4129,7 +4129,7 @@ MonoBehaviour:
   panel: {fileID: 539911590}
   infoCan: {fileID: 962173931}
   infoStr: 
-  info: {fileID: 869524077}
+  info: {fileID: 412425089}
 --- !u!114 &539911592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6234,7 +6234,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Player_1_v2Material
+  m_Name: Player_3_v2Material
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -6247,7 +6247,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 727ef50fb4194ca89f2e49d85e390b9b, type: 3}
+        m_Texture: {fileID: 2800000, guid: 82e18e0b2baf421a822d43fbd6533002, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -13516,7 +13516,7 @@ MonoBehaviour:
   panel: {fileID: 1672017977}
   infoCan: {fileID: 416708478}
   infoStr: 
-  info: {fileID: 1135091692}
+  info: {fileID: 549729870}
 --- !u!114 &1672017979
 MonoBehaviour:
   m_ObjectHideFlags: 0
