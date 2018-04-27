@@ -35,7 +35,7 @@ public class WhoAmIServer: NetworkBehaviour {
         NetworkServer.RegisterHandler(MsgType.Connect, OnConnected);
         NetworkServer.RegisterHandler(MsgType.AddPlayer, ConnectToLobby);
         NetworkServer.RegisterHandler(MsgType.Owner, CreateLobby);
-        NetworkServer.RegisterHandler(MsgType.UpdateVars, CheckGuess);
+        NetworkServer.RegisterHandler(MsgType.UpdateVars, BroadCastPlayerFinished);
     }
 
     public void CreateLobby(NetworkMessage netMsg) {
@@ -48,8 +48,9 @@ public class WhoAmIServer: NetworkBehaviour {
     public void ConnectToLobby(NetworkMessage netMsg) {
         StringMessage msg = netMsg.ReadMessage<StringMessage>();
         GameLobby lobby = GameLobby.Instance;
-        Debug.Log("Test");
-        lobby.RegisterPlayer(msg.value);
+        Player player = lobby.CreatePlayer(msg.value);
+        lobby.RegisterPlayer(player);
+        SendMessageToClient(netMsg, MsgType.SpawnFinished, player.Number + "");
         if(lobby.Size == lobby.Players.Count) {
             BroadCastReady();
         } else {
@@ -90,6 +91,12 @@ public class WhoAmIServer: NetworkBehaviour {
 
     public void StartGame() {
         BroadCastMessage(MsgType.LobbySceneLoaded, "Start");
+    }
+
+    public void BroadCastPlayerFinished(NetworkMessage netMsg) {
+        StringMessage message = netMsg.ReadMessage<StringMessage>();
+        int id = Int32.Parse(message.value);
+
     }
 
 }

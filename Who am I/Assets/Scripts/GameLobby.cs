@@ -46,12 +46,12 @@ public class GameLobby {// : MonoBehaviour {
         }
     }
 
-    public void RegisterPlayer(string username) {
-        Debug.Log("Registered player: " + username);
-        players.Add(CreatePlayer(username));
+    public void RegisterPlayer(Player player) {
+        Debug.Log("Registered player: " + player.Username);
+        players.Add(player);
     }
 
-    private Player CreatePlayer(string username) {
+    public Player CreatePlayer(string username) {
         this.CurrentPlayerCount += 1;
         return new Player(this.CurrentPlayerCount, username);
     }
