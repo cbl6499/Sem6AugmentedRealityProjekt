@@ -22,6 +22,7 @@ public class WhoAmIServer : NetworkBehaviour {
     private short lobbyReadyToBegin = 326;
     private short playerGuessedRight = 325;
     private short resultMessage = 324;
+    private short faceAssigned = 323;
 
     public static WhoAmIServer Instance {
         get {
@@ -49,6 +50,7 @@ public class WhoAmIServer : NetworkBehaviour {
         NetworkServer.RegisterHandler(addPlayer, ConnectToLobby);
         NetworkServer.RegisterHandler(owner, CreateLobby);
         NetworkServer.RegisterHandler(updateVars, BroadCastPlayerFinished);
+        NetworkServer.RegisterHandler(faceAssigned, BroadCastFaceAssigned);
        // NetworkServer.RegisterHandler(MsgType.Connect, AcceptConnection);
     }
 
@@ -69,10 +71,15 @@ public class WhoAmIServer : NetworkBehaviour {
         lobby.RegisterPlayer(player);
         SendMessageToClient(netMsg, spawnFinished, player.Number + "");
         if (lobby.Size == lobby.Players.Count) {
+            BroadCastConnectedPlayer();
             BroadCastReady();
         } else {
             BroadCastConnectedPlayer();
         }
+    }
+
+    public void BroadCastFaceAssigned(NetworkMessage netMsg) {
+        BroadCastMessage(faceAssigned, netMsg.ReadMessage<StringMessage>().value);
     }
 
     public void BroadCastReady() {

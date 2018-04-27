@@ -25,6 +25,7 @@ public class WhoAmIClient : NetworkBehaviour {
     private short lobbyReadyToBegin = 326;
     private short playerGuessedRight = 325;
     private short resultMessage = 324;
+    private short faceAssigned = 323;
 
     public int Port { get; set; }
     public string HostAddress { get; set; }
@@ -51,9 +52,39 @@ public class WhoAmIClient : NetworkBehaviour {
         this.MyClient.RegisterHandler(spawnFinished, SetLocalClient);
         this.MyClient.RegisterHandler(updateVars, GameWon);
         this.MyClient.RegisterHandler(lobbyReadyToBegin, LobbyReady);
+        this.MyClient.RegisterHandler(faceAssigned, AssignFaceToPlayer);
         // this.MyClient.RegisterHandler(MsgType.Owner, SetOwner);
 
         this.Connect();
+    }
+
+    public void AssignFaceToPlayer(NetworkMessage netMsg) {
+        string msg = netMsg.ReadMessage<StringMessage>().value;
+        string[] data = msg.Split('|');
+
+        Player player = findPlayerById(Int32.Parse(data[0]));
+        if(player != null) {
+            player.Face = data[2];
+        }
+    }
+
+    public void AssignTask(NetworkMessage netMsg) {
+        string msg = netMsg.ReadMessage<StringMessage>().value;
+        int id = Int32.Parse(msg);
+        Player p = findPlayerById(id);
+        if(p != null) {
+            //start choosing face
+        }
+        myClient.Send(faceAssigned, new StringMessage(id+"|"+p.Face));
+    }
+
+    private Player findPlayerById(int id) {
+        foreach (Player player in playerList) {
+            if (player.Number == id) {
+                return player;
+            }
+        }
+        return null;
     }
 
     private void LobbyReady(NetworkMessage netMsg) {
