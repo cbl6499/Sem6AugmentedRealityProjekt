@@ -32,7 +32,7 @@ public class ReadInformations : MonoBehaviour {
 		info.text = information;
 
 
-		Debug.Log(person.getName());
+		Debug.Log(path);
 		reader.Close();
 	}
 

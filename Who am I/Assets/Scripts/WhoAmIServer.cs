@@ -19,6 +19,9 @@ public class WhoAmIServer : NetworkBehaviour {
     private short connect = 329;
     private short addPlayer = 328;
     private short ready = 327;
+    private short lobbyReadyToBegin = 326;
+    private short playerGuessedRight = 325;
+    private short resultMessage = 324;
 
     public static WhoAmIServer Instance {
         get {
@@ -73,7 +76,7 @@ public class WhoAmIServer : NetworkBehaviour {
     public void BroadCastReady() {
         GameLobby lobby = GameLobby.Instance;
         List<Player> players = lobby.Players;
-        BroadCastMessage(MsgType.LobbyReadyToBegin, "Ready");
+        BroadCastMessage(lobbyReadyToBegin, "Ready");
     }
 
     public void BroadCastConnectedPlayer() {
@@ -112,7 +115,7 @@ public class WhoAmIServer : NetworkBehaviour {
         if (p != null) {
             GameLobby.Instance.PlayersFinished++;
             p.AddPoints(GameLobby.Instance.Players.Count - GameLobby.Instance.PlayersFinished);
-            BroadCastMessage(MsgType.Highest, p.Number + "");
+            BroadCastMessage(playerGuessedRight, p.Number + "");
         }
     }
 
@@ -121,7 +124,7 @@ public class WhoAmIServer : NetworkBehaviour {
         foreach (Player p in GameLobby.Instance.Players) {
             result += p.Number + "|" + p.Points;
         }
-        BroadCastMessage(MsgType.InternalHighest, result);
+        BroadCastMessage(resultMessage, result);
     }
 
     private Player findPlayerById(int id) {

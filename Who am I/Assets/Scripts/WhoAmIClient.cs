@@ -23,6 +23,8 @@ public class WhoAmIClient : NetworkBehaviour {
     private short addPlayer = 328;
     private short ready = 327;
     private short lobbyReadyToBegin = 326;
+    private short playerGuessedRight = 325;
+    private short resultMessage = 324;
 
     public int Port { get; set; }
     public string HostAddress { get; set; }
