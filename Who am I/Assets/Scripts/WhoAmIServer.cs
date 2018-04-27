@@ -16,6 +16,9 @@ public class WhoAmIServer : NetworkBehaviour {
     private short updateVars = 332;
     private short spawnFinished = 331;
     private short syncList = 330;
+    private short connect = 329;
+    private short addPlayer = 328;
+    private short ready = 327;
 
     public static WhoAmIServer Instance {
         get {
@@ -37,8 +40,8 @@ public class WhoAmIServer : NetworkBehaviour {
         this.Port = 63210;
         this.HostAddress = Network.player.ipAddress;
         NetworkServer.Listen(this.Port);
-        NetworkServer.RegisterHandler(MsgType.Connect, OnConnected);
-        NetworkServer.RegisterHandler(MsgType.AddPlayer, ConnectToLobby);
+        NetworkServer.RegisterHandler(connect, OnConnected);
+        NetworkServer.RegisterHandler(addPlayer, ConnectToLobby);
         NetworkServer.RegisterHandler(owner, CreateLobby);
         NetworkServer.RegisterHandler(updateVars, BroadCastPlayerFinished);
     }

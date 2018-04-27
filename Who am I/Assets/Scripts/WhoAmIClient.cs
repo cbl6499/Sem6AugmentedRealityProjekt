@@ -19,6 +19,9 @@ public class WhoAmIClient : NetworkBehaviour {
     private short updateVars = 332;
     private short spawnFinished = 331;
     private short syncList = 330;
+    private short connect = 329;
+    private short addPlayer = 328;
+    private short ready = 327;
 
     public int Port { get; set; }
     public string HostAddress { get; set; }
@@ -39,9 +42,9 @@ public class WhoAmIClient : NetworkBehaviour {
 
     public void SetupClient() {
         this.MyClient = new NetworkClient();
-        this.MyClient.RegisterHandler(MsgType.Ready, OnReady);
+        this.MyClient.RegisterHandler(ready, OnReady);
         this.MyClient.RegisterHandler(syncList, SetPlayerList);
-        this.MyClient.RegisterHandler(MsgType.Connect, OnSuccessfulConnection);
+        this.MyClient.RegisterHandler(connect, OnSuccessfulConnection);
         this.MyClient.RegisterHandler(spawnFinished, SetLocalClient);
         this.MyClient.RegisterHandler(updateVars, GameWon);
         // this.MyClient.RegisterHandler(MsgType.Owner, SetOwner);
@@ -59,11 +62,11 @@ public class WhoAmIClient : NetworkBehaviour {
     }
 
     public void SendLobbyRegistration() {
-        this.MyClient.Send(MsgType.AddPlayer, new StringMessage(this.Username));
+        this.MyClient.Send(addPlayer, new StringMessage(this.Username));
     }
 
     public void SendReadyMessage() {
-        myClient.Send(MsgType.Ready, new StringMessage("Ready"));
+        myClient.Send(ready, new StringMessage("Ready"));
     }
 
     private void OnReady(NetworkMessage netMsg) {
