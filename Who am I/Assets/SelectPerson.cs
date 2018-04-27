@@ -93,6 +93,7 @@ public class SelectPerson : MonoBehaviour {
 		selectPlayerList.SetActive (false);
 		selectButton.SetActive (false);
 		infoCanvas.SetActive (true);
+        
 	}
 
 	public GameObject loadInformations(){

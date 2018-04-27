@@ -91,6 +91,7 @@ public class WhoAmIClient : NetworkBehaviour {
 
     private void LobbyReady(NetworkMessage netMsg) {
         Debug.Log("Lobby is Ready to begin!");
+        GameManager.Instance.StartGame();
         readyToGo = true;
     }
 
