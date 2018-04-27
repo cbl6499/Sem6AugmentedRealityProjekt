@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour {
     public GameObject serverPrefab;
     public GameObject clientPrefab;
 
+
     string username;
 
     void Start() {
@@ -29,9 +30,11 @@ public class GameManager : MonoBehaviour {
         connectMenu.SetActive(false);
         hostSettingMenu.SetActive(false);
         DontDestroyOnLoad(gameObject);
+
+        this.client = Instantiate(clientPrefab.GetComponent<WhoAmIClient>()); // WhoAmIClient.Instance;
+        this.server = Instantiate(serverPrefab.GetComponent<WhoAmIServer>());//WhoAmIServer.Instance;
+        this.client.SetupClient();
         
-        this.client = WhoAmIClient.Instance;
-        this.server = WhoAmIServer.Instance;
         DontDestroyOnLoad(client);
         DontDestroyOnLoad(server);
         DontDestroyOnLoad(serverPrefab);
@@ -97,6 +100,7 @@ public class GameManager : MonoBehaviour {
         try {
             client.Username = username;
             client.HostAddress = hostAddress;
+            this.hostPort = hostAddress;
             Debug.Log("I mad it to to send method " + username + " " + hostAddress + " Client:" + client.Username + " " + client.HostAddress);
             client.SetupClient();
             client.Connect();

@@ -167,7 +167,12 @@ public class WhoAmIClient : NetworkBehaviour {
 
     public void SendFaceSelectionToServer(int id, string face) {
         Debug.Log(id + " | " + face);
-        myClient.Send(faceAssigned, new StringMessage(id + "|" + face));
+        if(this.myClient == null) {
+            SetupClient();
+            Connect();
+        }
+        Debug.Log(this.myClient.hostPort);
+        this.myClient.Send(faceAssigned, new StringMessage(id + "|" + face));
     }
 
 }
