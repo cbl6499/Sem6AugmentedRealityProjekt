@@ -70,12 +70,12 @@ public class GameManager : MonoBehaviour {
         DontDestroyOnLoad(serverPrefab);
         DontDestroyOnLoad(clientPrefab);
         persons = new Dictionary<string, int>();
-        persons.Add("Person1Selection", 1);
-        persons.Add("Person2Selection", 2);
-        persons.Add("Person3Selection", 3);
-        persons.Add("Person4Selection", 4);
-        persons.Add("Person5Selection", 5);
-        persons.Add("Person6Selection", 6);
+        persons.Add("Person1Selection", 0);
+        persons.Add("Person2Selection", 1);
+        persons.Add("Person3Selection", 2);
+        persons.Add("Person4Selection", 3);
+        persons.Add("Person5Selection", 4);
+        persons.Add("Person6Selection", 5);
 
     }
 

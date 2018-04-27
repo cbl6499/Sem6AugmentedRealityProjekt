@@ -64,6 +64,7 @@ public class WhoAmIClient : NetworkBehaviour {
     public void AssignFaceToPlayer(NetworkMessage netMsg) {
         string msg = netMsg.ReadMessage<StringMessage>().value;
         string[] data = msg.Split('|');
+        Debug.Log(data[0] + " | " + data[1]);
         Player player = findPlayerById(Int32.Parse(data[0]));
         if(player != null) {
             Debug.Log(player.Username + " gets: " + data[1]);
