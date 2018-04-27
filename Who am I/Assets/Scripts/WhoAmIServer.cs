@@ -40,12 +40,16 @@ public class WhoAmIServer : NetworkBehaviour {
         this.Port = 63210;
         this.HostAddress = Network.player.ipAddress;
         NetworkServer.Listen(this.Port);
-        NetworkServer.RegisterHandler(connect, OnConnected);
+        NetworkServer.RegisterHandler(MsgType.Connect, OnConnected);
         NetworkServer.RegisterHandler(addPlayer, ConnectToLobby);
         NetworkServer.RegisterHandler(owner, CreateLobby);
         NetworkServer.RegisterHandler(updateVars, BroadCastPlayerFinished);
+       // NetworkServer.RegisterHandler(MsgType.Connect, AcceptConnection);
     }
 
+   /* public void AcceptConnection() {
+        OnConnected();
+    }*/
     public void CreateLobby(NetworkMessage netMsg) {
         StringMessage msg = netMsg.ReadMessage<StringMessage>();
         GameLobby lobby = GameLobby.Instance;
