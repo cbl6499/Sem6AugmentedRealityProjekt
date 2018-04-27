@@ -19,14 +19,6 @@ public class WhoAmIClient : NetworkBehaviour {
     public string HostAddress { get; set; }
     public string Username { get; set; }
 
-    void Start() {
-     //   SetupClient();
-    }
-
-    void Update() {
-
-    }
-
     public NetworkClient MyClient { get; set; }
     public static WhoAmIClient Instance {
         get {
