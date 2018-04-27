@@ -58,9 +58,7 @@ public class WhoAmIClient : NetworkBehaviour {
         this.MyClient.RegisterHandler(updateVars, GameWon);
         this.MyClient.RegisterHandler(lobbyReadyToBegin, LobbyReady);
         this.MyClient.RegisterHandler(faceAssigned, AssignFaceToPlayer);
-        // this.MyClient.RegisterHandler(MsgType.Owner, SetOwner);
 
-     //   this.Connect();
     }
 
     public void AssignFaceToPlayer(NetworkMessage netMsg) {

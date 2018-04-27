@@ -36,7 +36,7 @@ public class GameLobby {
 
     private GameLobby() {
         this.CurrentPlayerCount = 0;
-        this.Owner = CreatePlayer(Network.player.ipAddress);
+        //this.Owner = CreatePlayer(Network.player.ipAddress);
         this.Players = new List<Player>();
         this.Players.Add(this.Owner);
         this.playersFinished = 0;
@@ -44,21 +44,22 @@ public class GameLobby {
 
     public int PlayersFinished { get; set; }
 
-    public void SetOwner(string username) {
-        this.Owner = CreatePlayer(username);
-        if (!this.Players.Contains(this.Owner)) {
-            this.Players.Add(Owner);
-        }
+    public void SetOwner(Player player) {
+        this.Owner = player;
     }
 
     public void RegisterPlayer(Player player) {
         Debug.Log("Registered player: " + player.Username);
+        if(player.Number == 0) {
+            SetOwner(player);
+        }
         this.Players.Add(player);
     }
 
     public Player CreatePlayer(string username) {
+        Player p = new Player(this.CurrentPlayerCount, username);
         this.CurrentPlayerCount += 1;
-        return new Player(this.CurrentPlayerCount, username);
+        return p;
     }
 
     public void RemovePlayer(Player player) {
