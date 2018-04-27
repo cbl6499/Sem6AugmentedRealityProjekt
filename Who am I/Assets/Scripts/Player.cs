@@ -25,4 +25,11 @@ public class Player {
 
     public string Face { get; set; }
 
+    public bool Equals(Player player) {
+        if (this.number == player.Number && this.username == player.Username) {
+            return true;
+        }
+        return false;
+    }
+
 }
