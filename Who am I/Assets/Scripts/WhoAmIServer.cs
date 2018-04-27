@@ -32,7 +32,7 @@ public class WhoAmIServer: NetworkBehaviour {
         this.HostAddress = Network.player.ipAddress;
         NetworkServer.Listen(this.Port);
         GameLobby lobby = GameLobby.Instance;
-        lobby.SetOwner(/*"Diego1337",*/ "127.0.0.1");
+        lobby.SetOwner("Diego1337");
         NetworkServer.RegisterHandler(MsgType.Connect, OnConnected);
         NetworkServer.RegisterHandler(MsgType.AddPlayer, ConnectToLobby);
 
@@ -44,7 +44,7 @@ public class WhoAmIServer: NetworkBehaviour {
         Notification msg = netMsg.ReadMessage<Notification>();
         GameLobby lobby = GameLobby.Instance;
         Debug.Log("Test");
-        lobby.RegisterPlayer(msg.Message, msg.Ip);
+        lobby.RegisterPlayer(msg.Message);
         if(lobby.Size == lobby.Players.Count) {
             BroadCastReady();
         } else {
@@ -80,7 +80,7 @@ public class WhoAmIServer: NetworkBehaviour {
         Notification msg = netMsg.ReadMessage<Notification>();
         Notification answer = new Notification();
         answer.Message = text;
-        answer.Ip = msg.Ip;
+        //answer.Username = msg.Username;
         NetworkServer.SendToClient(netMsg.conn.connectionId, type, answer);
     }
 
@@ -93,12 +93,11 @@ public class WhoAmIServer: NetworkBehaviour {
         BroadCastMessage(MsgType.LobbySceneLoaded, "Start");
     }
 
-<<<<<<< HEAD
     private void CheckGuess(NetworkMessage netMsg)
     {
         Notification msg = netMsg.ReadMessage<Notification>();
         GameLobby gl = GameLobby.Instance;
-        Boolean guessResult = gl.CheckGuess(msg.ToString(), msg.Ip);
+        Boolean guessResult = gl.CheckGuess(msg.ToString());
         Notification answer = new Notification();
         answer.Message = guessResult.ToString();
         NetworkServer.SendToClient(netMsg.conn.connectionId, MsgType.UpdateVars ,answer);
@@ -115,7 +114,4 @@ public class WhoAmIServer: NetworkBehaviour {
 		
 	}
 
-
-=======
->>>>>>> 220dd66f7dec4fba4ac4a70dcfb92e6fcf04a331
 }

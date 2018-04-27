@@ -46,9 +46,9 @@ public class GameLobby {// : MonoBehaviour {
         }
     }
 
-    public void RegisterPlayer(string ip) {
-        Debug.Log("Registered player: ");
-        players.Add(CreatePlayer(ip));
+    public void RegisterPlayer(string username) {
+        Debug.Log("Registered player: " + username);
+        players.Add(CreatePlayer(username));
     }
 
     private Player CreatePlayer(string ip) {
@@ -88,10 +88,10 @@ public class GameLobby {// : MonoBehaviour {
         return null;
     }
 
-    internal bool CheckGuess(string face, string ip)
+    internal bool CheckGuess(string face)
     {
         Boolean result = false;
-        Player player = GetPlayerByIp(ip);
+        Player player = GetPlayerByIp("fuck you"/*ip)*/);
         if (player != null)
         {
             string playerFace = player.Face.ToUpper();

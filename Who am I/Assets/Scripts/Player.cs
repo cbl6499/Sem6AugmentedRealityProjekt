@@ -5,14 +5,16 @@ using UnityEngine;
 public class Player {// : MonoBehaviour {
 
     private int number;
-    private string ip;
+    //private string ip;
+    private string username;
     private string face;
 
-    public Player(int number, string ip) {
+    public Player(int number, string username) {
         this.Number = number;
-        this.Ip = ip;
+        this.Username = username;
     }
 
+    public string Username { get; set; }
     public int Number { get; set; }
 
     public string Ip { get; set; }
