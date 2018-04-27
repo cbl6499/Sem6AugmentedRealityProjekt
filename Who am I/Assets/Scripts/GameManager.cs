@@ -26,6 +26,13 @@ public class GameManager : MonoBehaviour {
 
     void Start() {
         Instance = this;
+
+        GameObject.Find("Player_1").SetActive(false);
+        GameObject.Find("Player_2").SetActive(false);
+        GameObject.Find("Player_3").SetActive(false);
+        GameObject.Find("Player_4").SetActive(false);
+        GameObject.Find("Player_5").SetActive(false);
+        GameObject.Find("Player_6").SetActive(false);
         serverMenu.SetActive(false);
         connectMenu.SetActive(false);
         hostSettingMenu.SetActive(false);
@@ -100,7 +107,6 @@ public class GameManager : MonoBehaviour {
         try {
             client.Username = username;
             client.HostAddress = hostAddress;
-            this.hostPort = hostAddress;
             Debug.Log("I mad it to to send method " + username + " " + hostAddress + " Client:" + client.Username + " " + client.HostAddress);
             client.SetupClient();
             client.Connect();
@@ -110,8 +116,16 @@ public class GameManager : MonoBehaviour {
     }
 
     public void StartGame() {
-        Debug.Log("sceneName to load: 2D_Scene");
-        SceneManager.LoadScene("2D_Scene");
+        connectMenu.SetActive(false);
+        serverMenu.SetActive(false);
+
+        GameObject.Find("Player_1").SetActive(true);
+        GameObject.Find("Player_2").SetActive(true);
+        GameObject.Find("Player_3").SetActive(true);
+        GameObject.Find("Player_4").SetActive(true);
+        GameObject.Find("Player_5").SetActive(true);
+        GameObject.Find("Player_6").SetActive(true);
+
     }
 
     public void GuessButtonClick() {
