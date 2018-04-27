@@ -12,6 +12,11 @@ public class WhoAmIServer : NetworkBehaviour {
     private string hostAddress;
     private static WhoAmIServer instance;
 
+    private short owner = 333;
+    private short updateVars = 332;
+    private short spawnFinished = 331;
+
+
     public static WhoAmIServer Instance {
         get {
             if (instance == null) {
@@ -34,15 +39,15 @@ public class WhoAmIServer : NetworkBehaviour {
         NetworkServer.Listen(this.Port);
         NetworkServer.RegisterHandler(MsgType.Connect, OnConnected);
         NetworkServer.RegisterHandler(MsgType.AddPlayer, ConnectToLobby);
-        NetworkServer.RegisterHandler(MsgType.Owner, CreateLobby);
-        NetworkServer.RegisterHandler(MsgType.UpdateVars, BroadCastPlayerFinished);
+        NetworkServer.RegisterHandler(owner, CreateLobby);
+        NetworkServer.RegisterHandler(updateVars, BroadCastPlayerFinished);
     }
 
     public void CreateLobby(NetworkMessage netMsg) {
         StringMessage msg = netMsg.ReadMessage<StringMessage>();
         GameLobby lobby = GameLobby.Instance;
         lobby.SetOwner(msg.value);
-        SendMessageToClient(netMsg, MsgType.Owner, "Lobby created");
+        SendMessageToClient(netMsg, owner, "Lobby created");
     }
 
     public void ConnectToLobby(NetworkMessage netMsg) {
@@ -50,7 +55,7 @@ public class WhoAmIServer : NetworkBehaviour {
         GameLobby lobby = GameLobby.Instance;
         Player player = lobby.CreatePlayer(msg.value);
         lobby.RegisterPlayer(player);
-        SendMessageToClient(netMsg, MsgType.SpawnFinished, player.Number + "");
+        SendMessageToClient(netMsg, spawnFinished, player.Number + "");
         if (lobby.Size == lobby.Players.Count) {
             BroadCastReady();
         } else {
