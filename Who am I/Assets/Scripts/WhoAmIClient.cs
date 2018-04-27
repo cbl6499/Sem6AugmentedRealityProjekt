@@ -66,12 +66,13 @@ public class WhoAmIClient : NetworkBehaviour {
         string[] data = msg.Split('|');
         Debug.Log(data[0] + " | " + data[1]);
         Player player = findPlayerById(Int32.Parse(data[0]));
-        if(player != null) {
+        if (player != null) {
             Debug.Log(player.Username + " gets: " + data[1]);
             player.Face = data[1];
             GameManager.Instance.SetFaceForPerson(player);
+        } else {
+            Debug.Log("Player not found");
         }
-        Debug.Log("Player not found");
     }
 
     private Player findPlayerById(int id) {

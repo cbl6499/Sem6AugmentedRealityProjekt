@@ -195,42 +195,46 @@ public class GameManager : MonoBehaviour {
                 personName = name;
             }
         }
+
+        Debug.Log("Component to find: " + player.Face);
         switch (player.Number + 1) {
             case 1:
-                player_1.GetComponent(player.Face).gameObject.SetActive(true);
-                player_1.GetComponent("PersonSelect").gameObject.SetActive(false);
-                player_1.GetComponent("SelectButton").gameObject.SetActive(false);
-                player_1.GetComponent("InfoCanvas").gameObject.SetActive(true);
+                //player_1.transform.Find(player.Face).gameObject.SetActive(true);
+                player_1.transform.Find(player.Face).gameObject.SetActive(true);
+                player_1.transform.Find("Canvas").transform.Find("PersonSelect").gameObject.SetActive(false);
+                player_1.transform.Find("Canvas").transform.Find("SelectButton").gameObject.SetActive(false);
+                player_1.transform.Find("InfoCanvas").gameObject.SetActive(true);
                 break;
             case 2:
-                player_2.GetComponent(player.Face).gameObject.SetActive(true);
-                player_2.GetComponent("PersonSelect").gameObject.SetActive(false);
-                player_2.GetComponent("SelectButton").gameObject.SetActive(false);
-                player_2.GetComponent("InfoCanvas").gameObject.SetActive(true);
+                player_2.transform.Find(player.Face).gameObject.SetActive(true);
+                player_2.transform.Find("Canvas").transform.Find("PersonSelect").gameObject.SetActive(false);
+                player_2.transform.Find("Canvas").transform.Find("SelectButton").gameObject.SetActive(false);
+                player_2.transform.Find("InfoCanvas").gameObject.SetActive(true);
                 break;
             case 3:
-                player_3.GetComponent(player.Face).gameObject.SetActive(true);
-                player_3.GetComponent("PersonSelect").gameObject.SetActive(false);
-                player_3.GetComponent("SelectButton").gameObject.SetActive(false);
-                player_3.GetComponent("InfoCanvas").gameObject.SetActive(true);
+              //  Debug.Log("case3 +"+ player.Face+"+");
+                player_3.transform.Find(player.Face).gameObject.SetActive(true);
+                player_3.transform.Find("Canvas").transform.Find("PersonSelect").gameObject.SetActive(false);
+                player_3.transform.Find("Canvas").transform.Find("SelectButton").gameObject.SetActive(false);
+                player_3.transform.Find("InfoCanvas").gameObject.SetActive(true);
                 break;
             case 4:
-                player_4.GetComponent(player.Face).gameObject.SetActive(true);
-                player_4.GetComponent("PersonSelect").gameObject.SetActive(false);
-                player_4.GetComponent("SelectButton").gameObject.SetActive(false);
-                player_4.GetComponent("InfoCanvas").gameObject.SetActive(true);
+                player_4.transform.Find(player.Face).gameObject.SetActive(true);
+                player_4.transform.Find("Canvas").transform.Find("PersonSelect").gameObject.SetActive(false);
+                player_4.transform.Find("Canvas").transform.Find("SelectButton").gameObject.SetActive(false);
+                player_4.transform.Find("InfoCanvas").gameObject.SetActive(true);
                 break;
             case 5:
-                player_5.GetComponent(player.Face).gameObject.SetActive(true);
-                player_5.GetComponent("PersonSelect").gameObject.SetActive(false);
-                player_5.GetComponent("SelectButton").gameObject.SetActive(false);
-                player_5.GetComponent("InfoCanvas").gameObject.SetActive(true);
+                player_5.transform.Find(player.Face).gameObject.SetActive(true);
+                player_5.transform.Find("Canvas").transform.Find("PersonSelect").gameObject.SetActive(false);
+                player_5.transform.Find("Canvas").transform.Find("SelectButton").gameObject.SetActive(false);
+                player_5.transform.Find("InfoCanvas").gameObject.SetActive(true);
                 break;
             case 6:
-                player_6.GetComponent(player.Face).gameObject.SetActive(true);
-                player_6.GetComponent("PersonSelect").gameObject.SetActive(false);
-                player_6.GetComponent("SelectButton").gameObject.SetActive(false);
-                player_6.GetComponent("InfoCanvas").gameObject.SetActive(true);
+                player_6.transform.Find(player.Face).gameObject.SetActive(true);
+                player_6.transform.Find("Canvas").transform.Find("PersonSelect").gameObject.SetActive(false);
+                player_6.transform.Find("Canvas").transform.Find("SelectButton").gameObject.SetActive(false);
+                player_6.transform.Find("InfoCanvas").gameObject.SetActive(true);
                 break;
         }
         
