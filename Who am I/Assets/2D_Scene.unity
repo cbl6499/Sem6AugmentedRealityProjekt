@@ -2004,6 +2004,12 @@ MonoBehaviour:
     type: 2}
   clientPrefab: {fileID: 1209068005187220, guid: 2fa20dea168f49d4c8d800a53f798aec,
     type: 2}
+  player_1: {fileID: 1109985613}
+  player_2: {fileID: 2065945135}
+  player_3: {fileID: 2110428200}
+  player_4: {fileID: 1472622825}
+  player_5: {fileID: 1848162167}
+  player_6: {fileID: 583836784}
 --- !u!4 &251660880
 Transform:
   m_ObjectHideFlags: 0
@@ -4877,7 +4883,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 85.685}
+  m_AnchoredPosition: {x: 0.00012207031, y: 85.685}
   m_SizeDelta: {x: 0, y: 171.43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &526028797
@@ -20040,7 +20046,7 @@ Transform:
   - {fileID: 2012426628}
   - {fileID: 1531876111}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2074862085
 GameObject:
@@ -20625,7 +20631,7 @@ Transform:
   - {fileID: 158794975}
   - {fileID: 222029823}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2115730536
 GameObject:

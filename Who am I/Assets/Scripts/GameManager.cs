@@ -21,26 +21,49 @@ public class GameManager : MonoBehaviour {
     public GameObject serverPrefab;
     public GameObject clientPrefab;
 
+    public GameObject player_1;
+    public GameObject player_2;
+    public GameObject player_3;
+    public GameObject player_4;
+    public GameObject player_5;
+    public GameObject player_6;
+
 
     string username;
 
     void Start() {
         Instance = this;
-
+        /*player_1 = GameObject.Find("Player_1");
+        player_2 = GameObject.Find("Player_2");
+        player_3;
+        player_4;
+        player_5;
+        player_6;
         GameObject.Find("Player_1").SetActive(false);
         GameObject.Find("Player_2").SetActive(false);
         GameObject.Find("Player_3").SetActive(false);
         GameObject.Find("Player_4").SetActive(false);
         GameObject.Find("Player_5").SetActive(false);
-        GameObject.Find("Player_6").SetActive(false);
+        GameObject.Find("Player_6").SetActive(false);*/
+
+        player_1.SetActive(false);
+        player_2.SetActive(false);
+        player_3.SetActive(false);
+        player_4.SetActive(false);
+        player_5.SetActive(false);
+        player_6.SetActive(false);
+
         serverMenu.SetActive(false);
         connectMenu.SetActive(false);
         hostSettingMenu.SetActive(false);
+
+        this.client = WhoAmIClient.Instance;//Instantiate(clientPrefab.GetComponent<WhoAmIClient>()); // WhoAmIClient.Instance;
+        this.server = WhoAmIServer.Instance;//Instantiate(serverPrefab.GetComponent<WhoAmIServer>());//WhoAmIServer.Instance;
+        
+
         DontDestroyOnLoad(gameObject);
 
-        this.client = Instantiate(clientPrefab.GetComponent<WhoAmIClient>()); // WhoAmIClient.Instance;
-        this.server = Instantiate(serverPrefab.GetComponent<WhoAmIServer>());//WhoAmIServer.Instance;
-        this.client.SetupClient();
+     
         
         DontDestroyOnLoad(client);
         DontDestroyOnLoad(server);
@@ -81,7 +104,7 @@ public class GameManager : MonoBehaviour {
 
     public void CreateGameButton() {
         int amount = Convert.ToInt32(GameObject.Find("PlayerAmount").GetComponent<InputField>().text);
-        if (amount == null) {
+        if (amount == 0) {
             amount = 4;
         } else if (amount > 6) {
             GameManager.print("Lobby would be to big!");
@@ -118,13 +141,14 @@ public class GameManager : MonoBehaviour {
     public void StartGame() {
         connectMenu.SetActive(false);
         serverMenu.SetActive(false);
+        
 
-        GameObject.Find("Player_1").SetActive(true);
-        GameObject.Find("Player_2").SetActive(true);
-        GameObject.Find("Player_3").SetActive(true);
-        GameObject.Find("Player_4").SetActive(true);
-        GameObject.Find("Player_5").SetActive(true);
-        GameObject.Find("Player_6").SetActive(true);
+        player_1.SetActive(true);
+        player_2.SetActive(true);
+        player_3.SetActive(true);
+        player_4.SetActive(true);
+        player_5.SetActive(true);
+        player_6.SetActive(true);
 
     }
 
