@@ -27,6 +27,13 @@ public class GameManager : MonoBehaviour {
         DontDestroyOnLoad(gameObject);
     }
 
+    void Update() {
+        if (WhoAmIClient.Instance.ReadyToGo) {
+            WhoAmIClient.Instance.ReadyToGo = false;
+            StartGame();
+        }   
+    }
+
     public void ConnectButton() {
         username = GameObject.Find("Username").GetComponent<InputField>().text;
         if (username == "") {
@@ -88,7 +95,7 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    public void OnGameStart() {
+    public void StartGame() {
         Debug.Log("sceneName to load: 2D_Scene");
         SceneManager.LoadScene("2D_Scene");
     }

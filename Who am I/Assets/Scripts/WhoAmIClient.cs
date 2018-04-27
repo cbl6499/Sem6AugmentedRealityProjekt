@@ -14,6 +14,7 @@ public class WhoAmIClient : NetworkBehaviour {
     private static WhoAmIClient instance;
     private int localClient;
     private List<Player> playerList = new List<Player>();
+    private bool readyToGo = false;
 
     private short owner = 333;
     private short updateVars = 332;
@@ -31,6 +32,7 @@ public class WhoAmIClient : NetworkBehaviour {
     public string HostAddress { get; set; }
     public string Username { get; set; }
 
+    public bool ReadyToGo { get; set; }
     public NetworkClient MyClient { get; set; }
     public static WhoAmIClient Instance {
         get {
@@ -89,6 +91,7 @@ public class WhoAmIClient : NetworkBehaviour {
 
     private void LobbyReady(NetworkMessage netMsg) {
         Debug.Log("Lobby is Ready to begin!");
+        readyToGo = true;
     }
 
     private void OnSuccessfulConnection(NetworkMessage netMsg) {
