@@ -60,7 +60,7 @@ public class WhoAmIServer : NetworkBehaviour {
     public void CreateLobby(NetworkMessage netMsg) {
         StringMessage msg = netMsg.ReadMessage<StringMessage>();
         GameLobby lobby = GameLobby.Instance;
-        lobby.SetOwner(msg.value);
+        //lobby.SetOwner(msg.value);
         SendMessageToClient(netMsg, owner, "Lobby created");
     }
 
