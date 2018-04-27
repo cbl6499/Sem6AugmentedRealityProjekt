@@ -22,6 +22,7 @@ public class WhoAmIClient : NetworkBehaviour {
     private short connect = 329;
     private short addPlayer = 328;
     private short ready = 327;
+    private short lobbyReadyToBegin = 326;
 
     public int Port { get; set; }
     public string HostAddress { get; set; }
@@ -47,9 +48,14 @@ public class WhoAmIClient : NetworkBehaviour {
         this.MyClient.RegisterHandler(connect, OnSuccessfulConnection);
         this.MyClient.RegisterHandler(spawnFinished, SetLocalClient);
         this.MyClient.RegisterHandler(updateVars, GameWon);
+        this.MyClient.RegisterHandler(lobbyReadyToBegin, LobbyReady);
         // this.MyClient.RegisterHandler(MsgType.Owner, SetOwner);
 
         this.Connect();
+    }
+
+    private void LobbyReady(NetworkMessage netMsg) {
+        Debug.Log("Lobby is Ready to begin!");
     }
 
     private void OnSuccessfulConnection(NetworkMessage netMsg) {
