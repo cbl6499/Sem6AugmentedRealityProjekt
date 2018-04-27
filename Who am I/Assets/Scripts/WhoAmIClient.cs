@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.Networking.NetworkSystem;
@@ -11,6 +12,8 @@ public class WhoAmIClient : NetworkBehaviour {
     private string username;
     private int port = 63210;
     private static WhoAmIClient instance;
+    private int localClient;
+    private List<Player>playerList = new List<Player>();
 
     public int Port { get; set; }
     public string HostAddress { get; set; }
@@ -81,16 +84,24 @@ public class WhoAmIClient : NetworkBehaviour {
         return new StringMessage(username);
     }
 
-    private void SendGuess(string guess)
+    private void SendCorrectGuess()
     {
-        StringMessage msg = new StringMessage();
-        msg.value = guess;
-        myClient.Send(MsgType.UpdateVars, msg);
+        myClient.Send(MsgType.UpdateVars, new StringMessage("Success"));
     }
 
     private void GameWon(NetworkMessage netMsg)
     {
         StringMessage msg = netMsg.ReadMessage<StringMessage>();
         Debug.Log("Guess was: " + msg.value);
+    }
+
+    public bool CheckGuess(string face) {
+        if (playerList[localClient].Face.ToLower() == face.ToLower()) {
+            SendCorrectGuess();
+            Debug.Log("Guess was Correct");
+            return true;
+        }
+        Debug.Log("The Guess was not correct!");
+        return false;
     }
 }

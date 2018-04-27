@@ -68,8 +68,7 @@ public class GameLobby {// : MonoBehaviour {
     }
     */
 
-    private Player GetPlayerById(int id)
-    {
+    private Player GetPlayerById(int id) {
         foreach (Player p in players)
         {
             if (p.Number == id)
@@ -78,21 +77,5 @@ public class GameLobby {// : MonoBehaviour {
             }
         }
         return null;
-    }
-
-    internal bool CheckGuess(string face)
-    {
-        Boolean result = false;
-        Player player = GetPlayerById(0);
-        if (player != null)
-        {
-            string playerFace = player.Face.ToUpper();
-            if (face.ToUpper().Equals(playerFace))
-            {
-                result = true;
-            }
-        }
-        //TODO implemetn if player not found
-        return result;
     }
 }
