@@ -23,6 +23,7 @@ public class GameLobby {
         get {
             if (instance == null) {
                 instance = new GameLobby();
+                instance.Players = new List<Player>();
             }
             return instance;
         }
@@ -52,7 +53,7 @@ public class GameLobby {
 
     public void RegisterPlayer(Player player) {
         Debug.Log("Registered player: " + player.Username);
-        players.Add(player);
+        this.Players.Add(player);
     }
 
     public Player CreatePlayer(string username) {

@@ -93,7 +93,6 @@ public class WhoAmIServer : NetworkBehaviour {
     }
 
     private void SendMessageToClient(NetworkMessage netMsg, short type, string text) {
-        StringMessage msg = netMsg.ReadMessage<StringMessage>();
         NetworkServer.SendToClient(netMsg.conn.connectionId, type, new StringMessage(text));
     }
 
