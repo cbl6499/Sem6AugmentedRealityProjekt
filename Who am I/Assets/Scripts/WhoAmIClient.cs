@@ -2,6 +2,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.Networking.NetworkSystem;
 
 public class WhoAmIClient : NetworkBehaviour {
 
@@ -48,7 +49,7 @@ public class WhoAmIClient : NetworkBehaviour {
     }
 
     private void OnSuccessfulConnection(NetworkMessage netMsg) {
-        MessageBase msgBase = netMsg.ReadMessage<Notification>();
+        StringMessage msgBase = netMsg.ReadMessage<StringMessage>();
         Debug.Log("hell yeah " + netMsg.conn.address);
         this.SendLobbyRegistration();
     }
@@ -59,37 +60,37 @@ public class WhoAmIClient : NetworkBehaviour {
     }
 
     public void SendLobbyRegistration() {
-        this.MyClient.Send(MsgType.AddPlayer, new Notification(this.Username));
+        this.MyClient.Send(MsgType.AddPlayer, new StringMessage(this.Username));
     }
 
     public void SendReadyMessage() {
-        myClient.Send(MsgType.Ready, new Notification("Ready"));
+        myClient.Send(MsgType.Ready, new StringMessage("Ready"));
     }
 
     private void OnReady(NetworkMessage netMsg) {
-        Notification msg = netMsg.ReadMessage<Notification>();
+        StringMessage msg = netMsg.ReadMessage<StringMessage>();
         Debug.Log("Yay, everyone is ready");
     }
 
     private void PrintPlayerList(NetworkMessage netMsg) {
-        Notification msg = netMsg.ReadMessage<Notification>();
-        Debug.Log("Yay, " + msg.Message + " are in the lobby");
+        StringMessage msg = netMsg.ReadMessage<StringMessage>();
+        Debug.Log("Yay, " + msg.value + " are in the lobby");
     }
 
-    private Notification CreateConnectionMessage(string username, string userIp) {
-        return new Notification(username);
+    private StringMessage CreateConnectionMessage(string username, string userIp) {
+        return new StringMessage(username);
     }
 
     private void SendGuess(string guess)
     {
-        Notification msg = new Notification();
-        msg.Message = guess;
+        StringMessage msg = new StringMessage();
+        msg.value = guess;
         myClient.Send(MsgType.UpdateVars, msg);
     }
 
     private void GameWon(NetworkMessage netMsg)
     {
-        Notification msg = netMsg.ReadMessage<Notification>();
-        Debug.Log("Guess was: " + msg.Message);
+        StringMessage msg = netMsg.ReadMessage<StringMessage>();
+        Debug.Log("Guess was: " + msg.value);
     }
 }

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.Networking.NetworkSystem;
 
 public class WhoAmIServer: NetworkBehaviour {
 
@@ -41,10 +42,10 @@ public class WhoAmIServer: NetworkBehaviour {
     }
 
     public void ConnectToLobby(NetworkMessage netMsg) {
-        Notification msg = netMsg.ReadMessage<Notification>();
+        StringMessage msg = netMsg.ReadMessage<StringMessage>();
         GameLobby lobby = GameLobby.Instance;
         Debug.Log("Test");
-        lobby.RegisterPlayer(msg.Message);
+        lobby.RegisterPlayer(msg.value);
         if(lobby.Size == lobby.Players.Count) {
             BroadCastReady();
         } else {
@@ -71,22 +72,20 @@ public class WhoAmIServer: NetworkBehaviour {
     private void BroadCastMessage(short type, string message) {
         GameLobby lobby = GameLobby.Instance;
         List<Player> playerList = lobby.Players;
-        Notification msg = new Notification();
-        msg.Message = message;
+        StringMessage msg = new StringMessage();
+        msg.value = message;
         NetworkServer.SendToAll(type, msg);
     }
 
     private void SendMessageToClient(NetworkMessage netMsg, short type, string text) {
-        Notification msg = netMsg.ReadMessage<Notification>();
-        Notification answer = new Notification();
-        answer.Message = text;
-        //answer.Username = msg.Username;
+        StringMessage msg = netMsg.ReadMessage<StringMessage>();
+        StringMessage answer = new StringMessage();
+        answer.value = text;
         NetworkServer.SendToClient(netMsg.conn.connectionId, type, answer);
     }
 
     private void OnConnected(NetworkMessage netMsg) {
         SendMessageToClient(netMsg, MsgType.Connect, "Success");
-        //throw new NotImplementedException();
     }
 
     public void StartGame() {
@@ -95,12 +94,12 @@ public class WhoAmIServer: NetworkBehaviour {
 
     private void CheckGuess(NetworkMessage netMsg)
     {
-        Notification msg = netMsg.ReadMessage<Notification>();
+        StringMessage msg = netMsg.ReadMessage<StringMessage>();
         GameLobby gl = GameLobby.Instance;
-        Boolean guessResult = gl.CheckGuess(msg.ToString());
-        Notification answer = new Notification();
-        answer.Message = guessResult.ToString();
-        NetworkServer.SendToClient(netMsg.conn.connectionId, MsgType.UpdateVars ,answer);
+        Boolean guessResult = gl.CheckGuess(msg.value);
+        StringMessage answer = new StringMessage();
+        answer.value = guessResult.ToString();
+        NetworkServer.SendToClient(netMsg.conn.connectionId, MsgType.UpdateVars, answer);
     }
 
     // Use this for initialization
