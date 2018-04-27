@@ -51,36 +51,28 @@ public class GameLobby {// : MonoBehaviour {
         players.Add(CreatePlayer(username));
     }
 
-    private Player CreatePlayer(string ip) {
+    private Player CreatePlayer(string username) {
         this.CurrentPlayerCount += 1;
-        return new Player(this.CurrentPlayerCount, ip);
+        return new Player(this.CurrentPlayerCount, username);
     }
 
     public void RemovePlayer(Player player) {
         players.Remove(player);
         this.CurrentPlayerCount -= 1;
     }
-/*
+    
+    /*
     public void StartGame() {
         NetworkHandler handler = NetworkHandler.Instance;
         handler.BroadCastReady();
     }
     */
-    // Use this for initialization
-    void Start () {
-        
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
-    private Player GetPlayerByIp(string ip)
+    private Player GetPlayerById(int id)
     {
         foreach (Player p in players)
         {
-            if (p.Ip.Equals(ip))
+            if (p.Number == id)
             {
                 return p;
             }
@@ -91,7 +83,7 @@ public class GameLobby {// : MonoBehaviour {
     internal bool CheckGuess(string face)
     {
         Boolean result = false;
-        Player player = GetPlayerByIp("fuck you"/*ip)*/);
+        Player player = GetPlayerById(0);
         if (player != null)
         {
             string playerFace = player.Face.ToUpper();
