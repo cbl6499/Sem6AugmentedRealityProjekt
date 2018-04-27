@@ -72,16 +72,12 @@ public class WhoAmIServer: NetworkBehaviour {
     private void BroadCastMessage(short type, string message) {
         GameLobby lobby = GameLobby.Instance;
         List<Player> playerList = lobby.Players;
-        StringMessage msg = new StringMessage();
-        msg.value = message;
-        NetworkServer.SendToAll(type, msg);
+        NetworkServer.SendToAll(type, new StringMessage(message));
     }
 
     private void SendMessageToClient(NetworkMessage netMsg, short type, string text) {
         StringMessage msg = netMsg.ReadMessage<StringMessage>();
-        StringMessage answer = new StringMessage();
-        answer.value = text;
-        NetworkServer.SendToClient(netMsg.conn.connectionId, type, answer);
+        NetworkServer.SendToClient(netMsg.conn.connectionId, type, new StringMessage(text));
     }
 
     private void OnConnected(NetworkMessage netMsg) {
@@ -102,15 +98,5 @@ public class WhoAmIServer: NetworkBehaviour {
         NetworkServer.SendToClient(netMsg.conn.connectionId, MsgType.UpdateVars, answer);
     }
 
-    // Use this for initialization
-    void Start () {
-        this.Port = 6321;
-        SetupHost();
-    }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
 }
