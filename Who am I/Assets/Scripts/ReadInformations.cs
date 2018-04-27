@@ -17,10 +17,8 @@ public class ReadInformations : MonoBehaviour {
 	void Start () {
 		//activePerson = person.loadInformations ();
 
-		TextAsset infos = Resources.Load(person.getName()) as TextAsset;
-
 		//Read the text from directly from the test.txt file
-
+		TextAsset infos = Resources.Load(person.getName()) as TextAsset;
 		info.text = infos.text.ToString ();
 	}
 

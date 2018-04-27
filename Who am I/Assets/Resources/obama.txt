@@ -1,9 +1,7 @@
-Bürgerlicher Name: Barack Obama
+Name: Barack Obama
 Geburtsdatum: 04.08.1961
 Geburtsort: Honolulu, Hawaii (USA)
-Nationalität: us-amerikanisch
-Sternzeichen: Löwe
-Körpergröße: 1,86m
+Land: us-amerikanisch
 Hautfarbe: schwarz
 Augenfarbe: dunkelbraun
 Religion: Christ

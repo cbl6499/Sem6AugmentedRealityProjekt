@@ -3,6 +3,6 @@ Beruf: Zauberer
 Besondere Merkmale: Blitznarbe auf der Stirn
 Haustier: Eule Hedwig
 Geburtstag: 31.07.1980
-Augenfarbe: Grün
+Augenfarbe: Gruen
 Haarfarbe:Schwarz
 Real: nein

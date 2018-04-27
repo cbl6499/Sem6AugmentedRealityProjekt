@@ -1,10 +1,7 @@
 Name: Gandalf
 Beruf: Zauberer
 Real: nein
-Besondere Merkmale: altert nicht, grau/weiß
-Haustier: Schattenfell 
+Besondere Merkmale: altert nicht, grau oder weiss
+Haustier: Schattenfell
 Geburtstag: Am Anfang aller Tage
-Augenfarbe: Grün
 Schwert: Glamdril
-Haarfarbe: Schwarz
-Real: nein
