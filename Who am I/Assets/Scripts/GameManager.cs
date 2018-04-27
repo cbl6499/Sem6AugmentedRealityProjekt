@@ -16,16 +16,16 @@ public class GameManager : MonoBehaviour {
 
     public GameObject serverPrefab;
     public GameObject clientPrefab;
-    
+
     string username;
 
-    void Start () {
+    void Start() {
         Instance = this;
         serverMenu.SetActive(false);
         connectMenu.SetActive(false);
         hostSettingMenu.SetActive(false);
         DontDestroyOnLoad(gameObject);
-	}
+    }
 
     public void ConnectButton() {
         username = GameObject.Find("Username").GetComponent<InputField>().text;
@@ -44,10 +44,10 @@ public class GameManager : MonoBehaviour {
         if (username == "") {
             GameManager.print("Username was empty");
             username = "testUser";
-        } else {            
+        } else {
             mainMenu.SetActive(false);
             hostSettingMenu.SetActive(true);
-        }        
+        }
     }
 
     public void CreateGameButton() {
@@ -61,11 +61,11 @@ public class GameManager : MonoBehaviour {
             WhoAmIServer s = WhoAmIServer.Instance; //Instantiate(serverPrefab.GetComponent<WhoAmIServer>());
             WhoAmIClient c = WhoAmIClient.Instance;//Instantiate(clientPrefab.GetComponent<WhoAmIClient>());
             c.Username = username;
-            c.HostAddress = "127.0.0.1";            
+            c.HostAddress = "127.0.0.1";
             s.SetupHost();
             c.SetupClient();
 
-    
+            Debug.Log("I made it to send method " + c.Username + " " + c.HostAddress);
 
             serverMenu.SetActive(true);
             hostSettingMenu.SetActive(false);
@@ -81,14 +81,14 @@ public class GameManager : MonoBehaviour {
             WhoAmIClient c = WhoAmIClient.Instance;// Instantiate(clientPrefab.GetComponent<WhoAmIClient>());
             c.Username = username;
             c.HostAddress = hostAddress;
-            Debug.Log("I mad it to to send method " + username + " " + hostAddress + " Client:" + c.Username + " " + c.HostAddress );
+            Debug.Log("I mad it to to send method " + username + " " + hostAddress + " Client:" + c.Username + " " + c.HostAddress);
             c.SetupClient();
         } catch (Exception e) {
             Debug.Log(e.Message);
         }
     }
 
-    public void OnGameStart(){
+    public void OnGameStart() {
         Debug.Log("sceneName to load: 2D_Scene");
         SceneManager.LoadScene("2D_Scene");
     }
@@ -96,15 +96,13 @@ public class GameManager : MonoBehaviour {
     public void GuessButtonClick() {
         string guess = GameObject.Find("GuessInput").GetComponent<InputField>().text;
         WhoAmIClient client = WhoAmIClient.Instance;
-        client.SendGuess(guess);
+        //client.SendGuess(guess);
     }
-	
+
     public void BackButton() {
         serverMenu.SetActive(false);
         connectMenu.SetActive(false);
         hostSettingMenu.SetActive(false);
         mainMenu.SetActive(true);
     }
-
-
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.Networking.NetworkSystem;
 
-public class WhoAmIServer: NetworkBehaviour {
+public class WhoAmIServer : NetworkBehaviour {
 
     NetworkServer server;
     private int port;
@@ -24,30 +24,34 @@ public class WhoAmIServer: NetworkBehaviour {
         }
     }
 
-    public NetworkServer Server{ get; set; }
+    public NetworkServer Server { get; set; }
     public int Port { get; set; }
-    public string HostAddress{ get; set; }
+    public string HostAddress { get; set; }
     public void SetupHost() {
         NetworkServer.Reset();
         this.Port = 63210;
         this.HostAddress = Network.player.ipAddress;
         NetworkServer.Listen(this.Port);
-        GameLobby lobby = GameLobby.Instance;
-        lobby.SetOwner("127.0.0.1");
         NetworkServer.RegisterHandler(MsgType.Connect, OnConnected);
         NetworkServer.RegisterHandler(MsgType.AddPlayer, ConnectToLobby);
+        NetworkServer.RegisterHandler(MsgType.Owner, CreateLobby);
+        NetworkServer.RegisterHandler(MsgType.UpdateVars, BroadCastPlayerFinished);
+    }
 
-        //NetworkServer.RegisterHandler(MsgType.UpdateVars, CheckGuess);
-
+    public void CreateLobby(NetworkMessage netMsg) {
+        StringMessage msg = netMsg.ReadMessage<StringMessage>();
+        GameLobby lobby = GameLobby.Instance;
+        lobby.SetOwner(msg.value);
+        SendMessageToClient(netMsg, MsgType.Owner, "Lobby created");
     }
 
     public void ConnectToLobby(NetworkMessage netMsg) {
-        //StringMessage msg = netMsg.ReadMessage<StringMessage>();
+        StringMessage msg = netMsg.ReadMessage<StringMessage>();
         GameLobby lobby = GameLobby.Instance;
-        //Debug.Log("Test");
-        Debug.Log(netMsg.ReadMessage<StringMessage>().value);
-        //lobby.RegisterPlayer(msg.value);
-        if(lobby.Size == lobby.Players.Count) {
+        Player player = lobby.CreatePlayer(msg.value);
+        lobby.RegisterPlayer(player);
+        SendMessageToClient(netMsg, MsgType.SpawnFinished, player.Number + "");
+        if (lobby.Size == lobby.Players.Count) {
             BroadCastReady();
         } else {
             BroadCastConnectedPlayer();
@@ -64,23 +68,23 @@ public class WhoAmIServer: NetworkBehaviour {
         string players = "";
         GameLobby lobby = GameLobby.Instance;
         List<Player> playerList = lobby.Players;
-
+        foreach (Player p in playerList) {
+            players += p.Number + "|" + p.Username + ",";
+        }
         BroadCastMessage(MsgType.SyncList, players);
     }
 
     private void BroadCastMessage(short type, string message) {
         GameLobby lobby = GameLobby.Instance;
         List<Player> playerList = lobby.Players;
-        StringMessage msg = new StringMessage();
-        msg.value = message;
-        NetworkServer.SendToAll(type, msg);
+        NetworkServer.SendToAll(type, new StringMessage(message));
     }
 
     private void SendMessageToClient(NetworkMessage netMsg, short type, string text) {
+        StringMessage msg = netMsg.ReadMessage<StringMessage>();
         NetworkServer.SendToClient(netMsg.conn.connectionId, type, new StringMessage(text));
     }
 
-        //throw new NotImplementedException();
     private void OnConnected(NetworkMessage netMsg) {
         SendMessageToClient(netMsg, MsgType.Connect, "Success");
     }
@@ -88,24 +92,33 @@ public class WhoAmIServer: NetworkBehaviour {
     public void StartGame() {
         BroadCastMessage(MsgType.LobbySceneLoaded, "Start");
     }
-    private void CheckGuess(NetworkMessage netMsg)
-    {
-        StringMessage msg = netMsg.ReadMessage<StringMessage>();
-        GameLobby gl = GameLobby.Instance;
-        Boolean guessResult = gl.CheckGuess(msg.ToString(), netMsg.conn.connectionId + "");
-        StringMessage answer = new StringMessage();
-        answer.value = guessResult.ToString();
-        NetworkServer.SendToClient(netMsg.conn.connectionId, MsgType.UpdateVars ,answer);
+
+    public void BroadCastPlayerFinished(NetworkMessage netMsg) {
+        StringMessage message = netMsg.ReadMessage<StringMessage>();
+        int id = Int32.Parse(message.value);
+        Player p = findPlayerById(id);
+        if (p != null) {
+            GameLobby.Instance.PlayersFinished++;
+            p.AddPoints(GameLobby.Instance.Players.Count - GameLobby.Instance.PlayersFinished);
+            BroadCastMessage(MsgType.Highest, p.Number + "");
+        }
     }
-    
-    // Use this for initialization
-    /*void Start () {
-        this.Port = 6321;
-        SetupHost();
-    }*/
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    public void BroadCastResult() {
+        string result = "";
+        foreach (Player p in GameLobby.Instance.Players) {
+            result += p.Number + "|" + p.Points;
+        }
+        BroadCastMessage(MsgType.InternalHighest, result);
+    }
+
+    private Player findPlayerById(int id) {
+        foreach (Player p in GameLobby.Instance.Players) {
+            if (p.Number == id) {
+                return p;
+            }
+        }
+        return null;
+    }
+
 }
