@@ -32,7 +32,7 @@ public class ReadInformations : MonoBehaviour {
 		info.text = information;
 
 
-		//Debug.Log(person.getName());
+		Debug.Log(person.getName());
 		reader.Close();
 	}
 
@@ -42,3 +42,4 @@ public class ReadInformations : MonoBehaviour {
 		infoCan.SetActive (true);
 	}
 }
+
