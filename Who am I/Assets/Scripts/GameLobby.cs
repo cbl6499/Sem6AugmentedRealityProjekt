@@ -10,6 +10,7 @@ public class GameLobby {// : MonoBehaviour {
     private int currentPlayerCount;
     private int size;
     private static GameLobby instance;
+    private int playersFinished;
    
 
     public Player Owner{ get; set; }
@@ -37,7 +38,10 @@ public class GameLobby {// : MonoBehaviour {
         this.Owner = CreatePlayer(Network.player.ipAddress);
         this.Players = new List<Player>();
         this.Players.Add(this.Owner);
+        this.playersFinished = 0;
     }
+
+    public int PlayersFinished { get; set; }
 
     public void SetOwner(string username) {
         this.Owner = CreatePlayer(username);

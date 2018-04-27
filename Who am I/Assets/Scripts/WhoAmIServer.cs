@@ -96,7 +96,29 @@ public class WhoAmIServer: NetworkBehaviour {
     public void BroadCastPlayerFinished(NetworkMessage netMsg) {
         StringMessage message = netMsg.ReadMessage<StringMessage>();
         int id = Int32.Parse(message.value);
-        
+        Player p = findPlayerById(id);
+        if (p != null) {
+            GameLobby.Instance.PlayersFinished++;
+            p.AddPoints(GameLobby.Instance.Players.Count - GameLobby.Instance.PlayersFinished);
+            BroadCastMessage(MsgType.Highest, p.Number + "");
+        }
+    }
+
+    public void BroadCastResult() {
+        string result = "";
+        foreach(Player p in GameLobby.Instance.Players) {
+            result += p.Number + "|" + p.Points;
+        }
+        BroadCastMessage(MsgType.InternalHighest, result);
+    }
+
+    private Player findPlayerById(int id) {
+        foreach(Player p in GameLobby.Instance.Players) {
+            if(p.Number == id) {
+                return p;
+            }
+        }
+        return null;
     }
 
 }
