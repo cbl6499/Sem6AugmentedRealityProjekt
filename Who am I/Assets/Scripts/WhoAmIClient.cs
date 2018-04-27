@@ -15,6 +15,11 @@ public class WhoAmIClient : NetworkBehaviour {
     private int localClient;
     private List<Player> playerList = new List<Player>();
 
+    private short owner = 333;
+    private short updateVars = 332;
+    private short spawnFinished = 331;
+    private short syncList = 330;
+
     public int Port { get; set; }
     public string HostAddress { get; set; }
     public string Username { get; set; }
@@ -35,10 +40,11 @@ public class WhoAmIClient : NetworkBehaviour {
     public void SetupClient() {
         this.MyClient = new NetworkClient();
         this.MyClient.RegisterHandler(MsgType.Ready, OnReady);
-        this.MyClient.RegisterHandler(MsgType.SyncList, SetPlayerList);
+        this.MyClient.RegisterHandler(syncList, SetPlayerList);
         this.MyClient.RegisterHandler(MsgType.Connect, OnSuccessfulConnection);
-        this.MyClient.RegisterHandler(MsgType.SpawnFinished, SetLocalClient);
-        this.MyClient.RegisterHandler(MsgType.UpdateVars, GameWon);
+        this.MyClient.RegisterHandler(spawnFinished, SetLocalClient);
+        this.MyClient.RegisterHandler(updateVars, GameWon);
+        // this.MyClient.RegisterHandler(MsgType.Owner, SetOwner);
 
         this.Connect();
     }
@@ -87,7 +93,7 @@ public class WhoAmIClient : NetworkBehaviour {
     }
 
     private void SendCorrectGuess() {
-        myClient.Send(MsgType.UpdateVars, new StringMessage(localClient.ToString()));
+        myClient.Send(owner, new StringMessage(localClient.ToString()));
     }
 
     private void GameWon(NetworkMessage netMsg) {
