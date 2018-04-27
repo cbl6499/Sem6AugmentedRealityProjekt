@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour {
 
     Dictionary<String, int> persons;
-
+    Dictionary<String, String> loadPersons;
     public static GameManager Instance { set; get; }
 
     private WhoAmIClient client;
@@ -77,6 +77,9 @@ public class GameManager : MonoBehaviour {
         persons.Add("Person5Selection", 4);
         persons.Add("Person6Selection", 5);
 
+        loadPersons = new Dictionary<string, string>();
+
+       // loadPersons.Add("","");
     }
 
     public void ConnectButton() {
@@ -162,7 +165,10 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    public void FixSelection(GameObject selection, GameObject player) {
+    public void FixSelection(GameObject selection, GameObject player, GameObject selectPlayerList, GameObject selectButton, GameObject infoCanvas) {
+        selectPlayerList.SetActive (false);
+        selectButton.SetActive (false);
+        infoCanvas.SetActive (true);
         int id = persons[player.name];
         Debug.Log(selection.name);
         Debug.Log(player.name);
@@ -182,6 +188,7 @@ public class GameManager : MonoBehaviour {
         foreach(Transform child in transform) {
             Debug.Log(child.name);
         }
+        GameObject.Find("Player_" + player.Number + 1).GetComponent(player.Face).gameObject.SetActive(true);
         
     }
 

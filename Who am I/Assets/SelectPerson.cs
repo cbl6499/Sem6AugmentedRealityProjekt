@@ -89,10 +89,10 @@ public class SelectPerson : MonoBehaviour {
 
 
 	public void setFinalPlayer(){
-		selectPlayerList.SetActive (false);
+		/*selectPlayerList.SetActive (false);
 		selectButton.SetActive (false);
-		infoCanvas.SetActive (true);
-        GameManager.Instance.FixSelection(activePerson, this.gameObject);
+		infoCanvas.SetActive (true);*/
+        GameManager.Instance.FixSelection(activePerson, this.gameObject, selectPlayerList, selectButton, infoCanvas);
 	}
 
 	public GameObject loadInformations(){
