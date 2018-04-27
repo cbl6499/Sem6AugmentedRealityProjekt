@@ -105,6 +105,4 @@ public class GameManager : MonoBehaviour {
         hostSettingMenu.SetActive(false);
         mainMenu.SetActive(true);
     }
-
-
 }
