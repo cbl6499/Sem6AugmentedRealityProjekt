@@ -32,13 +32,17 @@ public class WhoAmIServer: NetworkBehaviour {
         this.Port = 63210;
         this.HostAddress = Network.player.ipAddress;
         NetworkServer.Listen(this.Port);
-        GameLobby lobby = GameLobby.Instance;
-        lobby.SetOwner("Diego1337");
         NetworkServer.RegisterHandler(MsgType.Connect, OnConnected);
         NetworkServer.RegisterHandler(MsgType.AddPlayer, ConnectToLobby);
-
+        NetworkServer.RegisterHandler(MsgType.Owner, CreateLobby);
         NetworkServer.RegisterHandler(MsgType.UpdateVars, CheckGuess);
+    }
 
+    public void CreateLobby(NetworkMessage netMsg) {
+        StringMessage msg = netMsg.ReadMessage<StringMessage>();
+        GameLobby lobby = GameLobby.Instance;
+        lobby.SetOwner(msg.value);
+        SendMessageToClient(netMsg, MsgType.Owner, "Lobby created");
     }
 
     public void ConnectToLobby(NetworkMessage netMsg) {
@@ -87,16 +91,5 @@ public class WhoAmIServer: NetworkBehaviour {
     public void StartGame() {
         BroadCastMessage(MsgType.LobbySceneLoaded, "Start");
     }
-
-    private void CheckGuess(NetworkMessage netMsg)
-    {
-        StringMessage msg = netMsg.ReadMessage<StringMessage>();
-        GameLobby gl = GameLobby.Instance;
-        Boolean guessResult = gl.CheckGuess(msg.value);
-        StringMessage answer = new StringMessage();
-        answer.value = guessResult.ToString();
-        NetworkServer.SendToClient(netMsg.conn.connectionId, MsgType.UpdateVars, answer);
-    }
-
 
 }
