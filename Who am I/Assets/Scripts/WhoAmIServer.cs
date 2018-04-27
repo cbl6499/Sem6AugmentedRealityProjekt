@@ -92,14 +92,4 @@ public class WhoAmIServer: NetworkBehaviour {
         BroadCastMessage(MsgType.LobbySceneLoaded, "Start");
     }
 
-    private void CheckGuess(NetworkMessage netMsg)
-    {
-        StringMessage msg = netMsg.ReadMessage<StringMessage>();
-        GameLobby gl = GameLobby.Instance;
-        Boolean guessResult = gl.CheckGuess(msg.value);
-        StringMessage answer = new StringMessage();
-        answer.value = guessResult.ToString();
-        NetworkServer.SendToClient(netMsg.conn.connectionId, MsgType.UpdateVars, answer);
-    }
-
 }
