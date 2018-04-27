@@ -3394,7 +3394,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.2, y: 91.33498}
+  m_AnchoredPosition: {x: -0.000012397766, y: 0}
   m_SizeDelta: {x: 990.7, y: 892.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &425319439
@@ -11112,8 +11112,8 @@ MonoBehaviour:
   Person2: {fileID: 896013857}
   Person3: {fileID: 1060410229}
   Person4: {fileID: 1846554530}
-  Person5: {fileID: 455619417}
-  Person6: {fileID: 341441649}
+  Person5: {fileID: 341441649}
+  Person6: {fileID: 455619417}
   selectPlayerList: {fileID: 1876937939}
   selectButton: {fileID: 483432164}
   infoCanvas: {fileID: 1953002025}
@@ -15410,12 +15410,12 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
