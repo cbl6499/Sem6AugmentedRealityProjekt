@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour {
             WhoAmIClient c = WhoAmIClient.Instance;//Instantiate(clientPrefab.GetComponent<WhoAmIClient>());
             c.Username = username;
             c.HostAddress = "127.0.0.1";
-            s.SetupHost();
+            s.SetupHost(amount);
             c.SetupClient();
 
             Debug.Log("I made it to send method " + c.Username + " " + c.HostAddress);
