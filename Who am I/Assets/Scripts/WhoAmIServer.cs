@@ -36,6 +36,7 @@ public class WhoAmIServer: NetworkBehaviour {
         NetworkServer.RegisterHandler(MsgType.AddPlayer, ConnectToLobby);
         NetworkServer.RegisterHandler(MsgType.Owner, CreateLobby);
         NetworkServer.RegisterHandler(MsgType.UpdateVars, BroadCastPlayerFinished);
+        
     }
 
     public void CreateLobby(NetworkMessage netMsg) {
