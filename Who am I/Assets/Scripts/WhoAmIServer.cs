@@ -94,7 +94,7 @@ public class WhoAmIServer : NetworkBehaviour {
     }
 
     private void OnConnected(NetworkMessage netMsg) {
-        SendMessageToClient(netMsg, MsgType.Connect, "Success");
+        SendMessageToClient(netMsg, connect, "Success");
     }
 
     public void StartGame() {
