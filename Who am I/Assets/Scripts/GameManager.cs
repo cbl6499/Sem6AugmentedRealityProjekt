@@ -7,8 +7,12 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
+    Dictionary<String, int> persons;
+
     public static GameManager Instance { set; get; }
 
+    private WhoAmIClient client;
+    private WhoAmIServer server;
     public GameObject mainMenu;
     public GameObject serverMenu;
     public GameObject connectMenu;
@@ -25,13 +29,21 @@ public class GameManager : MonoBehaviour {
         connectMenu.SetActive(false);
         hostSettingMenu.SetActive(false);
         DontDestroyOnLoad(gameObject);
-    }
+        
+        this.client = WhoAmIClient.Instance;
+        this.server = WhoAmIServer.Instance;
+        DontDestroyOnLoad(client);
+        DontDestroyOnLoad(server);
+        DontDestroyOnLoad(serverPrefab);
+        DontDestroyOnLoad(clientPrefab);
+        persons = new Dictionary<string, int>();
+        persons.Add("Person1Selection", 1);
+        persons.Add("Person2Selection", 2);
+        persons.Add("Person3Selection", 3);
+        persons.Add("Person4Selection", 4);
+        persons.Add("Person5Selection", 5);
+        persons.Add("Person6Selection", 6);
 
-    void Update() {
-        if (WhoAmIClient.Instance.ReadyToGo) {
-            WhoAmIClient.Instance.ReadyToGo = false;
-            StartGame();
-        }   
     }
 
     public void ConnectButton() {
@@ -65,14 +77,12 @@ public class GameManager : MonoBehaviour {
             GameManager.print("Lobby would be to big!");
             GameObject.Find("PlayerAmount").GetComponent<InputField>().text = "6";
         } else {
-            WhoAmIServer s = WhoAmIServer.Instance;
-            WhoAmIClient c = WhoAmIClient.Instance;
-            c.Username = username;
-            c.HostAddress = "127.0.0.1";
-            s.SetupHost(amount);
-            c.SetupClient();
-
-            Debug.Log("I made it to send method " + c.Username + " " + c.HostAddress);
+            client.Username = username;
+            client.HostAddress = "127.0.0.1";
+            server.SetupHost(amount);
+            client.SetupClient();
+            client.Connect();
+            Debug.Log("I made it to send method " + client.Username + " " + client.HostAddress);
 
             serverMenu.SetActive(true);
             hostSettingMenu.SetActive(false);
@@ -85,11 +95,11 @@ public class GameManager : MonoBehaviour {
             hostAddress = "127.0.0.1";
         }
         try {
-            WhoAmIClient c = WhoAmIClient.Instance;
-            c.Username = username;
-            c.HostAddress = hostAddress;
-            Debug.Log("I mad it to to send method " + username + " " + hostAddress + " Client:" + c.Username + " " + c.HostAddress);
-            c.SetupClient();
+            client.Username = username;
+            client.HostAddress = hostAddress;
+            Debug.Log("I mad it to to send method " + username + " " + hostAddress + " Client:" + client.Username + " " + client.HostAddress);
+            client.SetupClient();
+            client.Connect();
         } catch (Exception e) {
             Debug.Log(e.Message);
         }
@@ -102,8 +112,35 @@ public class GameManager : MonoBehaviour {
 
     public void GuessButtonClick() {
         string guess = GameObject.Find("GuessInput").GetComponent<InputField>().text;
-        WhoAmIClient client = WhoAmIClient.Instance;
-        //client.SendGuess(guess);
+        
+        if (client.CheckGuess(guess)) {
+            Debug.Log("GG EZ");
+        } else {
+            Debug.Log("LOL NOOB");
+        }
+    }
+
+    public void FixSelection(GameObject selection, GameObject player) {
+        int id = persons[player.name];
+        Debug.Log(selection.name);
+        Debug.Log(player.name);
+        Debug.Log(id+"");
+        client.SendFaceSelectionToServer(id, selection.name);
+        
+    }
+
+    public void SetFaceForPerson(Player player) {
+        string personName = "";
+        foreach(string name in persons.Keys) {
+            if(persons[name] == player.Number) {
+                personName = name;
+            }
+        }
+        GameObject person = GameObject.Find(personName);
+        foreach(Transform child in transform) {
+            Debug.Log(child.name);
+        }
+        
     }
 
     public void BackButton() {

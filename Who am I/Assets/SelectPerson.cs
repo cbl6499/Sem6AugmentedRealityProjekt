@@ -18,9 +18,8 @@ public class SelectPerson : MonoBehaviour {
 	public GameObject selectButton;
 	public GameObject infoCanvas;
 	public GameObject panel;
-
-	// Use this for initialization
-	void Start () {
+                                       // Use this for initialization
+    void Start () {
 		Person2.SetActive (false);
 		Person3.SetActive (false);
 		Person4.SetActive (false);
@@ -93,7 +92,7 @@ public class SelectPerson : MonoBehaviour {
 		selectPlayerList.SetActive (false);
 		selectButton.SetActive (false);
 		infoCanvas.SetActive (true);
-        
+        GameManager.Instance.FixSelection(activePerson, this.gameObject);
 	}
 
 	public GameObject loadInformations(){

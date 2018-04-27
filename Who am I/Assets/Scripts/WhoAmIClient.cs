@@ -38,6 +38,7 @@ public class WhoAmIClient : NetworkBehaviour {
         get {
             if (instance == null) {
                 instance = new WhoAmIClient();
+               // instance.SetupClient();
             }
             return instance;
         }
@@ -45,6 +46,8 @@ public class WhoAmIClient : NetworkBehaviour {
             instance = value;
         }
     }
+
+
 
     public void SetupClient() {
         this.MyClient = new NetworkClient();
@@ -57,27 +60,17 @@ public class WhoAmIClient : NetworkBehaviour {
         this.MyClient.RegisterHandler(faceAssigned, AssignFaceToPlayer);
         // this.MyClient.RegisterHandler(MsgType.Owner, SetOwner);
 
-        this.Connect();
+     //   this.Connect();
     }
 
     public void AssignFaceToPlayer(NetworkMessage netMsg) {
         string msg = netMsg.ReadMessage<StringMessage>().value;
         string[] data = msg.Split('|');
-
         Player player = findPlayerById(Int32.Parse(data[0]));
         if(player != null) {
-            player.Face = data[2];
+            player.Face = data[1];
+            GameManager.Instance.SetFaceForPerson(player);
         }
-    }
-
-    public void AssignTask(NetworkMessage netMsg) {
-        string msg = netMsg.ReadMessage<StringMessage>().value;
-        int id = Int32.Parse(msg);
-        Player p = findPlayerById(id);
-        if(p != null) {
-            //start choosing face
-        }
-        myClient.Send(faceAssigned, new StringMessage(id+"|"+p.Face));
     }
 
     private Player findPlayerById(int id) {
@@ -160,7 +153,10 @@ public class WhoAmIClient : NetworkBehaviour {
     }
 
     public bool CheckGuess(string face) {
-        if (playerList[localClient].Face.ToLower() == face.ToLower()) {
+        string guess = playerList[localClient].Face;
+        guess.Trim();
+        guess.ToLower();
+        if (guess == face.ToLower()) {
             SendCorrectGuess();
             Debug.Log("Guess was Correct");
             return true;
@@ -168,4 +164,10 @@ public class WhoAmIClient : NetworkBehaviour {
         Debug.Log("The Guess was not correct!");
         return false;
     }
+
+    public void SendFaceSelectionToServer(int id, string face) {
+        Debug.Log(id + " | " + face);
+        myClient.Send(faceAssigned, new StringMessage(id + "|" + face));
+    }
+
 }
