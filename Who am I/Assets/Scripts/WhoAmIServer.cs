@@ -15,7 +15,7 @@ public class WhoAmIServer : NetworkBehaviour {
     private short owner = 333;
     private short updateVars = 332;
     private short spawnFinished = 331;
-
+    private short syncList = 330;
 
     public static WhoAmIServer Instance {
         get {
@@ -76,7 +76,7 @@ public class WhoAmIServer : NetworkBehaviour {
         foreach (Player p in playerList) {
             players += p.Number + "|" + p.Username + ",";
         }
-        BroadCastMessage(MsgType.SyncList, players);
+        BroadCastMessage(syncList, players);
     }
 
     private void BroadCastMessage(short type, string message) {
