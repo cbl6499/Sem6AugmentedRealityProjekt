@@ -69,7 +69,7 @@ public class WhoAmIServer: NetworkBehaviour {
         GameLobby lobby = GameLobby.Instance;
         List<Player> playerList = lobby.Players;
         foreach(Player p in playerList) {
-            players += p.Username + ",";
+            players += p.Number + "|" + p.Username + ",";
         }
         BroadCastMessage(MsgType.SyncList, players);
     }
