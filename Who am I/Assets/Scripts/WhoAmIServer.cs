@@ -38,7 +38,9 @@ public class WhoAmIServer : NetworkBehaviour {
     public NetworkServer Server { get; set; }
     public int Port { get; set; }
     public string HostAddress { get; set; }
-    public void SetupHost() {
+    public void SetupHost(int size) {
+        GameLobby lobby = GameLobby.Instance;
+        lobby.Size = size;
         NetworkServer.Reset();
         this.Port = 63210;
         this.HostAddress = Network.player.ipAddress;
@@ -74,8 +76,6 @@ public class WhoAmIServer : NetworkBehaviour {
     }
 
     public void BroadCastReady() {
-        GameLobby lobby = GameLobby.Instance;
-        List<Player> players = lobby.Players;
         BroadCastMessage(lobbyReadyToBegin, "Ready");
     }
 
