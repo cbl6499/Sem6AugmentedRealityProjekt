@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour {
         GameObject.Find("Player_3").SetActive(false);
         GameObject.Find("Player_4").SetActive(false);
         GameObject.Find("Player_5").SetActive(false);
-        GameObject.Find("Player_6").SetActive(false);*/
+        GameObject.Find("Player_6").SetActive(false);
 
         SelectPerson sp1 = player_1.gameObject.GetComponent(typeof(SelectPerson)) as SelectPerson;
         SelectPerson sp2 = player_2.gameObject.GetComponent(typeof(SelectPerson)) as SelectPerson;
@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour {
         sp3.DisableAll();
         sp4.DisableAll();
         sp5.DisableAll();
-        sp6.DisableAll();
+        sp6.DisableAll();*/
 
         
 
