@@ -96,8 +96,17 @@ public class WhoAmIClient : NetworkBehaviour {
             string[] player = a.Split('|');
             player[0].Trim();
             if (a != "") {
+                Player tempPlayer = new Player(Int32.Parse(player[0]), player[1]);
+                bool alreadyExisting = false;
+                foreach (Player p in playerList) {
+                    if (p.Equals(tempPlayer)) {
+                        alreadyExisting = true;
+                    }
+                }
                 Debug.Log(player[0]);
-                playerList.Add(new Player(Int32.Parse(player[0]), player[1]));
+                if (!alreadyExisting) {
+                    playerList.Add(tempPlayer);
+                }
             }
         }
     }
