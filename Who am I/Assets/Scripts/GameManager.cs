@@ -96,7 +96,7 @@ public class GameManager : MonoBehaviour {
     public void GuessButtonClick() {
         string guess = GameObject.Find("GuessInput").GetComponent<InputField>().text;
         WhoAmIClient client = WhoAmIClient.Instance;
-        client.SendGuess(guess);
+        //client.SendGuess(guess);
     }
 	
     public void BackButton() {

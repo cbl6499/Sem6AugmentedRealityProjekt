@@ -32,7 +32,7 @@ public class WhoAmIServer: NetworkBehaviour {
         this.HostAddress = Network.player.ipAddress;
         NetworkServer.Listen(this.Port);
         GameLobby lobby = GameLobby.Instance;
-        lobby.SetOwner("Diego1337", "127.0.0.1");
+        lobby.SetOwner(/*"Diego1337",*/ "127.0.0.1");
         NetworkServer.RegisterHandler(MsgType.Connect, OnConnected);
         NetworkServer.RegisterHandler(MsgType.AddPlayer, ConnectToLobby);
 
