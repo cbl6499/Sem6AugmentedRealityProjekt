@@ -12,6 +12,7 @@ public class Player {
     public Player(int number, string username) {
         this.Number = number;
         this.Username = username;
+        this.Points = 0;
     }
 
     public void AddPoints(int points) {
