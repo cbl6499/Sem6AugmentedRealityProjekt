@@ -17,23 +17,11 @@ public class ReadInformations : MonoBehaviour {
 	void Start () {
 		//activePerson = person.loadInformations ();
 
-		string path = "Assets/Informations/" + person.getName() +".txt";
+		TextAsset infos = Resources.Load(person.getName()) as TextAsset;
 
 		//Read the text from directly from the test.txt file
-		StreamReader reader = new StreamReader(path, System.Text.Encoding.UTF8); 
 
-
-		while (reader.Peek() >= 0) 
-		{
-			information += reader.ReadLine().ToString();
-			information += "\n";
-
-		}
-		info.text = information;
-
-
-		//Debug.Log(path);
-		reader.Close();
+		info.text = infos.text.ToString ();
 	}
 
 

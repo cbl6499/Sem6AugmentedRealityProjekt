@@ -1,0 +1,4 @@
+Name: Bill Gates
+Beruf: Unternehmer, Programmierer
+Land: Amerika
+Spezial: Microsoft

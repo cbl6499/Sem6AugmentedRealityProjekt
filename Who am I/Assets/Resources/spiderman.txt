@@ -1,0 +1,9 @@
+Name: Spiderman
+Realname: Peter Benjamin Parker
+Einstellung: gut
+Beruf: Held
+Größe: 198 cm
+Gewicht: 87 kg
+Familienstand: ledig
+Geschlecht: männlich
+Besondere Merkmale: Rot blauer Tarnanzug, kann Spinnennetze erzeugen

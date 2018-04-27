@@ -1,0 +1,8 @@
+Name: Iron Man
+Realer Name:  Anthony Edward Stark 
+Beruf: Superheld
+Größe: 198 cm
+Gewicht: 113 kg
+Einstellung: gut
+Real: nein
+Besondere Merkmale: Kampfanzug mit integrierter Ki
