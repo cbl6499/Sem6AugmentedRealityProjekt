@@ -290,7 +290,7 @@ public class GameManager : MonoBehaviour {
         scoreboard.SetActive(true);
         client.GetCurrentPointsFromServer();
 
-        score.text = CurrentPoints;
+        score.text = "Waiting for point list...";
         
         Debug.Log("Scoreboard should be here");
         //GameObject.Find("Scoreboard").SetActive(true);
@@ -305,6 +305,10 @@ public class GameManager : MonoBehaviour {
         number++;
         this.Number = number;
         playerNumber.text = "You are player: " + number;
+    }
+
+    public void SetCurrentPoints(string points) {
+        score.text = CurrentPoints;
     }
 
 

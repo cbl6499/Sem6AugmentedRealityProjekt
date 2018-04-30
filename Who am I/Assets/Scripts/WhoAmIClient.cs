@@ -73,7 +73,8 @@ public class WhoAmIClient : NetworkBehaviour {
     }
     public void GetCurrentPointTable(NetworkMessage netMsg) {
         string points = netMsg.ReadMessage<StringMessage>().value;
-        GameManager.Instance.CurrentPoints = points;
+        Debug.Log("Points: " + points);
+        GameManager.Instance.SetCurrentPoints(points);
     }
 
     public void RestartLobby(NetworkMessage netMsg) {
