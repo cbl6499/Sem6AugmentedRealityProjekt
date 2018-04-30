@@ -29,7 +29,7 @@ public class WhoAmIClient : NetworkBehaviour {
     private short faceAssigned = 323;
     private short gameFinished = 322;
     private short currentPoints = 321;
-    private short restartLobby = 320;
+    private short restartLobby = 320; 
     private short guess = 319;
 
     public int Port { get; set; }
