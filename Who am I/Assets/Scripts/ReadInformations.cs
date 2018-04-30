@@ -11,6 +11,7 @@ public class ReadInformations : MonoBehaviour {
 	public GameObject panel;
 	public GameObject infoCan;
 	public string infoStr;
+	public GameObject guess;
 
 	public Text info;
 
@@ -18,6 +19,7 @@ public class ReadInformations : MonoBehaviour {
 		//activePerson = person.loadInformations ();
 
 		//Read the text from directly from the test.txt file
+		guess.SetActive(false);
 		TextAsset infos = Resources.Load(person.getName()) as TextAsset;
 		info.text = infos.text.ToString ();
 	}
@@ -26,6 +28,7 @@ public class ReadInformations : MonoBehaviour {
 	public void closeInfoScreen(){
 		panel.SetActive (false);
 		infoCan.SetActive (true);
+		guess.SetActive (true);
 	}
 }
 
