@@ -237,8 +237,13 @@ public class GameManager : MonoBehaviour {
                 player_6.transform.Find("InfoCanvas").gameObject.SetActive(true);
                 break;
         }
-        
+
+      
     }
+    public void FinishGame() {
+
+    }
+
 
     public void BackButton() {
         serverMenu.SetActive(false);

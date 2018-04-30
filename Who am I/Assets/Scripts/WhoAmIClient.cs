@@ -27,6 +27,7 @@ public class WhoAmIClient : NetworkBehaviour {
     private short playerGuessedRight = 325;
     private short resultMessage = 324;
     private short faceAssigned = 323;
+    private short gameFinished = 322;
 
     public int Port { get; set; }
     public string HostAddress { get; set; }
@@ -58,7 +59,12 @@ public class WhoAmIClient : NetworkBehaviour {
         this.MyClient.RegisterHandler(updateVars, GameWon);
         this.MyClient.RegisterHandler(lobbyReadyToBegin, LobbyReady);
         this.MyClient.RegisterHandler(faceAssigned, AssignFaceToPlayer);
+        this.MyClient.RegisterHandler(gameFinished, finishGame);
 
+    }
+
+    public void finishGame(NetworkMessage netMsg) {
+        GameManager.Instance.FinishGame();
     }
 
     public void AssignFaceToPlayer(NetworkMessage netMsg) {

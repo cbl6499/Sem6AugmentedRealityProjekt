@@ -67,12 +67,6 @@ public class GameLobby {
         this.CurrentPlayerCount -= 1;
     }
 
-    /*
-    public void StartGame() {
-        NetworkHandler handler = NetworkHandler.Instance;
-        handler.BroadCastReady();
-    }
-    */
 
     private Player GetPlayerById(int id) {
         foreach (Player p in players) {

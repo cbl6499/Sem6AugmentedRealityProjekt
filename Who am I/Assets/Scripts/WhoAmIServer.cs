@@ -23,7 +23,7 @@ public class WhoAmIServer : NetworkBehaviour {
     private short playerGuessedRight = 325;
     private short resultMessage = 324;
     private short faceAssigned = 323;
-
+    private short gameFinished = 322;
     public static WhoAmIServer Instance {
         get {
             if (instance == null) {
@@ -108,7 +108,6 @@ public class WhoAmIServer : NetworkBehaviour {
 
     private void OnConnected(NetworkMessage netMsg) {
         NetworkServer.SendToClient(netMsg.conn.connectionId, connect, new StringMessage("Success"));
-       // SendMessageToClient(netMsg, connect, "Success");
     }
 
     public void StartGame() {
@@ -122,7 +121,11 @@ public class WhoAmIServer : NetworkBehaviour {
         if (p != null) {
             GameLobby.Instance.PlayersFinished++;
             p.AddPoints(GameLobby.Instance.Players.Count - GameLobby.Instance.PlayersFinished);
-            BroadCastMessage(playerGuessedRight, p.Number + "");
+            if (GameLobby.Instance.PlayersFinished == GameLobby.Instance.Players.Count) {
+                BroadCastMessage(gameFinished, "finish");
+            } else {
+                BroadCastMessage(playerGuessedRight, p.Number + "");
+            }
         }
     }
 
