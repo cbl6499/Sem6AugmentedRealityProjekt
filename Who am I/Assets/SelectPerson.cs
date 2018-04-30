@@ -102,6 +102,7 @@ public class SelectPerson : MonoBehaviour {
 		selectButton.SetActive (false);
 		infoCanvas.SetActive (true);*/
 		submit.SetActive (true);
+		Debug.Log ("Tuan do mol an debug inne");
         GameManager.Instance.FixSelection(activePerson, this.gameObject, selectPlayerList, selectButton, infoCanvas);
 	}
 
