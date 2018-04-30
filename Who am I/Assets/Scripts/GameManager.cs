@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour {
     public GameObject clientPrefab;
 
     public Text playerNumber;
+    public Text playerAmount;
 
     public GameObject player_1;
     public GameObject player_2;
@@ -122,7 +123,7 @@ public class GameManager : MonoBehaviour {
             username = "testUser";
         } else {
             mainMenu.SetActive(false);
-            hostSettingMenu.SetActive(true);
+            hostSettingMenu.SetActive(true);            
         }
     }
 
@@ -140,7 +141,8 @@ public class GameManager : MonoBehaviour {
             client.SetupClient();
             client.Connect();
             Debug.Log("I made it to send method " + client.Username + " " + client.HostAddress);
-
+            playerAmount.gameObject.SetActive(true);
+            playerAmount.text = Network.player.ipAddress;
             serverMenu.SetActive(true);
             hostSettingMenu.SetActive(false);
         }
@@ -163,6 +165,7 @@ public class GameManager : MonoBehaviour {
     }
 
     public void StartGame() {
+        playerAmount.gameObject.SetActive(false);
         connectMenu.SetActive(false);
         serverMenu.SetActive(false);
         
