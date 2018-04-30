@@ -189,7 +189,7 @@ public class WhoAmIClient : NetworkBehaviour {
         string guess = playerList[localClient].Face;
         guess.Trim();
         string newguess = "";
-        char[] guessarray = guess.ToCharArray();
+        char[] guessarray = face.ToCharArray();
 
         for(int i = 0; i < guessarray.Length; i++) {
             if(guessarray[i] != ' ') {
@@ -198,7 +198,7 @@ public class WhoAmIClient : NetworkBehaviour {
         }
 
         guess.ToLower();
-        if (newguess == face.ToLower()) {
+        if (newguess.ToLower() == guess.ToLower()) {
             SendCorrectGuess();
             Debug.Log("Guess was Correct");
             return true;
