@@ -2019,6 +2019,12 @@ MonoBehaviour:
   lobby: {fileID: 1553577294}
   subButton: {fileID: 1025330492}
   textField: {fileID: 1346760741}
+  player1infotext: {fileID: 425319439}
+  player2infotext: {fileID: 1801666514}
+  player3infotext: {fileID: 1079161491}
+  player4infotext: {fileID: 1469781704}
+  player5infotext: {fileID: 412425089}
+  player6infotext: {fileID: 549729870}
   guessAnswer: {fileID: 534898683}
   guess: {fileID: 1888622190}
   guessText: {fileID: 818391677}
