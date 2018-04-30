@@ -197,9 +197,36 @@ public class GameManager : MonoBehaviour {
     }
 
     public void RestartGame() {
-        GameObject.Find("Restart").SetActive(false);
+        scoreboard.SetActive(false);
+        restart.SetActive(false);
         StartGame();
-        GameLobby.Instance.RestartLobby();
+        player_1.transform.Find(player1face).gameObject.SetActive(false);
+        player_1.transform.Find("Canvas").transform.Find("PersonSelect").gameObject.SetActive(true);
+        player_1.transform.Find("Canvas").transform.Find("SelectButton").gameObject.SetActive(true);
+        player_1.transform.Find("InfoCanvas").gameObject.SetActive(false);
+        player_2.transform.Find(player2face).gameObject.SetActive(false);
+        player_2.transform.Find("Canvas").transform.Find("PersonSelect").gameObject.SetActive(true);
+        player_2.transform.Find("Canvas").transform.Find("SelectButton").gameObject.SetActive(true);
+        player_2.transform.Find("InfoCanvas").gameObject.SetActive(false);
+        player_3.transform.Find(player3face).gameObject.SetActive(false);
+        player_3.transform.Find("Canvas").transform.Find("PersonSelect").gameObject.SetActive(true);
+        player_3.transform.Find("Canvas").transform.Find("SelectButton").gameObject.SetActive(true);
+        player_3.transform.Find("InfoCanvas").gameObject.SetActive(false);
+        player_4.transform.Find(player4face).gameObject.SetActive(false);
+        player_4.transform.Find("Canvas").transform.Find("PersonSelect").gameObject.SetActive(true);
+        player_4.transform.Find("Canvas").transform.Find("SelectButton").gameObject.SetActive(true);
+        player_4.transform.Find("InfoCanvas").gameObject.SetActive(false);
+        player_5.transform.Find(player5face).gameObject.SetActive(false);
+        player_5.transform.Find("Canvas").transform.Find("PersonSelect").gameObject.SetActive(true);
+        player_5.transform.Find("Canvas").transform.Find("SelectButton").gameObject.SetActive(true);
+        player_5.transform.Find("InfoCanvas").gameObject.SetActive(false);
+        player_6.transform.Find(player6face).gameObject.SetActive(false);
+        player_6.transform.Find("Canvas").transform.Find("PersonSelect").gameObject.SetActive(true);
+        player_6.transform.Find("Canvas").transform.Find("SelectButton").gameObject.SetActive(true);
+        player_6.transform.Find("InfoCanvas").gameObject.SetActive(false);
+
+        client.SendRestartLobbyToServer();
+        //GameLobby.Instance.RestartLobby();
     }
 
     public void GuessButtonClick() {
@@ -214,13 +241,16 @@ public class GameManager : MonoBehaviour {
 
     public void FixSelection(GameObject selection, GameObject player, GameObject selectPlayerList, GameObject selectButton, GameObject infoCanvas) {
         int id = persons[player.name];
-        Debug.Log(selection.name);
-        Debug.Log(player.name);
-        Debug.Log(id+"");
         client.SendFaceSelectionToServer(id, selection.name);
     }
 
     private int countFaceAssigned = 0;
+    private string player1face = "obama";
+    private string player2face = "spiderman";
+    private string player3face = "willsmith";
+    private string player4face = "markzuckerberg";
+    private string player5face = "katemoss";
+    private string player6face = "gandalf";
     public void SetFaceForPerson(Player player) {
         string personName = "";
         foreach(string name in persons.Keys) {
@@ -232,38 +262,42 @@ public class GameManager : MonoBehaviour {
         Debug.Log("Component to find: " + player.Face);
         switch (player.Number + 1) {
             case 1:
-                //player_1.transform.Find(player.Face).gameObject.SetActive(true);
+                string player1face = player.Face;
                 player_1.transform.Find(player.Face).gameObject.SetActive(true);
                 player_1.transform.Find("Canvas").transform.Find("PersonSelect").gameObject.SetActive(false);
                 player_1.transform.Find("Canvas").transform.Find("SelectButton").gameObject.SetActive(false);
                 player_1.transform.Find("InfoCanvas").gameObject.SetActive(true);
                 break;
             case 2:
+                string player2face = player.Face;
                 player_2.transform.Find(player.Face).gameObject.SetActive(true);
                 player_2.transform.Find("Canvas").transform.Find("PersonSelect").gameObject.SetActive(false);
                 player_2.transform.Find("Canvas").transform.Find("SelectButton").gameObject.SetActive(false);
                 player_2.transform.Find("InfoCanvas").gameObject.SetActive(true);
                 break;
             case 3:
-              //  Debug.Log("case3 +"+ player.Face+"+");
+                string player3face = player.Face;
                 player_3.transform.Find(player.Face).gameObject.SetActive(true);
                 player_3.transform.Find("Canvas").transform.Find("PersonSelect").gameObject.SetActive(false);
                 player_3.transform.Find("Canvas").transform.Find("SelectButton").gameObject.SetActive(false);
                 player_3.transform.Find("InfoCanvas").gameObject.SetActive(true);
                 break;
             case 4:
+                string player4face = player.Face;
                 player_4.transform.Find(player.Face).gameObject.SetActive(true);
                 player_4.transform.Find("Canvas").transform.Find("PersonSelect").gameObject.SetActive(false);
                 player_4.transform.Find("Canvas").transform.Find("SelectButton").gameObject.SetActive(false);
                 player_4.transform.Find("InfoCanvas").gameObject.SetActive(true);
                 break;
             case 5:
+                string player5face = player.Face;
                 player_5.transform.Find(player.Face).gameObject.SetActive(true);
                 player_5.transform.Find("Canvas").transform.Find("PersonSelect").gameObject.SetActive(false);
                 player_5.transform.Find("Canvas").transform.Find("SelectButton").gameObject.SetActive(false);
                 player_5.transform.Find("InfoCanvas").gameObject.SetActive(true);
                 break;
             case 6:
+                string player6face = player.Face;
                 player_6.transform.Find(player.Face).gameObject.SetActive(true);
                 player_6.transform.Find("Canvas").transform.Find("PersonSelect").gameObject.SetActive(false);
                 player_6.transform.Find("Canvas").transform.Find("SelectButton").gameObject.SetActive(false);
@@ -271,8 +305,8 @@ public class GameManager : MonoBehaviour {
                 break;
         }
         countFaceAssigned++;
-       // WhoAmIClient.Instance.PlayerList[player.Number].FaceSet = true;
-        if (countFaceAssigned == lobbySize){//WhoAmIClient.Instance.AllFacesSet()) {
+
+        if (countFaceAssigned == lobbySize){
             guess.SetActive(true);
         }
 
@@ -288,16 +322,18 @@ public class GameManager : MonoBehaviour {
         player_6.SetActive(false);
 
         scoreboard.SetActive(true);
+
+        guess.SetActive(false);
+
         client.GetCurrentPointsFromServer();
 
         score.text = "Waiting for point list...";
         
         Debug.Log("Scoreboard should be here");
-        //GameObject.Find("Scoreboard").SetActive(true);
 
-        if(this.Number == 0) {
+
+        if(this.Number == 1) {
             restart.SetActive(true);
-            //GameObject.Find("Restart").SetActive(true);
         }
     }
 
@@ -308,7 +344,7 @@ public class GameManager : MonoBehaviour {
     }
 
     public void SetCurrentPoints(string points) {
-        score.text = CurrentPoints;
+        score.text = points;
     }
 
 

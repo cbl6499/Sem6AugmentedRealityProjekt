@@ -20,7 +20,7 @@ public class Player {
     public bool FaceSet { get; set; }
 
     public void AddPoints(int points) {
-        points += points;
+        this.Points += points;
     }
 
     public int Points { get; set; }

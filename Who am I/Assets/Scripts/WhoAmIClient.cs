@@ -31,6 +31,7 @@ public class WhoAmIClient : NetworkBehaviour {
     private short currentPoints = 321;
     private short restartLobby = 320; 
     private short guess = 319;
+    private short resetlobby = 318;
 
     public int Port { get; set; }
     public string HostAddress { get; set; }
@@ -79,6 +80,11 @@ public class WhoAmIClient : NetworkBehaviour {
 
     public void RestartLobby(NetworkMessage netMsg) {
         GameManager.Instance.RestartGame();
+        
+    }
+
+    public void SendRestartLobbyToServer() {
+        this.MyClient.Send(restartLobby, new StringMessage("Start over"));
     }
     public void FinishGame(NetworkMessage netMsg) {
         GameManager.Instance.FinishGame();

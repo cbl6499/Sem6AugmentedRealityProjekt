@@ -58,9 +58,14 @@ public class WhoAmIServer : NetworkBehaviour {
         NetworkServer.RegisterHandler(faceAssigned, BroadCastFaceAssigned);
         NetworkServer.RegisterHandler(currentPoints, BroadCastPointList);
         NetworkServer.RegisterHandler(guess, BroadCastPlayerFinished);
+        NetworkServer.RegisterHandler(restartLobby, BroadCastRestartLobby);
        // NetworkServer.RegisterHandler(restartLobby, BroadCastLobbyRestart);
     }
 
+    public void BroadCastRestartLobby(NetworkMessage netMsg) {
+        GameLobby.Instance.RestartLobby();
+        BroadCastMessage(restartLobby, "Go for it");
+    }
     public void BroadCastLobbyRestart() {
         BroadCastMessage(restartLobby, "restart");
     }
@@ -131,8 +136,8 @@ public class WhoAmIServer : NetworkBehaviour {
         int id = Int32.Parse(message.value);
         Player p = findPlayerById(id);
         if (p != null) {
+            p.AddPoints(GameLobby.Instance.Players.Count - (GameLobby.Instance.PlayersFinished));
             GameLobby.Instance.PlayersFinished++;
-            p.AddPoints(GameLobby.Instance.Players.Count - GameLobby.Instance.PlayersFinished);
             if (GameLobby.Instance.PlayersFinished == GameLobby.Instance.Players.Count) {
                 BroadCastMessage(gameFinished, "finish");
             } else {
