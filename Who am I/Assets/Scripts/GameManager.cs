@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour {
     public GameObject serverPrefab;
     public GameObject clientPrefab;
 
+    public Text playerNumber;
+
     public GameObject player_1;
     public GameObject player_2;
     public GameObject player_3;
@@ -171,6 +173,10 @@ public class GameManager : MonoBehaviour {
     }
 
     public void RestartGameButton() {
+        RestartGame();
+    }
+
+    public void RestartGame() {
         GameLobby.Instance.RestartLobby();
     }
 
@@ -246,6 +252,10 @@ public class GameManager : MonoBehaviour {
     }
     public void FinishGame() {
 
+    }
+
+    public void SetPlayerNumber(int number) {
+        playerNumber.text = "You are player: " + number;
     }
 
 

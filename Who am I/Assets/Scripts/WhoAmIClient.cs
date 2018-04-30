@@ -28,6 +28,8 @@ public class WhoAmIClient : NetworkBehaviour {
     private short resultMessage = 324;
     private short faceAssigned = 323;
     private short gameFinished = 322;
+    private short currentPoints = 321;
+    private short restartLobby = 320;
 
     public int Port { get; set; }
     public string HostAddress { get; set; }
@@ -59,11 +61,20 @@ public class WhoAmIClient : NetworkBehaviour {
         this.MyClient.RegisterHandler(updateVars, GameWon);
         this.MyClient.RegisterHandler(lobbyReadyToBegin, LobbyReady);
         this.MyClient.RegisterHandler(faceAssigned, AssignFaceToPlayer);
-        this.MyClient.RegisterHandler(gameFinished, finishGame);
+        this.MyClient.RegisterHandler(gameFinished, FinishGame);
+        this.MyClient.RegisterHandler(currentPoints, GetCurrentPointTable);
+        this.MyClient.RegisterHandler(restartLobby, RestartLobby);
+    }
+
+
+    public void GetCurrentPointTable(NetworkMessage netMsg) {
 
     }
 
-    public void finishGame(NetworkMessage netMsg) {
+    public void RestartLobby(NetworkMessage netMsg) {
+        GameManager.Instance.RestartGame();
+    }
+    public void FinishGame(NetworkMessage netMsg) {
         GameManager.Instance.FinishGame();
     }
 
@@ -121,6 +132,7 @@ public class WhoAmIClient : NetworkBehaviour {
     private void SetLocalClient(NetworkMessage netMsg) {
         StringMessage msg = netMsg.ReadMessage<StringMessage>();
         this.localClient = Int32.Parse(msg.value);
+        GameManager.Instance.SetPlayerNumber(this.localClient);
     }
 
     private void SetPlayerList(NetworkMessage netMsg) {

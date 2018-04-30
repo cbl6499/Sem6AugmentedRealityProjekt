@@ -26,6 +26,8 @@ public class WhoAmIServer : NetworkBehaviour {
     private short faceAssigned = 323;
     private short gameFinished = 322;
     private short currentPoints = 321;
+    private short restartLobby = 320;
+
     public static WhoAmIServer Instance {
         get {
             if (instance == null) {
@@ -54,6 +56,11 @@ public class WhoAmIServer : NetworkBehaviour {
         NetworkServer.RegisterHandler(updateVars, BroadCastPlayerFinished);
         NetworkServer.RegisterHandler(faceAssigned, BroadCastFaceAssigned);
         NetworkServer.RegisterHandler(currentPoints, BroadCastPointList);
+       // NetworkServer.RegisterHandler(restartLobby, BroadCastLobbyRestart);
+    }
+
+    public void BroadCastLobbyRestart() {
+        BroadCastMessage(restartLobby, "restart");
     }
 
     public void CreateLobby(NetworkMessage netMsg) {
