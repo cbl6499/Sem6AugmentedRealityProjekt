@@ -17,6 +17,7 @@ public class SelectPerson : MonoBehaviour {
 	public GameObject selectPlayerList;
 	public GameObject selectButton;
 	public GameObject infoCanvas;
+	public GameObject submit;
 	public GameObject panel;
                                        // Use this for initialization
     void Start () {
@@ -100,6 +101,7 @@ public class SelectPerson : MonoBehaviour {
 		/*selectPlayerList.SetActive (false);
 		selectButton.SetActive (false);
 		infoCanvas.SetActive (true);*/
+		submit.SetActive (true);
         GameManager.Instance.FixSelection(activePerson, this.gameObject, selectPlayerList, selectButton, infoCanvas);
 	}
 

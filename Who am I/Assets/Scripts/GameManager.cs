@@ -179,7 +179,7 @@ public class GameManager : MonoBehaviour {
         connectMenu.SetActive(false);
         serverMenu.SetActive(false);
 
-        guess.SetActive(false);
+        //guess.SetActive(false);
         
         player_1.SetActive(true);
         player_2.SetActive(true);
@@ -230,7 +230,7 @@ public class GameManager : MonoBehaviour {
         player5face = "katemoss";
         player6face = "gandalf";*/
         client.SendRestartLobbyToServer();
-		guess.SetActive(false);
+		//guess.SetActive(false);
 		countFaceAssigned = 0;
         //StartGame();
 		player_1.SetActive(true);
@@ -318,10 +318,10 @@ public class GameManager : MonoBehaviour {
         }
         countFaceAssigned++;
 
-        Debug.Log("Faces assigned: " + countFaceAssigned + ", " + lobbySize);
+        /*Debug.Log("Faces assigned: " + countFaceAssigned + ", " + lobbySize);
         if (countFaceAssigned == lobbySize){
             guess.SetActive(true);
-        }
+        }*/
 
     }
 
