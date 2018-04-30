@@ -197,7 +197,7 @@ public class GameManager : MonoBehaviour {
     public void RestartGame() {
         scoreboard.SetActive(false);
         restart.SetActive(false);
-        
+        /*
         player_1.transform.Find(player1face).gameObject.SetActive(false);
         player_1.transform.Find("Canvas").transform.Find("PersonSelect").gameObject.SetActive(true);
         player_1.transform.Find("Canvas").transform.Find("SelectButton").gameObject.SetActive(true);
@@ -228,10 +228,18 @@ public class GameManager : MonoBehaviour {
         player3face = "willsmith";
         player4face = "markzuckerberg";
         player5face = "katemoss";
-        player6face = "gandalf";
+        player6face = "gandalf";*/
         client.SendRestartLobbyToServer();
-        StartGame();
-        GameLobby.Instance.RestartLobby();
+		guess.SetActive(false);
+		countFaceAssigned = 0;
+        //StartGame();
+		player_1.SetActive(true);
+		player_2.SetActive(true);
+		player_3.SetActive(true);
+		player_4.SetActive(true);
+		player_5.SetActive(true);
+		player_6.SetActive(true);
+        //GameLobby.Instance.RestartLobby();
     }
 
     public void GuessButtonClick() {

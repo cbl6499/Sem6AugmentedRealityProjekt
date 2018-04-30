@@ -115,4 +115,16 @@ public class SelectPerson : MonoBehaviour {
 		infoCanvas.SetActive (false);
 		panel.SetActive (true);
 	}
+
+	public void Restart(){
+		Person1.SetActive(false);
+		Person2.SetActive(false);
+		Person3.SetActive(false);
+		Person4.SetActive(false);
+		Person5.SetActive(false);
+		Person6.SetActive(false);
+		infoCanvas.SetActive (false);
+		selectButton.SetActive (true);
+		selectPlayerList.SetActive (true);
+	}
 }
