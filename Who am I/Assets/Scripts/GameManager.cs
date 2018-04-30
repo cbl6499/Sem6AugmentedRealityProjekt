@@ -38,7 +38,19 @@ public class GameManager : MonoBehaviour {
 	public GameObject subButton;
 	public GameObject textField;
 
-	public Text guessAnswer;
+
+    private int countFaceAssigned = 0;
+
+    public Text player1infotext;
+    public Text player2infotext;
+    public Text player3infotext;
+    public Text player4infotext;
+    public Text player5infotext;
+    public Text player6infotext;
+
+
+
+    public Text guessAnswer;
 
     public GameObject guess;
 
@@ -203,7 +215,9 @@ public class GameManager : MonoBehaviour {
         client.SendFaceSelectionToServer(id, selection.name);
     }
 
-    private int countFaceAssigned = 0;
+    public void InformationButton() {
+        
+    }
 
     public void SetFaceForPerson(Player player) {
         string personName = "";
@@ -212,6 +226,7 @@ public class GameManager : MonoBehaviour {
                 personName = name;
             }
         }
+        TextAsset infos;
         switch (player.Number + 1) {
             case 1:
                 string player1face = player.Face;
@@ -219,6 +234,8 @@ public class GameManager : MonoBehaviour {
                 player_1.transform.Find("Canvas").transform.Find("PersonSelect").gameObject.SetActive(false);
                 player_1.transform.Find("Canvas").transform.Find("SelectButton").gameObject.SetActive(false);
                 player_1.transform.Find("InfoCanvas").gameObject.SetActive(true);
+                infos = Resources.Load(player1face) as TextAsset;
+                player1infotext.text = infos.text.ToString();
                 break;
             case 2:
                 string player2face = player.Face;
@@ -226,6 +243,8 @@ public class GameManager : MonoBehaviour {
                 player_2.transform.Find("Canvas").transform.Find("PersonSelect").gameObject.SetActive(false);
                 player_2.transform.Find("Canvas").transform.Find("SelectButton").gameObject.SetActive(false);
                 player_2.transform.Find("InfoCanvas").gameObject.SetActive(true);
+                infos = Resources.Load(player2face) as TextAsset;
+                player2infotext.text = infos.text.ToString();
                 break;
             case 3:
                 string player3face = player.Face;
@@ -233,6 +252,8 @@ public class GameManager : MonoBehaviour {
                 player_3.transform.Find("Canvas").transform.Find("PersonSelect").gameObject.SetActive(false);
                 player_3.transform.Find("Canvas").transform.Find("SelectButton").gameObject.SetActive(false);
                 player_3.transform.Find("InfoCanvas").gameObject.SetActive(true);
+                infos = Resources.Load(player3face) as TextAsset;
+                player3infotext.text = infos.text.ToString();
                 break;
             case 4:
                 string player4face = player.Face;
@@ -240,6 +261,8 @@ public class GameManager : MonoBehaviour {
                 player_4.transform.Find("Canvas").transform.Find("PersonSelect").gameObject.SetActive(false);
                 player_4.transform.Find("Canvas").transform.Find("SelectButton").gameObject.SetActive(false);
                 player_4.transform.Find("InfoCanvas").gameObject.SetActive(true);
+                infos = Resources.Load(player4face) as TextAsset;
+                player4infotext.text = infos.text.ToString();
                 break;
             case 5:
                 string player5face = player.Face;
@@ -247,6 +270,8 @@ public class GameManager : MonoBehaviour {
                 player_5.transform.Find("Canvas").transform.Find("PersonSelect").gameObject.SetActive(false);
                 player_5.transform.Find("Canvas").transform.Find("SelectButton").gameObject.SetActive(false);
                 player_5.transform.Find("InfoCanvas").gameObject.SetActive(true);
+                infos = Resources.Load(player5face) as TextAsset;
+                player5infotext.text = infos.text.ToString();
                 break;
             case 6:
                 string player6face = player.Face;
@@ -254,6 +279,8 @@ public class GameManager : MonoBehaviour {
                 player_6.transform.Find("Canvas").transform.Find("PersonSelect").gameObject.SetActive(false);
                 player_6.transform.Find("Canvas").transform.Find("SelectButton").gameObject.SetActive(false);
                 player_6.transform.Find("InfoCanvas").gameObject.SetActive(true);
+                infos = Resources.Load(player6face) as TextAsset;
+                player6infotext.text = infos.text.ToString();
                 break;
         }
         countFaceAssigned++;
@@ -265,6 +292,8 @@ public class GameManager : MonoBehaviour {
         }
 
     }
+
+
 
     public void setGuessActive() {
         guess.SetActive(true);
