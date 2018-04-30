@@ -71,7 +71,7 @@ public class WhoAmIClient : NetworkBehaviour {
         this.MyClient.RegisterHandler(closeLobby, CloseLobby);
     }
 
-    public void CloseLobby() {
+    public void CloseLobby(NetworkMessage netMsg) {
         GameManager.Instance.CloseLobby();
     }
 
@@ -157,7 +157,6 @@ public class WhoAmIClient : NetworkBehaviour {
         StringMessage msg = netMsg.ReadMessage<StringMessage>();
         Debug.Log("Yay, " + msg.value + " are in the lobby");
         string[] array = msg.value.Split(',');
-        //Debug.Log(array[1] + ", " + array[0]);
         foreach (string a in array) {
             string[] player = a.Split('|');
             player[0].Trim();

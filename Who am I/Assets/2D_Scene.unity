@@ -2015,6 +2015,7 @@ MonoBehaviour:
   player_6: {fileID: 583836784}
   scoreboard: {fileID: 324182532}
   restart: {fileID: 2145412586}
+  lobby: {fileID: 1553577294}
   guess: {fileID: 1888622190}
   guessText: {fileID: 818391677}
   score: {fileID: 605935041}
@@ -14731,7 +14732,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1553577295
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14791,7 +14792,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 251660879}
-        m_MethodName: RestartGameButton
+        m_MethodName: CloseLobbyButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22235,7 +22236,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2145412587
 RectTransform:
   m_ObjectHideFlags: 0

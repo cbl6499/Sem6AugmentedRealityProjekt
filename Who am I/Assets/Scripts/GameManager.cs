@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour {
 
     public GameObject scoreboard;
     public GameObject restart;
+    public GameObject lobby;
 
     public GameObject guess;
 
@@ -65,16 +66,16 @@ public class GameManager : MonoBehaviour {
 
         this.client = WhoAmIClient.Instance;
         this.server = WhoAmIServer.Instance;
-        
 
-       /* DontDestroyOnLoad(gameObject);
-
-     
-        
         DontDestroyOnLoad(client);
         DontDestroyOnLoad(server);
-        DontDestroyOnLoad(serverPrefab);
-        DontDestroyOnLoad(clientPrefab);*/
+        DontDestroyOnLoad(gameObject);
+
+
+
+
+         DontDestroyOnLoad(serverPrefab);
+         DontDestroyOnLoad(clientPrefab);
         persons = new Dictionary<string, int>();
         persons.Add("Person1Selection", 0);
         persons.Add("Person2Selection", 1);
@@ -303,7 +304,15 @@ public class GameManager : MonoBehaviour {
     }
 
     public void CloseLobby() {
+        GameLobby.Instance = null;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        /*client = null;
+        server = null;
+        WhoAmIServer.Instance = null;
+        WhoAmIClient.Instance = null;
+        client = WhoAmIClient.Instance;
+        server = WhoAmIServer.Instance;
+        */
     }
 
 
@@ -316,7 +325,7 @@ public class GameManager : MonoBehaviour {
         player_6.SetActive(false);
 
         scoreboard.SetActive(true);
-
+        lobby.SetActive(true);
         guess.SetActive(false);
 
         client.GetCurrentPointsFromServer();
