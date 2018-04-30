@@ -152,7 +152,6 @@ public class GameManager : MonoBehaviour {
             server.SetupHost(amount);
             client.SetupClient();
             client.Connect();
-            Debug.Log("I made it to send method " + client.Username + " " + client.HostAddress);
             playerAmount.gameObject.SetActive(true);
             playerAmount.text = Network.player.ipAddress;
             serverMenu.SetActive(true);
@@ -168,7 +167,6 @@ public class GameManager : MonoBehaviour {
         try {
             client.Username = username;
             client.HostAddress = hostAddress;
-            Debug.Log("I mad it to to send method " + username + " " + hostAddress + " Client:" + client.Username + " " + client.HostAddress);
             client.SetupClient();
             client.Connect();
         } catch (Exception e) {
@@ -199,7 +197,7 @@ public class GameManager : MonoBehaviour {
     public void RestartGame() {
         scoreboard.SetActive(false);
         restart.SetActive(false);
-        StartGame();
+        
         player_1.transform.Find(player1face).gameObject.SetActive(false);
         player_1.transform.Find("Canvas").transform.Find("PersonSelect").gameObject.SetActive(true);
         player_1.transform.Find("Canvas").transform.Find("SelectButton").gameObject.SetActive(true);
@@ -224,9 +222,16 @@ public class GameManager : MonoBehaviour {
         player_6.transform.Find("Canvas").transform.Find("PersonSelect").gameObject.SetActive(true);
         player_6.transform.Find("Canvas").transform.Find("SelectButton").gameObject.SetActive(true);
         player_6.transform.Find("InfoCanvas").gameObject.SetActive(false);
-
+        countFaceAssigned = 0;
+        player1face = "obama";
+        player2face = "spiderman";
+        player3face = "willsmith";
+        player4face = "markzuckerberg";
+        player5face = "katemoss";
+        player6face = "gandalf";
         client.SendRestartLobbyToServer();
-        //GameLobby.Instance.RestartLobby();
+        StartGame();
+        GameLobby.Instance.RestartLobby();
     }
 
     public void GuessButtonClick() {
@@ -251,6 +256,7 @@ public class GameManager : MonoBehaviour {
     private string player4face = "markzuckerberg";
     private string player5face = "katemoss";
     private string player6face = "gandalf";
+
     public void SetFaceForPerson(Player player) {
         string personName = "";
         foreach(string name in persons.Keys) {
@@ -258,8 +264,6 @@ public class GameManager : MonoBehaviour {
                 personName = name;
             }
         }
-
-        Debug.Log("Component to find: " + player.Face);
         switch (player.Number + 1) {
             case 1:
                 string player1face = player.Face;
@@ -306,6 +310,7 @@ public class GameManager : MonoBehaviour {
         }
         countFaceAssigned++;
 
+        Debug.Log("Faces assigned: " + countFaceAssigned + ", " + lobbySize);
         if (countFaceAssigned == lobbySize){
             guess.SetActive(true);
         }

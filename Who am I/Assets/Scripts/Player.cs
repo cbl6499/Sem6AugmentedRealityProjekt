@@ -10,8 +10,8 @@ public class Player {
     private int points;
     private bool faceSet;
 
-    public Player(int number, string username) {
-        this.Number = number;
+    public Player(int id, string username) {
+        this.Number = id;
         this.Username = username;
         this.Points = 0;
         this.FaceSet = false;

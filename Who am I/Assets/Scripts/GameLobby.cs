@@ -49,6 +49,9 @@ public class GameLobby {
     }
 
     public void RestartLobby() {
+        foreach(Player player in this.Players) {
+            player.FaceSet = false;
+        }
         this.PlayersFinished = 0;
     }
 

@@ -14234,7 +14234,7 @@ MonoBehaviour:
   panel: {fileID: 1526873854}
   infoCan: {fileID: 1953002025}
   infoStr: 
-  guess: {fileID: 0}
+  guess: {fileID: 1888622190}
   info: {fileID: 425319439}
 --- !u!1 &1531876110
 GameObject:
