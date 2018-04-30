@@ -30,9 +30,12 @@ public class GameManager : MonoBehaviour {
     public GameObject player_5;
     public GameObject player_6;
 
+    private int number;
+
 
     string username;
 
+    public int Number { get; set; }
     void Start() {
         Instance = this;
         /*player_1 = GameObject.Find("Player_1");
@@ -177,6 +180,8 @@ public class GameManager : MonoBehaviour {
     }
 
     public void RestartGame() {
+        GameObject.Find("Restart").SetActive(false);
+        StartGame();
         GameLobby.Instance.RestartLobby();
     }
 
@@ -251,11 +256,24 @@ public class GameManager : MonoBehaviour {
       
     }
     public void FinishGame() {
+        player_1.SetActive(false);
+        player_2.SetActive(false);
+        player_3.SetActive(false);
+        player_4.SetActive(false);
+        player_5.SetActive(false);
+        player_6.SetActive(false);
 
+        GameObject.Find("Scoreboard").SetActive(true);
+
+        if(this.Number == 0) {
+            GameObject.Find("Restart").SetActive(true);
+        }
     }
 
     public void SetPlayerNumber(int number) {
-        playerNumber.text = "You are player: " + number+1;
+        number++;
+        this.Number = number;
+        playerNumber.text = "You are player: " + number;
     }
 
 
