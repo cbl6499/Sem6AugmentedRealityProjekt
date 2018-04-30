@@ -24,6 +24,7 @@ public class WhoAmIServer : NetworkBehaviour {
     private short resultMessage = 324;
     private short faceAssigned = 323;
     private short gameFinished = 322;
+    private short currentPoints = 321;
     public static WhoAmIServer Instance {
         get {
             if (instance == null) {
@@ -51,6 +52,7 @@ public class WhoAmIServer : NetworkBehaviour {
         NetworkServer.RegisterHandler(owner, CreateLobby);
         NetworkServer.RegisterHandler(updateVars, BroadCastPlayerFinished);
         NetworkServer.RegisterHandler(faceAssigned, BroadCastFaceAssigned);
+        NetworkServer.RegisterHandler(currentPoints, BroadCastPointList);
     }
 
     public void CreateLobby(NetworkMessage netMsg) {
@@ -123,6 +125,19 @@ public class WhoAmIServer : NetworkBehaviour {
                 BroadCastMessage(playerGuessedRight, p.Number + "");
             }
         }
+    }
+
+    public void BroadCastPointList(NetworkMessage netMsg) {
+        BroadCastMessage(currentPoints, GetPointList());
+    }
+
+    private string GetPointList() {
+        List<Player> playerList = GameLobby.Instance.Players;
+        string pointlist = "";
+        foreach(Player player in playerList) {
+            pointlist += player.Username + ": " + player.Points + "\n";
+        }
+        return pointlist;
     }
 
     public void BroadCastResult() {
