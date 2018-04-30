@@ -32,6 +32,7 @@ public class WhoAmIClient : NetworkBehaviour {
     private short restartLobby = 320; 
     private short guess = 319;
     private short resetlobby = 318;
+    private short closeLobby = 317;
 
     public int Port { get; set; }
     public string HostAddress { get; set; }
@@ -67,6 +68,11 @@ public class WhoAmIClient : NetworkBehaviour {
         this.MyClient.RegisterHandler(gameFinished, FinishGame);
         this.MyClient.RegisterHandler(currentPoints, GetCurrentPointTable);
         this.MyClient.RegisterHandler(restartLobby, RestartLobby);
+        this.MyClient.RegisterHandler(closeLobby, CloseLobby);
+    }
+
+    public void CloseLobby() {
+        GameManager.Instance.CloseLobby();
     }
 
     public void GetCurrentPointsFromServer() {
@@ -182,6 +188,10 @@ public class WhoAmIClient : NetworkBehaviour {
     private void GameWon(NetworkMessage netMsg) {
         StringMessage msg = netMsg.ReadMessage<StringMessage>();
         Debug.Log("Guess was: " + msg.value);
+    }
+
+    public void SendCloseLobbyCommand() {
+        this.MyClient.Send(closeLobby, new StringMessage("End"));
     }
 
     public bool CheckGuess(string face) {
