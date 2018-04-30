@@ -51,12 +51,8 @@ public class WhoAmIServer : NetworkBehaviour {
         NetworkServer.RegisterHandler(owner, CreateLobby);
         NetworkServer.RegisterHandler(updateVars, BroadCastPlayerFinished);
         NetworkServer.RegisterHandler(faceAssigned, BroadCastFaceAssigned);
-       // NetworkServer.RegisterHandler(MsgType.Connect, AcceptConnection);
     }
 
-   /* public void AcceptConnection() {
-        OnConnected();
-    }*/
     public void CreateLobby(NetworkMessage netMsg) {
         StringMessage msg = netMsg.ReadMessage<StringMessage>();
         GameLobby lobby = GameLobby.Instance;

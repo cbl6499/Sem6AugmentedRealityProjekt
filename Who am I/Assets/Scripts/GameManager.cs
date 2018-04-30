@@ -170,6 +170,10 @@ public class GameManager : MonoBehaviour {
 
     }
 
+    public void RestartGameButton() {
+        GameLobby.Instance.RestartLobby();
+    }
+
     public void GuessButtonClick() {
         string guess = GameObject.Find("GuessInput").GetComponent<InputField>().text;
         

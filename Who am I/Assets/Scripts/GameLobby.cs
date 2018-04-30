@@ -48,6 +48,13 @@ public class GameLobby {
         this.Owner = player;
     }
 
+    public void RestartLobby() {
+        this.PlayersFinished = 0;
+        foreach(Player player in players) {
+            player.Face = "";
+        }
+    }
+
     public void RegisterPlayer(Player player) {
         Debug.Log("Registered player: " + player.Username);
         if(player.Number == 0) {
