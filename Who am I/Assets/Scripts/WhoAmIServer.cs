@@ -28,6 +28,7 @@ public class WhoAmIServer : NetworkBehaviour {
     private short currentPoints = 321;
     private short restartLobby = 320;
     private short guess = 319;
+    private short closeLobby = 317;
 
     public static WhoAmIServer Instance {
         get {
@@ -59,7 +60,12 @@ public class WhoAmIServer : NetworkBehaviour {
         NetworkServer.RegisterHandler(currentPoints, BroadCastPointList);
         NetworkServer.RegisterHandler(guess, BroadCastPlayerFinished);
         NetworkServer.RegisterHandler(restartLobby, BroadCastRestartLobby);
+        NetworkServer.RegisterHandler(closeLobby, BroadCastCloseLobby);
        // NetworkServer.RegisterHandler(restartLobby, BroadCastLobbyRestart);
+    }
+
+    public void BroadCastCloseLobby(NetworkMessage netMsg) {
+        BroadCastMessage(closeLobby, "close all lobbys");
     }
 
     public void BroadCastRestartLobby(NetworkMessage netMsg) {

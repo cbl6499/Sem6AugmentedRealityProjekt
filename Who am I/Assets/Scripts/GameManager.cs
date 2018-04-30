@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
 public class GameManager : MonoBehaviour {
 
     Dictionary<String, int> persons;
@@ -295,6 +296,14 @@ public class GameManager : MonoBehaviour {
             guess.SetActive(true);
         }
 
+    }
+
+    public void CloseLobbyButton() {
+        client.SendCloseLobbyCommand();
+    }
+
+    public void CloseLobby() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 
