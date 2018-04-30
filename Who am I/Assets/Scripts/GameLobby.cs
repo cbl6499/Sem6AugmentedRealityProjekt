@@ -48,10 +48,11 @@ public class GameLobby {
     }
 
     public void RestartLobby() {
-        foreach(Player player in players) {
+        foreach(Player player in this.Players) {
             player.FaceSet = false;
         }
         this.playersFinished = 0;
+        this.CurrentPlayerCount = 0;
     }
 
     public void RegisterPlayer(Player player) {

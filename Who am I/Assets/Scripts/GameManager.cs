@@ -50,34 +50,6 @@ public class GameManager : MonoBehaviour {
     public int Number { get; set; }
     void Start() {
         Instance = this;
-        /*player_1 = GameObject.Find("Player_1");
-        player_2 = GameObject.Find("Player_2");
-        player_3;
-        player_4;
-        player_5;
-        player_6;
-        GameObject.Find("Player_1").SetActive(false);
-        GameObject.Find("Player_2").SetActive(false);
-        GameObject.Find("Player_3").SetActive(false);
-        GameObject.Find("Player_4").SetActive(false);
-        GameObject.Find("Player_5").SetActive(false);
-        GameObject.Find("Player_6").SetActive(false);
-
-        SelectPerson sp1 = player_1.gameObject.GetComponent(typeof(SelectPerson)) as SelectPerson;
-        SelectPerson sp2 = player_2.gameObject.GetComponent(typeof(SelectPerson)) as SelectPerson;
-        SelectPerson sp3 = player_3.gameObject.GetComponent(typeof(SelectPerson)) as SelectPerson;
-        SelectPerson sp4 = player_4.gameObject.GetComponent(typeof(SelectPerson)) as SelectPerson;
-        SelectPerson sp5 = player_5.gameObject.GetComponent(typeof(SelectPerson)) as SelectPerson;
-        SelectPerson sp6 = player_6.gameObject.GetComponent(typeof(SelectPerson)) as SelectPerson;
-
-        sp1.DisableAll();
-        sp2.DisableAll();
-        sp3.DisableAll();
-        sp4.DisableAll();
-        sp5.DisableAll();
-        sp6.DisableAll();*/
-
-        
 
         player_1.SetActive(false);
         player_2.SetActive(false);
@@ -90,8 +62,8 @@ public class GameManager : MonoBehaviour {
         connectMenu.SetActive(false);
         hostSettingMenu.SetActive(false);
 
-        this.client = WhoAmIClient.Instance;//Instantiate(clientPrefab.GetComponent<WhoAmIClient>()); // WhoAmIClient.Instance;
-        this.server = WhoAmIServer.Instance;//Instantiate(serverPrefab.GetComponent<WhoAmIServer>());//WhoAmIServer.Instance;
+        this.client = WhoAmIClient.Instance;
+        this.server = WhoAmIServer.Instance;
         
 
         DontDestroyOnLoad(gameObject);
