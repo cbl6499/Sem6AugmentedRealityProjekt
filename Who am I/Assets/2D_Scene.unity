@@ -1637,7 +1637,7 @@ MonoBehaviour:
   panel: {fileID: 192256168}
   infoCan: {fileID: 1531876110}
   infoStr: 
-  guess: {fileID: 0}
+  guess: {fileID: 1888622190}
   info: {fileID: 1801666514}
 --- !u!114 &192256171
 MonoBehaviour:
@@ -5283,7 +5283,7 @@ MonoBehaviour:
   panel: {fileID: 539911590}
   infoCan: {fileID: 962173931}
   infoStr: 
-  guess: {fileID: 0}
+  guess: {fileID: 1888622190}
   info: {fileID: 412425089}
 --- !u!114 &539911592
 MonoBehaviour:
@@ -10508,7 +10508,7 @@ MonoBehaviour:
   panel: {fileID: 1134235463}
   infoCan: {fileID: 1848489706}
   infoStr: 
-  guess: {fileID: 0}
+  guess: {fileID: 1888622190}
   info: {fileID: 1469781704}
 --- !u!114 &1134235465
 MonoBehaviour:
@@ -14445,7 +14445,7 @@ MonoBehaviour:
   panel: {fileID: 1544213949}
   infoCan: {fileID: 222029822}
   infoStr: 
-  guess: {fileID: 0}
+  guess: {fileID: 1888622190}
   info: {fileID: 1079161491}
 --- !u!114 &1544213951
 MonoBehaviour:
@@ -17080,7 +17080,7 @@ MonoBehaviour:
   panel: {fileID: 1672017977}
   infoCan: {fileID: 416708478}
   infoStr: 
-  guess: {fileID: 0}
+  guess: {fileID: 1888622190}
   info: {fileID: 549729870}
 --- !u!114 &1672017979
 MonoBehaviour:
