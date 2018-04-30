@@ -1,0 +1,7 @@
+Name: Gandalf
+Beruf: Zauberer und Pyrotechnicker
+Real: nein
+Bsonderer Merkmale: altert nicht, grau oder weiss
+Haustier: Schattenfell
+Geburtstag: AmAnfang aller Tage
+Schwert: Glamdril

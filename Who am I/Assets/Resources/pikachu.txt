@@ -1,0 +1,6 @@
+Name: Pikatchu
+Art: Pokemon
+Real: nein
+Groesse: 40cm
+Herkunft: Kanto
+Pokemonart: Elektropokemon
