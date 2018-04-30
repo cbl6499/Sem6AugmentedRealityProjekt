@@ -168,6 +168,8 @@ public class GameManager : MonoBehaviour {
         playerAmount.gameObject.SetActive(false);
         connectMenu.SetActive(false);
         serverMenu.SetActive(false);
+
+        GameObject.Find("Guess").SetActive(false);
         
         player_1.SetActive(true);
         player_2.SetActive(true);
@@ -189,7 +191,7 @@ public class GameManager : MonoBehaviour {
     }
 
     public void GuessButtonClick() {
-        string guess = GameObject.Find("GuessInput").GetComponent<InputField>().text;
+        string guess = GameObject.Find("Guess").GetComponent<InputField>().text;
         
         if (client.CheckGuess(guess)) {
             Debug.Log("GG EZ");
@@ -255,9 +257,14 @@ public class GameManager : MonoBehaviour {
                 player_6.transform.Find("InfoCanvas").gameObject.SetActive(true);
                 break;
         }
+        WhoAmIClient.Instance.PlayerList[player.Number].FaceSet = true;
+        if (WhoAmIClient.Instance.AllFacesSet()) {
+            GameObject.Find("Guess").SetActive(true);
+        }
 
-      
     }
+
+
     public void FinishGame() {
         player_1.SetActive(false);
         player_2.SetActive(false);

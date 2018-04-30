@@ -8,12 +8,16 @@ public class Player {
     private string username;
     private string face;
     private int points;
+    private bool faceSet;
 
     public Player(int number, string username) {
         this.Number = number;
         this.Username = username;
         this.Points = 0;
+        this.FaceSet = false;
     }
+
+    public bool FaceSet { get; set; }
 
     public void AddPoints(int points) {
         points += points;

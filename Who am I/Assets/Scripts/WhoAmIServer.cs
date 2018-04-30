@@ -85,6 +85,10 @@ public class WhoAmIServer : NetworkBehaviour {
     }
 
     public void BroadCastFaceAssigned(NetworkMessage netMsg) {
+        string msg = netMsg.ReadMessage<StringMessage>().value;
+        string[] data = msg.Split('|');
+        Player player = findPlayerById(Int32.Parse(data[0]));
+        player.FaceSet = true;
         BroadCastMessage(faceAssigned, netMsg.ReadMessage<StringMessage>().value);
     }
 

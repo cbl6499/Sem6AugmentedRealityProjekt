@@ -50,6 +50,9 @@ public class GameLobby {
 
     public void RestartLobby() {
         this.PlayersFinished = 0;
+        foreach(Player player in players) {
+            player.FaceSet = false;
+        }
     }
 
     public void RegisterPlayer(Player player) {

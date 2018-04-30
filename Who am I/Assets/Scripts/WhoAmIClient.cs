@@ -35,6 +35,7 @@ public class WhoAmIClient : NetworkBehaviour {
     public string HostAddress { get; set; }
     public string Username { get; set; }
 
+    public List<Player> PlayerList { get; set; }
     public bool ReadyToGo { get; set; }
     public NetworkClient MyClient { get; set; }
     public static WhoAmIClient Instance {
@@ -195,6 +196,21 @@ public class WhoAmIClient : NetworkBehaviour {
         }
         Debug.Log(this.MyClient.hostPort);
         this.MyClient.Send(faceAssigned, new StringMessage(id + "|" + face));
+    }
+
+    public bool AllFacesSet() {
+        foreach(Player player in playerList) {
+            if (!player.FaceSet) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public void ResetPlayers() {
+        foreach (Player player in playerList) {
+            player.FaceSet = false;
+        }
     }
 
 }
