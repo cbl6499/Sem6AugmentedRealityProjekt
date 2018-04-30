@@ -30,6 +30,7 @@ public class WhoAmIClient : NetworkBehaviour {
     private short gameFinished = 322;
     private short currentPoints = 321;
     private short restartLobby = 320;
+    private short guess = 319;
 
     public int Port { get; set; }
     public string HostAddress { get; set; }
@@ -59,7 +60,7 @@ public class WhoAmIClient : NetworkBehaviour {
         this.MyClient.RegisterHandler(syncList, SetPlayerList);
         this.MyClient.RegisterHandler(connect, OnSuccessfulConnection);
         this.MyClient.RegisterHandler(spawnFinished, SetLocalClient);
-        this.MyClient.RegisterHandler(updateVars, GameWon);
+        this.MyClient.RegisterHandler(playerGuessedRight, GameWon);
         this.MyClient.RegisterHandler(lobbyReadyToBegin, LobbyReady);
         this.MyClient.RegisterHandler(faceAssigned, AssignFaceToPlayer);
         this.MyClient.RegisterHandler(gameFinished, FinishGame);
@@ -67,9 +68,12 @@ public class WhoAmIClient : NetworkBehaviour {
         this.MyClient.RegisterHandler(restartLobby, RestartLobby);
     }
 
-
+    public void GetCurrentPointsFromServer() {
+        this.MyClient.Send(currentPoints, new StringMessage("give me points"));
+    }
     public void GetCurrentPointTable(NetworkMessage netMsg) {
-
+        string points = netMsg.ReadMessage<StringMessage>().value;
+        GameManager.Instance.CurrentPoints = points;
     }
 
     public void RestartLobby(NetworkMessage netMsg) {
@@ -165,7 +169,7 @@ public class WhoAmIClient : NetworkBehaviour {
     }
 
     private void SendCorrectGuess() {
-        myClient.Send(owner, new StringMessage(localClient.ToString()));
+        this.MyClient.Send(guess, new StringMessage(localClient.ToString()));
     }
 
     private void GameWon(NetworkMessage netMsg) {

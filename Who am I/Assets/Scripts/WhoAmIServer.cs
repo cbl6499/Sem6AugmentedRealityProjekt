@@ -27,6 +27,7 @@ public class WhoAmIServer : NetworkBehaviour {
     private short gameFinished = 322;
     private short currentPoints = 321;
     private short restartLobby = 320;
+    private short guess = 319;
 
     public static WhoAmIServer Instance {
         get {
@@ -56,6 +57,7 @@ public class WhoAmIServer : NetworkBehaviour {
         NetworkServer.RegisterHandler(updateVars, BroadCastPlayerFinished);
         NetworkServer.RegisterHandler(faceAssigned, BroadCastFaceAssigned);
         NetworkServer.RegisterHandler(currentPoints, BroadCastPointList);
+        NetworkServer.RegisterHandler(guess, BroadCastPlayerFinished);
        // NetworkServer.RegisterHandler(restartLobby, BroadCastLobbyRestart);
     }
 
@@ -89,7 +91,7 @@ public class WhoAmIServer : NetworkBehaviour {
         string[] data = msg.Split('|');
         Player player = findPlayerById(Int32.Parse(data[0]));
         player.FaceSet = true;
-        BroadCastMessage(faceAssigned, netMsg.ReadMessage<StringMessage>().value);
+        BroadCastMessage(faceAssigned, msg);
     }
 
     public void BroadCastReady() {

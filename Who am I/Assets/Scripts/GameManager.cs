@@ -31,11 +31,22 @@ public class GameManager : MonoBehaviour {
     public GameObject player_5;
     public GameObject player_6;
 
-    private int number;
+    public GameObject scoreboard;
+    public GameObject restart;
 
+    public GameObject guess;
+
+    private int number;
+    private int lobbySize;
+
+    public Text guessText;
+    public Text score;
+
+    public string currentPoints = "";
 
     string username;
 
+    public string CurrentPoints { get; set; }
     public int Number { get; set; }
     void Start() {
         Instance = this;
@@ -135,6 +146,7 @@ public class GameManager : MonoBehaviour {
             GameManager.print("Lobby would be to big!");
             GameObject.Find("PlayerAmount").GetComponent<InputField>().text = "6";
         } else {
+            lobbySize = amount;
             client.Username = username;
             client.HostAddress = "127.0.0.1";
             server.SetupHost(amount);
@@ -169,7 +181,7 @@ public class GameManager : MonoBehaviour {
         connectMenu.SetActive(false);
         serverMenu.SetActive(false);
 
-        GameObject.Find("Guess").SetActive(false);
+        guess.SetActive(false);
         
         player_1.SetActive(true);
         player_2.SetActive(true);
@@ -191,7 +203,7 @@ public class GameManager : MonoBehaviour {
     }
 
     public void GuessButtonClick() {
-        string guess = GameObject.Find("Guess").GetComponent<InputField>().text;
+        string guess = this.guessText.text;
         
         if (client.CheckGuess(guess)) {
             Debug.Log("GG EZ");
@@ -208,6 +220,7 @@ public class GameManager : MonoBehaviour {
         client.SendFaceSelectionToServer(id, selection.name);
     }
 
+    private int countFaceAssigned = 0;
     public void SetFaceForPerson(Player player) {
         string personName = "";
         foreach(string name in persons.Keys) {
@@ -257,9 +270,10 @@ public class GameManager : MonoBehaviour {
                 player_6.transform.Find("InfoCanvas").gameObject.SetActive(true);
                 break;
         }
-        WhoAmIClient.Instance.PlayerList[player.Number].FaceSet = true;
-        if (WhoAmIClient.Instance.AllFacesSet()) {
-            GameObject.Find("Guess").SetActive(true);
+        countFaceAssigned++;
+       // WhoAmIClient.Instance.PlayerList[player.Number].FaceSet = true;
+        if (countFaceAssigned == lobbySize){//WhoAmIClient.Instance.AllFacesSet()) {
+            guess.SetActive(true);
         }
 
     }
@@ -273,10 +287,17 @@ public class GameManager : MonoBehaviour {
         player_5.SetActive(false);
         player_6.SetActive(false);
 
-        GameObject.Find("Scoreboard").SetActive(true);
+        scoreboard.SetActive(true);
+        client.GetCurrentPointsFromServer();
+
+        score.text = CurrentPoints;
+        
+        Debug.Log("Scoreboard should be here");
+        //GameObject.Find("Scoreboard").SetActive(true);
 
         if(this.Number == 0) {
-            GameObject.Find("Restart").SetActive(true);
+            restart.SetActive(true);
+            //GameObject.Find("Restart").SetActive(true);
         }
     }
 
