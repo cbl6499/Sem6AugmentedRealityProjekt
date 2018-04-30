@@ -290,10 +290,10 @@ public class GameManager : MonoBehaviour {
         }
         countFaceAssigned++;
 
-        /*Debug.Log("Faces assigned: " + countFaceAssigned + ", " + lobbySize);
+        Debug.Log("Faces assigned: " + countFaceAssigned + ", " + lobbySize);
         if (countFaceAssigned == lobbySize){
             guess.SetActive(true);
-        }*/
+        }
 
     }
 

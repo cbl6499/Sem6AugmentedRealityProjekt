@@ -185,10 +185,20 @@ public class WhoAmIClient : NetworkBehaviour {
     }
 
     public bool CheckGuess(string face) {
+        Debug.Log(face);
         string guess = playerList[localClient].Face;
         guess.Trim();
+        string newguess = "";
+        char[] guessarray = guess.ToCharArray();
+
+        for(int i = 0; i < guessarray.Length; i++) {
+            if(guessarray[i] != ' ') {
+                newguess += guessarray[i];
+            }
+        }
+
         guess.ToLower();
-        if (guess == face.ToLower()) {
+        if (newguess == face.ToLower()) {
             SendCorrectGuess();
             Debug.Log("Guess was Correct");
             return true;

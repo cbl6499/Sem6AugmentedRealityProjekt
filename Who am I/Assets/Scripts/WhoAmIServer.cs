@@ -138,7 +138,7 @@ public class WhoAmIServer : NetworkBehaviour {
         if (p != null) {
             p.AddPoints(GameLobby.Instance.Players.Count - (GameLobby.Instance.PlayersFinished));
             GameLobby.Instance.PlayersFinished++;
-            if (GameLobby.Instance.PlayersFinished == GameLobby.Instance.Players.Count) {
+            if (GameLobby.Instance.PlayersFinished >= GameLobby.Instance.CurrentPlayerCount) {
                 BroadCastMessage(gameFinished, "finish");
             } else {
                 BroadCastMessage(playerGuessedRight, p.Number + "");
