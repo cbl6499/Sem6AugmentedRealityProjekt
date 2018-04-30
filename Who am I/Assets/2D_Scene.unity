@@ -2019,6 +2019,7 @@ MonoBehaviour:
   lobby: {fileID: 1553577294}
   subButton: {fileID: 1025330492}
   textField: {fileID: 1346760741}
+  connectButton: {fileID: 2078933230}
   player1infotext: {fileID: 425319439}
   player2infotext: {fileID: 1801666514}
   player3infotext: {fileID: 1079161491}
@@ -20558,7 +20559,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 85.685}
+  m_AnchoredPosition: {x: -0.00012207031, y: 85.685}
   m_SizeDelta: {x: 0, y: 171.43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2008784889
@@ -22238,7 +22239,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 85.685}
+  m_AnchoredPosition: {x: 0.00012207031, y: 85.685}
   m_SizeDelta: {x: 0, y: 171.43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2121392661

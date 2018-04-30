@@ -38,6 +38,8 @@ public class GameManager : MonoBehaviour {
 	public GameObject subButton;
 	public GameObject textField;
 
+    public GameObject connectButton;
+
 
     private int countFaceAssigned = 0;
 
@@ -347,6 +349,7 @@ public class GameManager : MonoBehaviour {
         number++;
         this.Number = number;
         playerNumber.text = "You are player: " + number;
+        connectButton.SetActive(false);
     }
 
     public void SetCurrentPoints(string points) {
