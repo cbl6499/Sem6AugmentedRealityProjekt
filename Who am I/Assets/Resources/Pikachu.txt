@@ -1,5 +1,0 @@
-Name: Pikachu
-Art: Pokemon
-Real: nein
-Groesse: 40cm
-Herkunft: Kanto
