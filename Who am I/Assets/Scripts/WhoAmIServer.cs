@@ -29,6 +29,7 @@ public class WhoAmIServer : NetworkBehaviour {
     private short restartLobby = 320;
     private short guess = 319;
     private short closeLobby = 317;
+    private short setguessactive = 316;
 
     public static WhoAmIServer Instance {
         get {
@@ -61,9 +62,13 @@ public class WhoAmIServer : NetworkBehaviour {
         NetworkServer.RegisterHandler(guess, BroadCastPlayerFinished);
         NetworkServer.RegisterHandler(restartLobby, BroadCastRestartLobby);
         NetworkServer.RegisterHandler(closeLobby, BroadCastCloseLobby);
+        NetworkServer.RegisterHandler(setguessactive, BroadCastSetGuessActive);
        // NetworkServer.RegisterHandler(restartLobby, BroadCastLobbyRestart);
     }
 
+    public void BroadCastSetGuessActive(NetworkMessage netMsg) {
+        BroadCastMessage(setguessactive, "start guessing");
+    }
     public void BroadCastCloseLobby(NetworkMessage netMsg) {
         BroadCastMessage(closeLobby, "close all lobbys");
     }

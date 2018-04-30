@@ -232,12 +232,12 @@ public class GameManager : MonoBehaviour {
     }
 
     private int countFaceAssigned = 0;
-    private string player1face = "obama";
+   /* private string player1face = "obama";
     private string player2face = "spiderman";
     private string player3face = "willsmith";
     private string player4face = "markzuckerberg";
     private string player5face = "katemoss";
-    private string player6face = "gandalf";
+    private string player6face = "gandalf";*/
 
     public void SetFaceForPerson(Player player) {
         string personName = "";
@@ -294,9 +294,14 @@ public class GameManager : MonoBehaviour {
 
         Debug.Log("Faces assigned: " + countFaceAssigned + ", " + lobbySize);
         if (countFaceAssigned == lobbySize){
-            guess.SetActive(true);
+            //guess.SetActive(true);
+            client.SendSetGuessActive();
         }
 
+    }
+
+    public void setGuessActive() {
+        guess.SetActive(true);
     }
 
     public void CloseLobbyButton() {
