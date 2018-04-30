@@ -36,7 +36,6 @@ public class GameLobby {
 
     private GameLobby() {
         this.CurrentPlayerCount = 0;
-        //this.Owner = CreatePlayer(Network.player.ipAddress);
         this.Players = new List<Player>();
         this.Players.Add(this.Owner);
         this.playersFinished = 0;
@@ -49,10 +48,10 @@ public class GameLobby {
     }
 
     public void RestartLobby() {
-        foreach(Player player in this.Players) {
+        foreach(Player player in players) {
             player.FaceSet = false;
         }
-        this.PlayersFinished = 0;
+        this.playersFinished = 0;
     }
 
     public void RegisterPlayer(Player player) {
