@@ -1638,6 +1638,7 @@ MonoBehaviour:
   infoCan: {fileID: 1531876110}
   infoStr: 
   guess: {fileID: 1888622190}
+  guessAnswer: {fileID: 534898683}
   info: {fileID: 1801666514}
 --- !u!114 &192256171
 MonoBehaviour:
@@ -2016,6 +2017,9 @@ MonoBehaviour:
   scoreboard: {fileID: 324182532}
   restart: {fileID: 2145412586}
   lobby: {fileID: 1553577294}
+  subButton: {fileID: 1025330492}
+  textField: {fileID: 1346760741}
+  guessAnswer: {fileID: 534898683}
   guess: {fileID: 1888622190}
   guessText: {fileID: 818391677}
   score: {fileID: 605935041}
@@ -5250,6 +5254,80 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 526251779}
+--- !u!1 &534898681
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 534898682}
+  - component: {fileID: 534898684}
+  - component: {fileID: 534898683}
+  m_Layer: 5
+  m_Name: Answer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &534898682
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 534898681}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1888622194}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 56.493774, y: 116.899994}
+  m_SizeDelta: {x: 826.67, y: 58.9}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &534898683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 534898681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.0074070143, b: 0.0074070143, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 38
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 50
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &534898684
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 534898681}
 --- !u!1 &539911590
 GameObject:
   m_ObjectHideFlags: 0
@@ -5284,6 +5362,7 @@ MonoBehaviour:
   infoCan: {fileID: 962173931}
   infoStr: 
   guess: {fileID: 1888622190}
+  guessAnswer: {fileID: 534898683}
   info: {fileID: 412425089}
 --- !u!114 &539911592
 MonoBehaviour:
@@ -10509,6 +10588,7 @@ MonoBehaviour:
   infoCan: {fileID: 1848489706}
   infoStr: 
   guess: {fileID: 1888622190}
+  guessAnswer: {fileID: 534898683}
   info: {fileID: 1469781704}
 --- !u!114 &1134235465
 MonoBehaviour:
@@ -14317,6 +14397,7 @@ MonoBehaviour:
   infoCan: {fileID: 1953002025}
   infoStr: 
   guess: {fileID: 1888622190}
+  guessAnswer: {fileID: 534898683}
   info: {fileID: 425319439}
 --- !u!1 &1531876110
 GameObject:
@@ -14446,6 +14527,7 @@ MonoBehaviour:
   infoCan: {fileID: 222029822}
   infoStr: 
   guess: {fileID: 1888622190}
+  guessAnswer: {fileID: 534898683}
   info: {fileID: 1079161491}
 --- !u!114 &1544213951
 MonoBehaviour:
@@ -17081,6 +17163,7 @@ MonoBehaviour:
   infoCan: {fileID: 416708478}
   infoStr: 
   guess: {fileID: 1888622190}
+  guessAnswer: {fileID: 534898683}
   info: {fileID: 549729870}
 --- !u!114 &1672017979
 MonoBehaviour:
@@ -19185,6 +19268,7 @@ RectTransform:
   m_Children:
   - {fileID: 1025330493}
   - {fileID: 1346760742}
+  - {fileID: 534898682}
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

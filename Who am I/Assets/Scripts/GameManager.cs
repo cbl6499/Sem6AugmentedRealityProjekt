@@ -35,6 +35,10 @@ public class GameManager : MonoBehaviour {
     public GameObject scoreboard;
     public GameObject restart;
     public GameObject lobby;
+	public GameObject subButton;
+	public GameObject textField;
+
+	public Text guessAnswer;
 
     public GameObject guess;
 
@@ -155,6 +159,7 @@ public class GameManager : MonoBehaviour {
 
         //guess.SetActive(false);
         
+		guessAnswer.gameObject.SetActive (false);
         player_1.SetActive(true);
         player_2.SetActive(true);
         player_3.SetActive(true);
@@ -171,58 +176,25 @@ public class GameManager : MonoBehaviour {
     public void RestartGame() {
         scoreboard.SetActive(false);
         restart.SetActive(false);
-        /*
-        player_1.transform.Find(player1face).gameObject.SetActive(false);
-        player_1.transform.Find("Canvas").transform.Find("PersonSelect").gameObject.SetActive(true);
-        player_1.transform.Find("Canvas").transform.Find("SelectButton").gameObject.SetActive(true);
-        player_1.transform.Find("InfoCanvas").gameObject.SetActive(false);
-        player_2.transform.Find(player2face).gameObject.SetActive(false);
-        player_2.transform.Find("Canvas").transform.Find("PersonSelect").gameObject.SetActive(true);
-        player_2.transform.Find("Canvas").transform.Find("SelectButton").gameObject.SetActive(true);
-        player_2.transform.Find("InfoCanvas").gameObject.SetActive(false);
-        player_3.transform.Find(player3face).gameObject.SetActive(false);
-        player_3.transform.Find("Canvas").transform.Find("PersonSelect").gameObject.SetActive(true);
-        player_3.transform.Find("Canvas").transform.Find("SelectButton").gameObject.SetActive(true);
-        player_3.transform.Find("InfoCanvas").gameObject.SetActive(false);
-        player_4.transform.Find(player4face).gameObject.SetActive(false);
-        player_4.transform.Find("Canvas").transform.Find("PersonSelect").gameObject.SetActive(true);
-        player_4.transform.Find("Canvas").transform.Find("SelectButton").gameObject.SetActive(true);
-        player_4.transform.Find("InfoCanvas").gameObject.SetActive(false);
-        player_5.transform.Find(player5face).gameObject.SetActive(false);
-        player_5.transform.Find("Canvas").transform.Find("PersonSelect").gameObject.SetActive(true);
-        player_5.transform.Find("Canvas").transform.Find("SelectButton").gameObject.SetActive(true);
-        player_5.transform.Find("InfoCanvas").gameObject.SetActive(false);
-        player_6.transform.Find(player6face).gameObject.SetActive(false);
-        player_6.transform.Find("Canvas").transform.Find("PersonSelect").gameObject.SetActive(true);
-        player_6.transform.Find("Canvas").transform.Find("SelectButton").gameObject.SetActive(true);
-        player_6.transform.Find("InfoCanvas").gameObject.SetActive(false);
-        countFaceAssigned = 0;
-        player1face = "obama";
-        player2face = "spiderman";
-        player3face = "willsmith";
-        player4face = "markzuckerberg";
-        player5face = "katemoss";
-        player6face = "gandalf";*/
         client.SendRestartLobbyToServer();
-		//guess.SetActive(false);
 		countFaceAssigned = 0;
-        //StartGame();
 		player_1.SetActive(true);
 		player_2.SetActive(true);
 		player_3.SetActive(true);
 		player_4.SetActive(true);
 		player_5.SetActive(true);
 		player_6.SetActive(true);
-        //GameLobby.Instance.RestartLobby();
     }
 
     public void GuessButtonClick() {
         string guess = this.guessText.text;
-        
+		guessAnswer.gameObject.SetActive (true);
         if (client.CheckGuess(guess)) {
-            Debug.Log("GG EZ");
+			guessAnswer.text = "Damn you are good, you got it right!";
+			subButton.SetActive (false);
+			textField.SetActive (false);
         } else {
-            Debug.Log("LOL NOOB");
+			guessAnswer.text = "Damn that was a bad answer, better luck next time!";
         }
     }
 
@@ -232,12 +204,6 @@ public class GameManager : MonoBehaviour {
     }
 
     private int countFaceAssigned = 0;
-   /* private string player1face = "obama";
-    private string player2face = "spiderman";
-    private string player3face = "willsmith";
-    private string player4face = "markzuckerberg";
-    private string player5face = "katemoss";
-    private string player6face = "gandalf";*/
 
     public void SetFaceForPerson(Player player) {
         string personName = "";
@@ -329,8 +295,9 @@ public class GameManager : MonoBehaviour {
         player_5.SetActive(false);
         player_6.SetActive(false);
 
+		guessAnswer.gameObject.SetActive (false);
+
         scoreboard.SetActive(true);
-        lobby.SetActive(true);
         guess.SetActive(false);
 
         client.GetCurrentPointsFromServer();
@@ -342,6 +309,7 @@ public class GameManager : MonoBehaviour {
 
         if(this.Number == 1) {
             restart.SetActive(true);
+			lobby.SetActive(true);
         }
     }
 
