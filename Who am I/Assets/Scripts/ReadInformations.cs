@@ -22,8 +22,8 @@ public class ReadInformations : MonoBehaviour {
 		//Read the text from directly from the test.txt file
 		guessAnswer.gameObject.SetActive(false);
 		guess.SetActive(false);
-		TextAsset infos = Resources.Load(person.getName()) as TextAsset;
-		info.text = infos.text.ToString ();
+		//TextAsset infos = Resources.Load(person.getName()) as TextAsset;
+		//info.text = infos.text.ToString ();
 	}
 
 

@@ -228,8 +228,9 @@ public class GameManager : MonoBehaviour {
         }
         TextAsset infos;
         switch (player.Number + 1) {
-            case 1:
-                string player1face = player.Face;
+		case 1:
+			string player1face = player.Face;
+			Debug.Log (player1face);
                 player_1.transform.Find(player.Face).gameObject.SetActive(true);
                 player_1.transform.Find("Canvas").transform.Find("PersonSelect").gameObject.SetActive(false);
                 player_1.transform.Find("Canvas").transform.Find("SelectButton").gameObject.SetActive(false);
