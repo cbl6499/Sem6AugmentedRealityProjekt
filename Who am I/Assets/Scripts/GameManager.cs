@@ -66,14 +66,14 @@ public class GameManager : MonoBehaviour {
         this.server = WhoAmIServer.Instance;
         
 
-        DontDestroyOnLoad(gameObject);
+       /* DontDestroyOnLoad(gameObject);
 
      
         
         DontDestroyOnLoad(client);
         DontDestroyOnLoad(server);
         DontDestroyOnLoad(serverPrefab);
-        DontDestroyOnLoad(clientPrefab);
+        DontDestroyOnLoad(clientPrefab);*/
         persons = new Dictionary<string, int>();
         persons.Add("Person1Selection", 0);
         persons.Add("Person2Selection", 1);
