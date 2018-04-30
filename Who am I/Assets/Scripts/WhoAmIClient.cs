@@ -225,6 +225,7 @@ public class WhoAmIClient : NetworkBehaviour {
             Debug.Log("test" + this.MyClient.hostPort);
         }
         Debug.Log(this.MyClient.hostPort);
+
         this.MyClient.Send(faceAssigned, new StringMessage(id + "|" + face));
     }
 
