@@ -255,7 +255,7 @@ public class GameManager : MonoBehaviour {
     }
 
     public void SetPlayerNumber(int number) {
-        playerNumber.text = "You are player: " + number;
+        playerNumber.text = "You are player: " + number+1;
     }
 
 
