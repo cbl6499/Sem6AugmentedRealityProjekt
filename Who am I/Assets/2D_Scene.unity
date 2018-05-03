@@ -2991,7 +2991,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 341441649}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 1.8012271, z: -0.645}
+  m_LocalPosition: {x: 0, y: 1.8012271, z: -0.533}
   m_LocalScale: {x: 0.13473602, y: 0.13473602, z: 0.13473602}
   m_Children: []
   m_Father: {fileID: 1109985619}
@@ -6895,7 +6895,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 653642441}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0.057844833, y: 1.4129312, z: -0.619}
+  m_LocalPosition: {x: 0.057844833, y: 1.4129312, z: -0.472}
   m_LocalScale: {x: 0.15337665, y: 0.15337665, z: 0.15337665}
   m_Children: []
   m_Father: {fileID: 2110428206}
@@ -9790,7 +9790,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1060410229}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 1.653, z: -0.502}
+  m_LocalPosition: {x: 0, y: 1.653, z: -0.577}
   m_LocalScale: {x: 0.16132653, y: 0.16132653, z: 0.16132653}
   m_Children: []
   m_Father: {fileID: 1109985619}
@@ -11392,7 +11392,7 @@ GameObject:
   - component: {fileID: 1207416142}
   - component: {fileID: 1207416141}
   m_Layer: 0
-  m_Name: kim
+  m_Name: kimjongun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11613,7 +11613,7 @@ GameObject:
   - component: {fileID: 1216527628}
   - component: {fileID: 1216527627}
   m_Layer: 5
-  m_Name: Kim
+  m_Name: kimjongun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
